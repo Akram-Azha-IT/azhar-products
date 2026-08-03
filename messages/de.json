@@ -121,6 +121,12 @@
       "button": "TODO_TRANSLATE: Request a quote"
     }
   },
+  "notFound": {
+    "title": "TODO_TRANSLATE: That page does not exist.",
+    "body": "TODO_TRANSLATE: The link may be out of date. The catalogue is the fastest way to find a format, or tell us what you need and we will quote it.",
+    "products": "TODO_TRANSLATE: Browse products",
+    "contact": "TODO_TRANSLATE: Request a quote"
+  },
   "catalogue": {
     "eyebrow": "TODO_TRANSLATE: Catalogue",
     "title": "TODO_TRANSLATE: Formats, materials and volumes.",

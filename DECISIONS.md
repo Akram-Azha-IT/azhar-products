@@ -353,6 +353,47 @@ count on the home page cannot drift from the catalogue.
 
 ---
 
+## Phase 7 — Closing the remaining SEO gaps
+
+Two brief requirements were still outstanding: OpenGraph images and the
+`Organization` JSON-LD. Both are now in.
+
+### D29. OG cards are generated, not designed by hand
+
+`src/app/[locale]/opengraph-image.tsx` draws a per-locale 1200×630 card with
+`next/og`, using the brand palette and **system fonts only** — no font fetch, no
+remote asset — so card generation cannot fail on a network hiccup at build time.
+Three cards prerender, one per locale.
+
+### D30. The OG card strips `TODO_TRANSLATE:`, the pages keep it
+
+First build published FR and DE cards reading literally
+"TODO_TRANSLATE: Thermoformed packaging, built for food." Caught by noticing the
+FR/DE PNGs were 39.8 kB against English's 31.2 kB — the marker made the headline
+longer.
+
+On a page the marker is *useful*: it shows exactly what is still outstanding. On
+an OpenGraph card it gets published to every social feed that touches the link,
+so it is stripped there and the card falls back to the English source. Both now
+render at 31.2 kB.
+
+### D31. `Organization` JSON-LD omits unconfirmed fields
+
+Same rule as D17 for `Product`: `email`, `telephone`, `address` and `sameAs` are
+emitted only once they no longer contain `TODO_CONFIRM`. Structured data feeds
+search engines and Google Business listings downstream — a placeholder phone
+number there is worse than no phone number.
+
+Currently only Instagram passes the check, so `sameAs` carries one entry.
+
+### D32. Localised 404
+
+`[locale]/not-found.tsx` renders in the visitor's language and routes to the
+catalogue or a quote rather than dead-ending. Verified: an unknown product slug
+returns a real `404` status, not a soft 200.
+
+---
+
 ## Open items
 
 - ~~First Load JS on `/` is over budget~~ — resolved in D25; `/` is now 126 kB.

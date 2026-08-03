@@ -121,6 +121,12 @@
       "button": "Request a quote"
     }
   },
+  "notFound": {
+    "title": "That page does not exist.",
+    "body": "The link may be out of date. The catalogue is the fastest way to find a format, or tell us what you need and we will quote it.",
+    "products": "Browse products",
+    "contact": "Request a quote"
+  },
   "catalogue": {
     "eyebrow": "Catalogue",
     "title": "Formats, materials and volumes.",

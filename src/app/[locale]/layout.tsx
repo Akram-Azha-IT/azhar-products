@@ -11,6 +11,7 @@ import { MotionProvider } from '@/components/providers/MotionProvider';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { SkipLink } from '@/components/layout/SkipLink';
+import { OrganizationJsonLd } from '@/components/seo/OrganizationJsonLd';
 
 const interTight = Inter_Tight({
   subsets: ['latin'],
@@ -72,6 +73,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   return (
     <html lang={locale} className={`${interTight.variable} ${inter.variable}`}>
       <body className="min-h-dvh">
+        <OrganizationJsonLd locale={locale as Locale} />
         <NextIntlClientProvider>
           <MotionProvider>
             <SkipLink />
