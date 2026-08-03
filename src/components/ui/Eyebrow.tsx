@@ -10,7 +10,7 @@ interface EyebrowProps {
 /** Section label: "01 — Products". */
 export function Eyebrow({ index, children, className = '' }: EyebrowProps) {
   return (
-    <p className={`eyebrow text-teal-body ${className}`}>
+    <p className={`eyebrow text-steel ${className}`}>
       {index ? <span aria-hidden>{index} — </span> : null}
       {children}
     </p>

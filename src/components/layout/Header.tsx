@@ -30,7 +30,7 @@ export function Header() {
           isHidden ? '-translate-y-full' : 'translate-y-0'
         } ${
           isPastHero
-            ? 'border-b border-teal-mid/30 bg-cream/95 backdrop-blur-sm'
+            ? 'border-b border-steel-light/30 bg-paper/95 backdrop-blur-sm'
             : 'border-b border-transparent bg-transparent'
         }`}
       >

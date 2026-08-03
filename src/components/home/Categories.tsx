@@ -6,13 +6,19 @@ import { useTranslations } from 'next-intl';
 import { useGsapEffect } from '@/hooks/useGsapEffect';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { useRevealText } from '@/hooks/useRevealText';
-import { CATEGORIES } from '@/content/categories';
+import { CATEGORIES, type Category } from '@/content/categories';
+import { PRODUCTS } from '@/content/products';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 import { ButtonLink } from '@/components/ui/Button';
-import { PlaceholderImage } from '@/components/ui/PlaceholderImage';
+import { CategoryImage } from '@/components/ui/CategoryImage';
 
 const DESKTOP_PINNED =
   '(min-width: 1024px) and (prefers-reduced-motion: no-preference)';
+
+/** Derived from the catalogue so the tile count can never drift from reality. */
+function countFor(slug: Category['slug']): number {
+  return PRODUCTS.filter((product) => product.category === slug).length;
+}
 
 export function Categories() {
   const t = useTranslations('home.categories');
@@ -67,7 +73,7 @@ export function Categories() {
     <section
       ref={sectionRef}
       aria-labelledby="categories-heading"
-      className="bg-cream px-(--spacing-gutter) py-(--spacing-section) lg:flex lg:min-h-dvh lg:flex-col lg:justify-center"
+      className="bg-paper px-(--spacing-gutter) py-(--spacing-section) lg:flex lg:min-h-dvh lg:flex-col lg:justify-center"
     >
       <Eyebrow index="01">{t('eyebrow')}</Eyebrow>
       <h2
@@ -85,27 +91,32 @@ export function Categories() {
             return (
               <li
                 key={category.slug}
-                className="border-t border-teal-mid/30 py-6 last:border-b"
+                className="border-t border-steel-light/30 py-6 last:border-b"
               >
                 {/* Mobile shows every image inline; desktop uses the pinned pane. */}
                 <div className="mb-6 lg:hidden">
-                  <PlaceholderImage filename={category.image} ratio="4/3" />
+                  <CategoryImage
+                    src={category.image}
+                    expectedPath={`/products/${category.slug}/category.webp`}
+                    alt={t(`items.${category.slug}.name`)}
+                    sizes="100vw"
+                  />
                 </div>
 
                 <div className="flex items-baseline justify-between gap-6">
                   <h3
                     className={`font-display text-3xl tracking-[-0.03em] transition-colors duration-[var(--duration-ui)] md:text-4xl ${
-                      isActive ? 'text-ink' : 'text-teal-body lg:text-teal-mid'
+                      isActive ? 'text-ink' : 'text-steel lg:text-steel-light'
                     }`}
                   >
                     {t(`items.${category.slug}.name`)}
                   </h3>
-                  <span className="eyebrow shrink-0 text-teal-body">
-                    {category.skuCount ?? t('skuPending')} {t('skuLabel')}
+                  <span className="eyebrow shrink-0 text-steel">
+                    {countFor(category.slug) || t('skuPending')} {t('skuLabel')}
                   </span>
                 </div>
 
-                <p className="mt-3 max-w-[46ch] text-teal-body">
+                <p className="mt-3 max-w-[46ch] text-steel">
                   {t(`items.${category.slug}.descriptor`)}
                 </p>
               </li>
@@ -124,7 +135,12 @@ export function Categories() {
                   : 'pointer-events-none absolute inset-0 opacity-0'
               }`}
             >
-              <PlaceholderImage filename={category.image} ratio="4/3" />
+              <CategoryImage
+                src={category.image}
+                expectedPath={`/products/${category.slug}/category.webp`}
+                alt=""
+                sizes="(min-width: 1024px) 45vw, 100vw"
+              />
             </div>
           ))}
         </div>

@@ -33,7 +33,7 @@ export default async function AboutPage({ params }: PageProps) {
         <h1 className="mt-6 max-w-[18ch] text-(length:--text-hero) font-medium">
           {t('title')}
         </h1>
-        <p className="mt-8 max-w-[52ch] text-lg leading-relaxed text-teal-body">
+        <p className="mt-8 max-w-[52ch] text-lg leading-relaxed text-steel">
           {t('intro')}
         </p>
       </header>
@@ -45,7 +45,7 @@ export default async function AboutPage({ params }: PageProps) {
           index={String(index + 1).padStart(2, '0')}
           image={`/facility/${chapter}.webp`}
           isReversed={index % 2 === 1}
-          tone={index === 2 ? 'dark' : 'cream'}
+          tone={index === 2 ? 'dark' : 'paper'}
         />
       ))}
 

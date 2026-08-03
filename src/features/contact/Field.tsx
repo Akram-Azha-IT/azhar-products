@@ -36,7 +36,7 @@ export function Field({
       </label>
 
       {hint ? (
-        <p id={`${id}-hint`} className="mt-1 text-sm text-teal-body">
+        <p id={`${id}-hint`} className="mt-1 text-sm text-steel">
           {hint}
         </p>
       ) : null}

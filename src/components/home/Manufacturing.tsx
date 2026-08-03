@@ -21,11 +21,11 @@ export function Manufacturing() {
   return (
     <section
       aria-labelledby="manufacturing-heading"
-      className="bg-teal-deep px-(--spacing-gutter) py-(--spacing-section) text-cream"
+      className="bg-navy-deep px-(--spacing-gutter) py-(--spacing-section) text-paper"
     >
       <div className="grid gap-16 lg:grid-cols-[1fr_1fr] lg:gap-24">
         <div>
-          <Eyebrow index="02" className="!text-cream/70">
+          <Eyebrow index="02" className="!text-paper/70">
             {t('eyebrow')}
           </Eyebrow>
           <h2
@@ -35,7 +35,7 @@ export function Manufacturing() {
           >
             {t('title')}
           </h2>
-          <p className="mt-8 max-w-[52ch] text-lg leading-relaxed text-cream/80">
+          <p className="mt-8 max-w-[52ch] text-lg leading-relaxed text-paper/80">
             {t('body')}
           </p>
           <div className="mt-10">
@@ -55,10 +55,10 @@ export function Manufacturing() {
         </div>
       </div>
 
-      <dl className="mt-(--spacing-section) grid gap-10 border-t border-cream/20 pt-12 sm:grid-cols-3">
+      <dl className="mt-(--spacing-section) grid gap-10 border-t border-paper/20 pt-12 sm:grid-cols-3">
         {TRUST_STATS.map((stat) => (
           <div key={stat.key}>
-            <dt className="eyebrow text-cream/70">
+            <dt className="eyebrow text-paper/70">
               {t(`stats.${stat.key}`)}
             </dt>
             <dd className="mt-3 font-display text-5xl tracking-[-0.03em] tabular-nums md:text-6xl">

@@ -21,7 +21,9 @@ export const COMPANY = {
   whatsapp: 'TODO_CONFIRM',
   address: 'TODO_CONFIRM — full facility address',
   social: {
-    instagram: 'TODO_CONFIRM',
+    // Taken from the current site. Facebook and LinkedIn are referenced there
+    // but only as share widgets, with no canonical page URL exposed.
+    instagram: 'https://www.instagram.com/azhar.product/',
     facebook: 'TODO_CONFIRM',
     linkedin: 'TODO_CONFIRM',
   },

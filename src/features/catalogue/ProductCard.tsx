@@ -24,7 +24,7 @@ export function ProductCard({ product }: ProductCardProps) {
         href={`/products/${product.slug}`}
         className="block focus-visible:outline-offset-4"
       >
-        <div className="relative overflow-hidden bg-off-white transition-colors duration-[var(--duration-ui)] group-hover:bg-white">
+        <div className="relative overflow-hidden bg-mist transition-colors duration-[var(--duration-ui)] group-hover:bg-white">
           {primary ? (
             <>
               <Image
@@ -61,7 +61,7 @@ export function ProductCard({ product }: ProductCardProps) {
             <h3 className="font-display text-xl tracking-[-0.02em]">
               {product.name[locale]}
             </h3>
-            <p className="mt-1 text-sm text-teal-body">
+            <p className="mt-1 text-sm text-steel">
               {product.capacityMl === null
                 ? t('specPending')
                 : t('capacity', { value: product.capacityMl })}
@@ -77,7 +77,7 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {product.material ? (
-          <span className="mt-3 inline-block border border-teal-mid/40 px-2 py-1 text-xs tracking-[0.08em] text-teal-body uppercase">
+          <span className="mt-3 inline-block border border-steel-light/40 px-2 py-1 text-xs tracking-[0.08em] text-steel uppercase">
             {product.material}
           </span>
         ) : null}

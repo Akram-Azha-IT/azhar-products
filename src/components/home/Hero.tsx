@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 import { useRevealText } from '@/hooks/useRevealText';
 import { useParallax } from '@/hooks/useParallax';
 import { ButtonLink } from '@/components/ui/Button';
-import { PlaceholderImage } from '@/components/ui/PlaceholderImage';
+import { CategoryImage } from '@/components/ui/CategoryImage';
 
 export function Hero() {
   const t = useTranslations('home.hero');
@@ -23,7 +23,7 @@ export function Hero() {
             {t('headline')}
           </h1>
 
-          <p className="mt-8 max-w-[46ch] text-lg leading-relaxed text-teal-body">
+          <p className="mt-8 max-w-[46ch] text-lg leading-relaxed text-steel">
             {t('subline')}
           </p>
 
@@ -38,16 +38,20 @@ export function Hero() {
         </div>
 
         <div ref={imageRef} className="w-full">
-          <PlaceholderImage
-            filename="/products/dairy/hero-cup.webp"
+          <CategoryImage
+            src="/products/dairy/yogurt-cup-tall-1.webp"
+            expectedPath="/products/dairy/yogurt-cup-tall-1.webp"
+            alt={t('imageAlt')}
             ratio="3/4"
+            sizes="(min-width: 1024px) 45vw, 100vw"
+            priority
           />
         </div>
       </div>
 
       <p
         aria-hidden
-        className="eyebrow mt-16 px-(--spacing-gutter) text-teal-body"
+        className="eyebrow mt-16 px-(--spacing-gutter) text-steel"
       >
         ↓ {t('scrollCue')}
       </p>

@@ -13,7 +13,7 @@ export function Capabilities() {
   return (
     <section
       aria-labelledby="capabilities-heading"
-      className="bg-off-white px-(--spacing-gutter) py-(--spacing-section)"
+      className="bg-mist px-(--spacing-gutter) py-(--spacing-section)"
     >
       <Eyebrow index="03">{t('eyebrow')}</Eyebrow>
       <h2
@@ -26,14 +26,14 @@ export function Capabilities() {
 
       <ul className="mt-16 grid gap-x-16 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
         {CAPABILITY_KEYS.map((key, index) => (
-          <li key={key} className="border-t border-teal-mid/30 pt-6">
-            <span aria-hidden className="eyebrow text-teal-mid">
+          <li key={key} className="border-t border-steel-light/30 pt-6">
+            <span aria-hidden className="eyebrow text-steel-light">
               {String(index + 1).padStart(2, '0')}
             </span>
             <h3 className="mt-4 font-display text-2xl tracking-[-0.02em]">
               {t(`items.${key}.title`)}
             </h3>
-            <p className="mt-3 max-w-[38ch] leading-relaxed text-teal-body">
+            <p className="mt-3 max-w-[38ch] leading-relaxed text-steel">
               {t(`items.${key}.body`)}
             </p>
           </li>

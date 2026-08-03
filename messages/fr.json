@@ -41,7 +41,8 @@
       "subline": "TODO_TRANSLATE: Food-grade cups and containers for yogurt, cream cheese, dairy and desserts — produced to your volume, your format and your lid standard.",
       "primaryCta": "TODO_TRANSLATE: Request a quote",
       "secondaryCta": "TODO_TRANSLATE: View products",
-      "scrollCue": "TODO_TRANSLATE: Scroll"
+      "scrollCue": "TODO_TRANSLATE: Scroll",
+      "imageAlt": "TODO_TRANSLATE: Tall thermoformed yogurt cup with a printed sleeve, shown with a nested stack"
     },
     "marquee": {
       "label": "TODO_TRANSLATE: Capabilities at a glance",

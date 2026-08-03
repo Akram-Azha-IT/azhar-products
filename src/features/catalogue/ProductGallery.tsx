@@ -18,7 +18,7 @@ export function ProductGallery({ images, locale }: ProductGalleryProps) {
 
   return (
     <div>
-      <div className="bg-off-white">
+      <div className="bg-mist">
         <Image
           src={active.src}
           alt={active.alt[locale]}
@@ -40,8 +40,8 @@ export function ProductGallery({ images, locale }: ProductGalleryProps) {
                 aria-current={index === activeIndex ? 'true' : undefined}
                 className={`block cursor-pointer border-2 transition-colors duration-[var(--duration-ui)] ${
                   index === activeIndex
-                    ? 'border-teal-deep'
-                    : 'border-transparent hover:border-teal-mid'
+                    ? 'border-navy-deep'
+                    : 'border-transparent hover:border-steel-light'
                 }`}
               >
                 <Image

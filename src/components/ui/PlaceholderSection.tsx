@@ -4,7 +4,7 @@ interface PlaceholderSectionProps {
   eyebrow: string;
   title: string;
   body: string;
-  tone?: 'cream' | 'dark';
+  tone?: 'paper' | 'dark';
   className?: string;
 }
 
@@ -17,7 +17,7 @@ export function PlaceholderSection({
   eyebrow,
   title,
   body,
-  tone = 'cream',
+  tone = 'paper',
   className = '',
 }: PlaceholderSectionProps) {
   const isDark = tone === 'dark';
@@ -25,16 +25,16 @@ export function PlaceholderSection({
   return (
     <section
       className={`px-(--spacing-gutter) py-(--spacing-section) ${
-        isDark ? 'bg-teal-deep text-cream' : 'bg-cream text-ink'
+        isDark ? 'bg-navy-deep text-paper' : 'bg-paper text-ink'
       } ${className}`}
     >
-      <Eyebrow className={isDark ? '!text-cream/70' : ''}>{eyebrow}</Eyebrow>
+      <Eyebrow className={isDark ? '!text-paper/70' : ''}>{eyebrow}</Eyebrow>
       <h2 className="mt-8 max-w-[14ch] text-(length:--text-section) font-medium">
         {title}
       </h2>
       <p
         className={`mt-8 max-w-[52ch] text-lg leading-relaxed ${
-          isDark ? 'text-cream/80' : 'text-teal-body'
+          isDark ? 'text-paper/80' : 'text-steel'
         }`}
       >
         {body}

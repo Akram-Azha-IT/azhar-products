@@ -105,7 +105,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
       <TransitionLink
         href="/products"
-        className="eyebrow text-teal-body underline underline-offset-4"
+        className="eyebrow text-steel underline underline-offset-4"
       >
         ← {t('backToCatalogue')}
       </TransitionLink>
@@ -126,18 +126,18 @@ export default async function ProductDetailPage({ params }: PageProps) {
           <h1 className="max-w-[16ch] text-(length:--text-section) font-medium">
             {product.name[typedLocale]}
           </h1>
-          <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-teal-body">
+          <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-steel">
             {product.description[typedLocale]}
           </p>
 
-          <h2 className="eyebrow mt-14 text-teal-body">{t('specsTitle')}</h2>
+          <h2 className="eyebrow mt-14 text-steel">{t('specsTitle')}</h2>
           <dl className="mt-4">
             {specs.map((spec) => (
               <div
                 key={spec.key}
-                className="flex items-baseline justify-between gap-6 border-b border-teal-mid/30 py-4"
+                className="flex items-baseline justify-between gap-6 border-b border-steel-light/30 py-4"
               >
-                <dt className="text-sm text-teal-body">
+                <dt className="text-sm text-steel">
                   {t(`specs.${spec.key}`)}
                 </dt>
                 <dd className="text-right">

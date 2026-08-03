@@ -1,27 +1,22 @@
 /**
  * The four product families shown on the home page and used as the top-level
- * catalogue filter in Phase 3.
+ * catalogue filter.
  *
- * `skuCount` stays null until the product data model lands — the tile renders
- * an em dash rather than a guessed figure.
+ * `image` is null where no processed asset exists yet — the tile then renders a
+ * labelled placeholder naming the file it wants, rather than borrowing a shot
+ * from another category.
  */
 export interface Category {
   /** Matches the catalogue filter value and the i18n key. */
   slug: 'dairy' | 'clear' | 'foodservice' | 'carton';
-  /** Path the processed hero asset for this family will occupy. */
-  image: string;
-  skuCount: number | null;
+  image: string | null;
 }
 
 export const CATEGORIES: readonly Category[] = [
-  { slug: 'dairy', image: '/products/dairy/category.webp', skuCount: null },
-  { slug: 'clear', image: '/products/clear/category.webp', skuCount: null },
-  {
-    slug: 'foodservice',
-    image: '/products/foodservice/category.webp',
-    skuCount: null,
-  },
-  { slug: 'carton', image: '/products/carton/category.webp', skuCount: null },
+  { slug: 'dairy', image: '/products/dairy/yogurt-tub-wide-4.webp' },
+  { slug: 'clear', image: null },
+  { slug: 'foodservice', image: null },
+  { slug: 'carton', image: null },
 ] as const;
 
 /** Six capability statements. Copy lives in `home.capabilities.items.<key>`. */

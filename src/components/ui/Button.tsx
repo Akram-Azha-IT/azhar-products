@@ -12,15 +12,15 @@ const BASE =
   'duration-[var(--duration-ui)] ease-[var(--ease-brand)] disabled:cursor-not-allowed disabled:opacity-50';
 
 const VARIANT: Record<Variant, string> = {
-  primary: 'bg-accent-strong text-off-white hover:text-accent-strong',
+  primary: 'bg-accent-strong text-paper hover:text-accent-strong',
   ghost:
-    'border border-teal-mid text-teal-deep hover:text-cream focus-visible:text-teal-deep',
+    'border border-steel-light text-navy hover:border-navy hover:text-paper focus-visible:text-navy',
 };
 
 /** The wipe surface: scales up from the bottom edge on hover. */
 const FILL: Record<Variant, string> = {
-  primary: 'bg-off-white',
-  ghost: 'bg-teal-deep',
+  primary: 'bg-mist',
+  ghost: 'bg-navy-deep',
 };
 
 interface ButtonContentProps {

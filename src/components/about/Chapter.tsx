@@ -13,7 +13,7 @@ interface ChapterProps {
   image: string;
   /** Alternating sides keep the long scroll from settling into a rhythm. */
   isReversed?: boolean;
-  tone?: 'cream' | 'dark';
+  tone?: 'paper' | 'dark';
 }
 
 export function Chapter({
@@ -21,7 +21,7 @@ export function Chapter({
   index,
   image,
   isReversed = false,
-  tone = 'cream',
+  tone = 'paper',
 }: ChapterProps) {
   const t = useTranslations(`about.chapters.${chapterKey}`);
   const titleRef = useRevealText<HTMLHeadingElement>();
@@ -36,12 +36,12 @@ export function Chapter({
     <section
       aria-labelledby={`chapter-${chapterKey}`}
       className={`px-(--spacing-gutter) py-(--spacing-section) ${
-        isDark ? 'bg-teal-deep text-cream' : 'bg-cream text-ink'
+        isDark ? 'bg-navy-deep text-paper' : 'bg-paper text-ink'
       }`}
     >
       <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-24">
         <div className={isReversed ? 'lg:order-2' : ''}>
-          <Eyebrow index={index} className={isDark ? '!text-cream/70' : ''}>
+          <Eyebrow index={index} className={isDark ? '!text-paper/70' : ''}>
             {t('eyebrow')}
           </Eyebrow>
           <h2
@@ -53,7 +53,7 @@ export function Chapter({
           </h2>
           <p
             className={`mt-8 max-w-[52ch] text-lg leading-relaxed ${
-              isDark ? 'text-cream/80' : 'text-teal-body'
+              isDark ? 'text-paper/80' : 'text-steel'
             }`}
           >
             {t('body')}

@@ -40,43 +40,104 @@ export interface Product {
 }
 
 /*
- * ---------------------------------------------------------------------------
- * SCAFFOLD DATA — not a real catalogue.
+ * Families are grouped by FORM FACTOR — that is what the renders actually show
+ * and what a buyer selects on. Specs stay null until the format sheets arrive
+ * (DECISIONS.md D14); the images are real.
  *
- * These entries exist so the filter bar, grid, detail template and empty
- * states are all reviewable. Every spec is null and every name is a positional
- * label, because the real SKUs, capacities, diameters, lid standards, carton
- * counts and MOQs have not been supplied yet.
- *
- * To turn this into the real catalogue: replace each entry's `name`,
- * `description` and specs, point `images` at the processed files listed in
- * IMAGES.md, and delete this comment. No component changes are required —
- * filter facets are derived from whatever data is present.
- * ---------------------------------------------------------------------------
+ * Alt text describes the packaging, never the customer's printed brand.
  */
 
-const TODO_NAME = (label: string): Record<Locale, string> => ({
-  en: label,
-  fr: `TODO_TRANSLATE: ${label}`,
-  de: `TODO_TRANSLATE: ${label}`,
-});
+function localised(en: string): Record<Locale, string> {
+  return { en, fr: `TODO_TRANSLATE: ${en}`, de: `TODO_TRANSLATE: ${en}` };
+}
 
-const TODO_DESCRIPTION: Record<Locale, string> = {
-  en: 'Specification pending. Send the format sheet and this entry fills in.',
-  fr: 'TODO_TRANSLATE: Specification pending.',
-  de: 'TODO_TRANSLATE: Specification pending.',
-};
+function image(src: string, description: string): ProductImage {
+  return { src, alt: localised(description) };
+}
 
-function scaffold(
+const WIDE_TUB_IMAGES: readonly ProductImage[] = [
+  image(
+    '/products/dairy/yogurt-tub-wide-1.webp',
+    'Wide thermoformed dairy tub with a rolled sealing rim and full-wrap printed sleeve',
+  ),
+  image(
+    '/products/dairy/yogurt-tub-wide-2.webp',
+    'Wide dairy tub at a three-quarter angle, print running to the base',
+  ),
+  image(
+    '/products/dairy/yogurt-tub-wide-3.webp',
+    'Wide dairy tub with a banded print and reinforced stacking rib',
+  ),
+  image(
+    '/products/dairy/yogurt-tub-wide-4.webp',
+    'Wide dairy tubs nested in a stack beside a single filled unit',
+  ),
+  image('/products/dairy/yogurt-tub-wide-5.webp', 'Wide dairy tub, side view'),
+  image(
+    '/products/dairy/yogurt-tub-wide-6.webp',
+    'Wide dairy tub with an alternate print treatment',
+  ),
+  image(
+    '/products/dairy/yogurt-tub-wide-7.webp',
+    'Wide dairy tub showing its stacking profile',
+  ),
+];
+
+const TALL_CUP_IMAGES: readonly ProductImage[] = [
+  image(
+    '/products/dairy/yogurt-cup-tall-1.webp',
+    'Tall thermoformed yogurt cup with a printed sleeve, shown with a nested stack',
+  ),
+  image(
+    '/products/dairy/yogurt-cup-tall-2.webp',
+    'Tall yogurt cups, one tipped to show the base and stacking ribs',
+  ),
+  image('/products/dairy/yogurt-cup-tall-3.webp', 'Tall yogurt cup, front view'),
+  image(
+    '/products/dairy/yogurt-cup-tall-4.webp',
+    'Tall yogurt cup, three-quarter view',
+  ),
+  image(
+    '/products/dairy/yogurt-cup-tall-5.webp',
+    'Tall yogurt cup with an alternate print treatment',
+  ),
+  image(
+    '/products/dairy/yogurt-cup-tall-6.webp',
+    'Tall yogurt cup showing its rim detail',
+  ),
+];
+
+const POT_IMAGES: readonly ProductImage[] = [
+  image(
+    '/products/dairy/cream-cheese-pot-1.webp',
+    'Small cream cheese pot with a wide rim and full-wrap printed sleeve',
+  ),
+  image(
+    '/products/dairy/cream-cheese-pot-2.webp',
+    'Cream cheese pots nested in a stack beside a single filled unit',
+  ),
+  image(
+    '/products/dairy/cream-cheese-pot-3.webp',
+    'Cream cheese pot, three-quarter view',
+  ),
+  image(
+    '/products/dairy/cream-cheese-pot-4.webp',
+    'Cream cheese pot showing its lid seat',
+  ),
+];
+
+function family(
   slug: string,
-  category: Category['slug'],
-  label: string,
+  name: string,
+  description: string,
+  applications: readonly Application[],
+  images: readonly ProductImage[],
 ): Product {
   return {
     slug,
-    category,
-    name: TODO_NAME(label),
-    description: TODO_DESCRIPTION,
+    category: 'dairy',
+    name: localised(name),
+    description: localised(description),
     material: null,
     capacityMl: null,
     diameterMm: null,
@@ -84,20 +145,33 @@ function scaffold(
     lidCompatibility: null,
     unitsPerCarton: null,
     moq: null,
-    applications: [],
-    images: [],
+    applications,
+    images,
   };
 }
 
 export const PRODUCTS: readonly Product[] = [
-  scaffold('dairy-format-a', 'dairy', 'Dairy format A'),
-  scaffold('dairy-format-b', 'dairy', 'Dairy format B'),
-  scaffold('dairy-format-c', 'dairy', 'Dairy format C'),
-  scaffold('clear-format-a', 'clear', 'Clear format A'),
-  scaffold('clear-format-b', 'clear', 'Clear format B'),
-  scaffold('foodservice-format-a', 'foodservice', 'Food service format A'),
-  scaffold('foodservice-format-b', 'foodservice', 'Food service format B'),
-  scaffold('carton-format-a', 'carton', 'Carton format A'),
+  family(
+    'yogurt-tub-wide',
+    'Wide dairy tub',
+    'Low, wide-mouth thermoformed tub for set yogurt, raib and fermented milk. Rolled rim for foil sealing, stacking ribs on the base, and a full-wrap print area from rim to foot.',
+    ['yogurt', 'dessert'],
+    WIDE_TUB_IMAGES,
+  ),
+  family(
+    'yogurt-cup-tall',
+    'Tall yogurt cup',
+    'Taller profile on a smaller footprint, for drinking yogurt, stirred yogurt and chilled desserts. Nests tightly for transport and takes the same foil lid standard as the wide tub.',
+    ['yogurt', 'dessert', 'foodService'],
+    TALL_CUP_IMAGES,
+  ),
+  family(
+    'cream-cheese-pot',
+    'Cream cheese pot',
+    'Small-format pot for spreadable cream cheese and portion dairy. Wide rim relative to its height for easy scooping, with a deep lid seat for a secure foil seal.',
+    ['creamCheese', 'foodService'],
+    POT_IMAGES,
+  ),
 ] as const;
 
 export function getProductBySlug(slug: string): Product | undefined {

@@ -34,7 +34,7 @@ export function LocaleSwitcher() {
         return (
           <span key={locale} className="flex items-center gap-1">
             {index > 0 ? (
-              <span aria-hidden className="text-teal-mid">
+              <span aria-hidden className="text-steel-light">
                 /
               </span>
             ) : null}
@@ -46,7 +46,7 @@ export function LocaleSwitcher() {
               className={`cursor-pointer px-1 py-2 text-xs tracking-[0.12em] uppercase transition-colors duration-[var(--duration-ui)] ${
                 isActive
                   ? 'text-accent-strong'
-                  : 'text-teal-body hover:text-ink'
+                  : 'text-steel hover:text-ink'
               }`}
             >
               {locale}

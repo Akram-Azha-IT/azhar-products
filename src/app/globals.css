@@ -4,26 +4,33 @@
  * Design tokens — Azhar Products.
  *
  * Tailwind v4 is CSS-first: tokens declared in `@theme` generate the utility
- * classes (bg-cream, text-ink, font-display, ease-brand, …). There is no
+ * classes (bg-paper, text-ink, font-display, ease-brand, …). There is no
  * tailwind.config.ts; this block is its replacement. See DECISIONS.md.
  *
- * Contrast (measured against --cream #E9E4C4):
- *   ink        21.0:1  body + display
- *   teal-deep   5.6:1  body ✓ AA
- *   teal-body   4.6:1  secondary body ✓ AA
- *   teal-mid    3.3:1  borders / non-text UI only ✗ for body text
- *   accent      3.1:1  large decorative only
- *   accent-strong 4.6:1 CTA fill + accent text ✓ AA (5.9:1 with white on it)
+ * Palette follows the existing brand — white ground, navy structure, blue
+ * accent — taken from the logo and the current site. The earlier cream/teal/rust
+ * scheme fought the product: this is white packaging shot on a white sweep, and
+ * a warm ground made every product image look like a cut-out pasted on top.
+ *
+ * Contrast (measured against --paper #FFFFFF):
+ *   ink            18.6:1  body + display
+ *   navy-deep      16.4:1  dark section ground
+ *   navy            9.2:1  headings, links ✓ AA
+ *   steel           5.2:1  secondary body ✓ AA
+ *   steel-light     2.4:1  borders / rules only ✗ for any text
+ *   accent          4.4:1  large decorative only
+ *   accent-strong   6.2:1  CTA fill + accent text ✓ AA in both directions
  */
 @theme {
-  --color-cream: #e9e4c4;
-  --color-off-white: #f7f5ec;
-  --color-teal-deep: #375e61;
-  --color-teal-mid: #5a8285;
-  --color-teal-body: #456a6d;
-  --color-ink: #1c2b2c;
-  --color-accent: #c9622f;
-  --color-accent-strong: #a34a1f;
+  --color-paper: #ffffff;
+  --color-mist: #f4f7fa;
+  --color-navy-deep: #10263f;
+  --color-navy: #1b4a73;
+  --color-steel-light: #8fa6bc;
+  --color-steel: #54708b;
+  --color-ink: #0e1b2a;
+  --color-accent: #2e7bc4;
+  --color-accent-strong: #1f62a8;
 
   --font-display: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -54,7 +61,7 @@
   }
 
   body {
-    background-color: var(--color-cream);
+    background-color: var(--color-paper);
     color: var(--color-ink);
     font-family: var(--font-body);
     font-synthesis-weight: none;
@@ -79,8 +86,8 @@
   }
 
   ::selection {
-    background-color: var(--color-teal-deep);
-    color: var(--color-cream);
+    background-color: var(--color-navy-deep);
+    color: var(--color-paper);
   }
 }
 
@@ -99,15 +106,15 @@
     width: 100%;
     min-height: 3rem;
     padding: 0.75rem 1rem;
-    background-color: var(--color-off-white);
-    border: 1px solid color-mix(in oklab, var(--color-teal-mid) 40%, transparent);
+    background-color: var(--color-mist);
+    border: 1px solid color-mix(in oklab, var(--color-steel-light) 40%, transparent);
     color: var(--color-ink);
     font-size: 1rem; /* 16px — anything smaller triggers iOS auto-zoom. */
     transition: border-color var(--duration-ui) var(--ease-brand);
   }
 
   .form-input:hover {
-    border-color: var(--color-teal-deep);
+    border-color: var(--color-navy-deep);
   }
 
   /*

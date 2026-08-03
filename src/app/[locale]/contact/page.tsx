@@ -37,7 +37,7 @@ export default async function ContactPage({ params }: PageProps) {
       <h1 className="mt-6 max-w-[16ch] text-(length:--text-section) font-medium">
         {t('title')}
       </h1>
-      <p className="mt-8 max-w-[52ch] text-lg leading-relaxed text-teal-body">
+      <p className="mt-8 max-w-[52ch] text-lg leading-relaxed text-steel">
         {t('intro')}
       </p>
 
@@ -45,7 +45,7 @@ export default async function ContactPage({ params }: PageProps) {
         <ContactForm />
 
         <aside className="lg:sticky lg:top-32 lg:self-start">
-          <h2 className="eyebrow text-teal-body">{t('panel.title')}</h2>
+          <h2 className="eyebrow text-steel">{t('panel.title')}</h2>
 
           <address className="mt-6 flex flex-col gap-4 text-base not-italic">
             {isConfirmed(COMPANY.email) ? (
@@ -56,7 +56,7 @@ export default async function ContactPage({ params }: PageProps) {
                 {COMPANY.email}
               </a>
             ) : (
-              <span className="text-teal-body">{t('panel.pending')}</span>
+              <span className="text-steel">{t('panel.pending')}</span>
             )}
 
             {isConfirmed(COMPANY.phone) ? (
@@ -80,7 +80,7 @@ export default async function ContactPage({ params }: PageProps) {
             ) : null}
 
             {isConfirmed(COMPANY.address) ? (
-              <p className="max-w-[32ch] text-teal-body">{COMPANY.address}</p>
+              <p className="max-w-[32ch] text-steel">{COMPANY.address}</p>
             ) : null}
           </address>
 
@@ -105,8 +105,8 @@ export default async function ContactPage({ params }: PageProps) {
            * The map is omitted rather than pointed at a guessed location, and
            * omitting it also avoids loading a third-party frame for nothing.
            */}
-          <div className="mt-10 border border-teal-mid/30 bg-off-white p-6">
-            <p className="text-sm text-teal-body">{t('panel.mapPending')}</p>
+          <div className="mt-10 border border-steel-light/30 bg-mist p-6">
+            <p className="text-sm text-steel">{t('panel.mapPending')}</p>
           </div>
         </aside>
       </div>

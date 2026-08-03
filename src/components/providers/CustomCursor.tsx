@@ -63,7 +63,7 @@ export function CustomCursor() {
     <div
       ref={dotRef}
       aria-hidden
-      className="pointer-events-none fixed top-0 left-0 z-100 -ml-[6px] -mt-[6px] h-3 w-3 rounded-full bg-teal-deep opacity-0 mix-blend-multiply"
+      className="pointer-events-none fixed top-0 left-0 z-100 -ml-[6px] -mt-[6px] h-3 w-3 rounded-full bg-navy-deep opacity-0 mix-blend-multiply"
     />
   );
 }

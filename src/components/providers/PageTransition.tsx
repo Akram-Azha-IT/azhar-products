@@ -95,7 +95,7 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
       <div
         ref={panelRef}
         aria-hidden
-        className="pointer-events-none fixed inset-0 z-1000 translate-y-full bg-teal-deep"
+        className="pointer-events-none fixed inset-0 z-1000 translate-y-full bg-navy-deep"
       />
     </PageTransitionContext.Provider>
   );

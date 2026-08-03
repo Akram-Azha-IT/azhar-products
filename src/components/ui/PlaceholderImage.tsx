@@ -23,9 +23,9 @@ export function PlaceholderImage({
       role="img"
       aria-label={`Placeholder for ${filename}`}
       style={{ aspectRatio: ratio }}
-      className={`flex w-full items-center justify-center border border-teal-mid/30 bg-off-white p-6 ${className}`}
+      className={`flex w-full items-center justify-center border border-steel-light/30 bg-mist p-6 ${className}`}
     >
-      <span className="text-center font-mono text-xs break-all text-teal-body">
+      <span className="text-center font-mono text-xs break-all text-steel">
         {filename}
       </span>
     </div>

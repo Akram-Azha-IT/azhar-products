@@ -64,11 +64,11 @@ export function ProductGrid({
 
   if (products.length === 0) {
     return (
-      <div className="border-t border-teal-mid/30 py-20 text-center">
+      <div className="border-t border-steel-light/30 py-20 text-center">
         <p className="font-display text-2xl tracking-[-0.02em]">
           {t('empty.title')}
         </p>
-        <p className="mx-auto mt-3 max-w-[42ch] text-teal-body">
+        <p className="mx-auto mt-3 max-w-[42ch] text-steel">
           {t('empty.body')}
         </p>
         <button

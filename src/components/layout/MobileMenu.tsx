@@ -51,7 +51,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       aria-modal="true"
       aria-label={t('primaryLabel')}
       inert={!isOpen}
-      className={`fixed inset-0 z-100 flex flex-col bg-teal-deep text-cream transition-[opacity,transform] duration-[var(--duration-ui)] ease-[var(--ease-brand)] motion-reduce:transition-none md:hidden ${
+      className={`fixed inset-0 z-100 flex flex-col bg-navy-deep text-paper transition-[opacity,transform] duration-[var(--duration-ui)] ease-[var(--ease-brand)] motion-reduce:transition-none md:hidden ${
         isOpen
           ? 'pointer-events-auto translate-y-0 opacity-100'
           : 'pointer-events-none -translate-y-4 opacity-0'

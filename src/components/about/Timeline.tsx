@@ -70,7 +70,7 @@ export function Timeline() {
     <section
       ref={sectionRef}
       aria-labelledby="timeline-heading"
-      className="overflow-hidden bg-off-white py-(--spacing-section)"
+      className="overflow-hidden bg-mist py-(--spacing-section)"
     >
       <div className="px-(--spacing-gutter)">
         <Eyebrow index="05">{t('eyebrow')}</Eyebrow>
@@ -91,7 +91,7 @@ export function Timeline() {
         {MILESTONES.map((milestone) => (
           <li
             key={milestone.key}
-            className="w-[18rem] shrink-0 border-t border-teal-mid/30 pt-6"
+            className="w-[18rem] shrink-0 border-t border-steel-light/30 pt-6"
           >
             <p className="font-display text-4xl tracking-[-0.03em] tabular-nums">
               {milestone.year ?? t('yearPending')}
@@ -99,7 +99,7 @@ export function Timeline() {
             <h3 className="mt-4 font-display text-xl tracking-[-0.02em]">
               {t(`items.${milestone.key}.title`)}
             </h3>
-            <p className="mt-2 leading-relaxed text-teal-body">
+            <p className="mt-2 leading-relaxed text-steel">
               {t(`items.${milestone.key}.body`)}
             </p>
           </li>

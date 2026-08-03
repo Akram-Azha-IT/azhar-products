@@ -70,7 +70,7 @@ export function Marquee() {
   return (
     <section
       aria-label={t('label')}
-      className="overflow-hidden border-y border-teal-mid/30 py-6"
+      className="overflow-hidden border-y border-steel-light/30 py-6"
     >
       {/*
        * The list is rendered twice so -50% lands on a seam. Spacing is trailing
@@ -83,7 +83,7 @@ export function Marquee() {
             <span
               key={`${copy}-${item}`}
               aria-hidden={copy === 1}
-              className="pr-12 text-sm tracking-[0.08em] whitespace-nowrap text-teal-deep uppercase"
+              className="pr-12 text-sm tracking-[0.08em] whitespace-nowrap text-navy-deep uppercase"
             >
               {item}
             </span>

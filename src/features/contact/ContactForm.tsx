@@ -120,11 +120,11 @@ export function ContactForm() {
 
   if (submitState === 'success') {
     return (
-      <div ref={panelRef} role="status" className="border-t border-teal-mid/30 pt-10">
+      <div ref={panelRef} role="status" className="border-t border-steel-light/30 pt-10">
         <h2 className="font-display text-3xl tracking-[-0.03em]">
           {t('status.successTitle')}
         </h2>
-        <p className="mt-4 max-w-[46ch] text-teal-body">
+        <p className="mt-4 max-w-[46ch] text-steel">
           {t('status.successBody')}
         </p>
       </div>
@@ -219,7 +219,7 @@ export function ContactForm() {
             {' *'}
           </span>
         </legend>
-        <p className="mt-1 text-sm text-teal-body">
+        <p className="mt-1 text-sm text-steel">
           {t('hints.productInterest')}
         </p>
 
@@ -227,7 +227,7 @@ export function ContactForm() {
           {PRODUCTS.map((product) => (
             <label
               key={product.slug}
-              className="flex cursor-pointer items-center gap-2 border border-teal-mid/40 px-4 py-2.5 text-sm transition-colors duration-[var(--duration-ui)] hover:border-teal-deep has-checked:border-accent-strong has-checked:bg-accent-strong has-checked:text-off-white"
+              className="flex cursor-pointer items-center gap-2 border border-steel-light/40 px-4 py-2.5 text-sm transition-colors duration-[var(--duration-ui)] hover:border-navy-deep has-checked:border-accent-strong has-checked:bg-accent-strong has-checked:text-mist"
             >
               <input
                 type="checkbox"
@@ -278,11 +278,11 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={submitState === 'submitting'}
-        className="group relative isolate mt-10 inline-flex cursor-pointer items-center justify-center overflow-hidden bg-accent-strong px-8 py-4 text-sm font-medium tracking-[0.04em] text-off-white uppercase transition-colors duration-[var(--duration-ui)] hover:text-accent-strong disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:text-off-white"
+        className="group relative isolate mt-10 inline-flex cursor-pointer items-center justify-center overflow-hidden bg-accent-strong px-8 py-4 text-sm font-medium tracking-[0.04em] text-mist uppercase transition-colors duration-[var(--duration-ui)] hover:text-accent-strong disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:text-mist"
       >
         <span
           aria-hidden
-          className="absolute inset-0 -z-10 origin-bottom scale-y-0 bg-off-white transition-transform duration-[var(--duration-ui)] ease-[var(--ease-brand)] group-hover:scale-y-100 group-disabled:scale-y-0 motion-reduce:transition-none"
+          className="absolute inset-0 -z-10 origin-bottom scale-y-0 bg-mist transition-transform duration-[var(--duration-ui)] ease-[var(--ease-brand)] group-hover:scale-y-100 group-disabled:scale-y-0 motion-reduce:transition-none"
         />
         {submitState === 'submitting' ? t('status.submitting') : t('submit')}
       </button>

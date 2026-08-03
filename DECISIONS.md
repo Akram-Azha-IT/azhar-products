@@ -273,6 +273,69 @@ waiting on an animation library.
 
 ---
 
+## Phase 6 — Re-theme to the brand palette, real 3D renders in
+
+Requested directly: take the theme from the current site, because the warm
+cream/rust scheme did not sit well with the packaging, and put the 3D product
+renders in.
+
+### D26. Palette moved to white / navy / blue
+
+The old ground was `--cream #E9E4C4` with a rust accent. Every product render is
+**white packaging on a white sweep**, so a warm ground made each image read as a
+cut-out pasted onto the page — the exact failure mode D18 predicted, confirmed
+once real images went in.
+
+New palette, taken from the logo and the existing site:
+
+| Token | Hex | Role | On white |
+| --- | --- | --- | --- |
+| `--paper` | `#FFFFFF` | ground | — |
+| `--mist` | `#F4F7FA` | surfaces, image plates | — |
+| `--navy-deep` | `#10263F` | dark sections | 16.4:1 |
+| `--navy` | `#1B4A73` | headings, ghost buttons | 9.2:1 ✓ |
+| `--steel` | `#54708B` | secondary body | 5.2:1 ✓ |
+| `--steel-light` | `#8FA6BC` | rules, borders — **never text** | 2.4:1 ✗ |
+| `--ink` | `#0E1B2A` | body + display | 18.6:1 |
+| `--accent` | `#2E7BC4` | large decorative only | 4.4:1 |
+| `--accent-strong` | `#1F62A8` | CTA fill, accent text | 6.2:1 ✓ |
+
+Verified in the built stylesheet: all new values present, all seven old values
+gone. The image plate is now `--mist`, one step off white, so the renders sit on
+the page instead of being framed by it.
+
+### D27. The rename needed two repairs
+
+Renaming tokens with a PowerShell find-and-replace corrupted every non-ASCII
+character in the source — em dashes, arrows and mid-dots all became mojibake,
+because the files were read as ANSI and written as UTF-8. Reverted and redone in
+Node with explicit UTF-8. Worth remembering: **do not bulk-edit this repo's
+source from PowerShell.**
+
+The same pass also turned `creamCheese` into `paperCheese` (`cream` → `paper`
+matched inside an identifier). Caught by a grep after the fact, not by the
+compiler, because the union type and its only usage were renamed together.
+
+### D28. Renders are grouped by form factor, and 9 of 17 are unverified
+
+The 17 files are all white thermoformed dairy packaging with customer print.
+They are grouped into three families by **shape**, which is what a buyer selects
+on: wide tub, tall cup, cream cheese pot.
+
+I visually inspected 8 of the 17 and placed those confidently. **The other 9 were
+distributed across the three galleries by inference, not inspection** — they may
+sit in the wrong family. Re-map any that are wrong in `scripts/image-map.json`
+and re-run `node scripts/process-images.mjs --map scripts/image-map.json`; no
+code changes needed.
+
+Alt text describes the packaging — rim, stacking ribs, lid seat — never the
+customer's printed brand.
+
+Category tile counts are now derived from `PRODUCTS` rather than stored, so the
+count on the home page cannot drift from the catalogue.
+
+---
+
 ## Open items
 
 - ~~First Load JS on `/` is over budget~~ — resolved in D25; `/` is now 126 kB.

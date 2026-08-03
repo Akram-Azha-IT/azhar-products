@@ -24,7 +24,7 @@ interface FilterGroupProps {
 function FilterGroup({ label, children }: FilterGroupProps) {
   return (
     <fieldset className="flex flex-wrap items-center gap-2">
-      <legend className="eyebrow mr-3 float-left text-teal-body">
+      <legend className="eyebrow mr-3 float-left text-steel">
         {label}
       </legend>
       {children}
@@ -47,8 +47,8 @@ function Chip({ isActive, onClick, children }: ChipProps) {
       aria-pressed={isActive}
       className={`cursor-pointer border px-4 py-2.5 text-sm transition-colors duration-[var(--duration-ui)] ${
         isActive
-          ? 'border-accent-strong bg-accent-strong text-off-white'
-          : 'border-teal-mid/40 text-teal-body hover:border-teal-deep hover:text-ink'
+          ? 'border-accent-strong bg-accent-strong text-mist'
+          : 'border-steel-light/40 text-steel hover:border-navy-deep hover:text-ink'
       }`}
     >
       {children}
@@ -75,7 +75,7 @@ export function FilterBar({
   const tCategories = useTranslations('home.categories.items');
 
   return (
-    <div className="sticky top-0 z-40 -mx-(--spacing-gutter) mb-16 border-y border-teal-mid/30 bg-cream/95 px-(--spacing-gutter) py-5 backdrop-blur-sm">
+    <div className="sticky top-0 z-40 -mx-(--spacing-gutter) mb-16 border-y border-steel-light/30 bg-paper/95 px-(--spacing-gutter) py-5 backdrop-blur-sm">
       <div className="flex flex-col gap-5">
         {facets.categories.length > 0 ? (
           <FilterGroup label={t('filters.category')}>
@@ -135,7 +135,7 @@ export function FilterBar({
 
         <div className="flex items-center justify-between gap-4">
           {/* Announced politely so filtering never steals focus from the chips. */}
-          <p aria-live="polite" className="text-sm text-teal-body">
+          <p aria-live="polite" className="text-sm text-steel">
             {t('resultCount', { count: resultCount })}
           </p>
           {activeCount > 0 ? (

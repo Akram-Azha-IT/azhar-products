@@ -29,7 +29,7 @@ export default async function ProductsPage({ params }: PageProps) {
       <h1 className="mt-6 max-w-[16ch] text-(length:--text-section) font-medium">
         {t('title')}
       </h1>
-      <p className="mt-8 mb-16 max-w-[52ch] text-lg leading-relaxed text-teal-body">
+      <p className="mt-8 mb-16 max-w-[52ch] text-lg leading-relaxed text-steel">
         {t('intro')}
       </p>
 
