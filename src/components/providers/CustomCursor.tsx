@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 
-import { gsap } from '@/lib/gsap';
+import { useGsapEffect } from '@/hooks/useGsapEffect';
 
 const INTERACTIVE = 'a, button, [role="button"], input, select, textarea, label';
 const FOLLOW_DURATION = 0.35;
@@ -11,21 +11,16 @@ const HOVER_SCALE = 3;
 /**
  * Small circle that trails the pointer and swells over interactive elements.
  *
- * Purely decorative: the native cursor is never hidden globally, and nothing
- * here is required to operate the site. Renders only for fine pointers that
- * accept hover, so touch and reduced-motion users never load the behaviour.
+ * Purely decorative: the native cursor is never hidden, and nothing here is
+ * required to operate the site. The parent only renders this for fine pointers
+ * that accept hover and welcome motion.
  */
 export function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useGsapEffect(({ gsap }) => {
     const dot = dotRef.current;
     if (!dot) return;
-
-    const supportsCursor = window.matchMedia(
-      '(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)',
-    ).matches;
-    if (!supportsCursor) return;
 
     dot.style.opacity = '1';
 
@@ -60,6 +55,7 @@ export function CustomCursor() {
       window.removeEventListener('pointermove', onMove);
       window.removeEventListener('pointerover', onOver);
       gsap.killTweensOf(dot);
+      dot.style.opacity = '0';
     };
   }, []);
 

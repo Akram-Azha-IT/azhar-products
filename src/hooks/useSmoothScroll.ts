@@ -1,9 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
-import Lenis from 'lenis';
-
-import { gsap, ScrollTrigger } from '@/lib/gsap';
+import { useGsapEffect } from './useGsapEffect';
 
 const LERP = 0.08;
 
@@ -16,29 +13,45 @@ interface UseSmoothScrollOptions {
  * Drives Lenis from `gsap.ticker` so ScrollTrigger and Lenis share one RAF
  * loop instead of competing for frames.
  *
- * Disabled on reduced-motion and on touch devices, where Lenis fights the
+ * Lenis is imported lazily alongside GSAP — native scrolling is already correct,
+ * so there is nothing to wait for and no reason to block first paint on it.
+ *
+ * Disabled on reduced motion and on touch devices, where Lenis fights the
  * platform's native momentum scrolling.
  */
 export function useSmoothScroll({ disabled }: UseSmoothScrollOptions): void {
-  useEffect(() => {
-    if (disabled) return;
+  useGsapEffect(
+    ({ gsap, ScrollTrigger }) => {
+      let cleanup: (() => void) | undefined;
+      let isCancelled = false;
 
-    const lenis = new Lenis({ lerp: LERP });
+      void import('lenis').then(({ default: Lenis }) => {
+        if (isCancelled) return;
 
-    lenis.on('scroll', ScrollTrigger.update);
+        const lenis = new Lenis({ lerp: LERP });
+        lenis.on('scroll', ScrollTrigger.update);
 
-    const onTick = (time: number) => {
-      // gsap.ticker reports seconds; Lenis expects milliseconds.
-      lenis.raf(time * 1000);
-    };
+        const onTick = (time: number) => {
+          // gsap.ticker reports seconds; Lenis expects milliseconds.
+          lenis.raf(time * 1000);
+        };
 
-    gsap.ticker.add(onTick);
-    gsap.ticker.lagSmoothing(0);
+        gsap.ticker.add(onTick);
+        gsap.ticker.lagSmoothing(0);
 
-    return () => {
-      gsap.ticker.remove(onTick);
-      gsap.ticker.lagSmoothing(500, 33);
-      lenis.destroy();
-    };
-  }, [disabled]);
+        cleanup = () => {
+          gsap.ticker.remove(onTick);
+          gsap.ticker.lagSmoothing(500, 33);
+          lenis.destroy();
+        };
+      });
+
+      return () => {
+        isCancelled = true;
+        cleanup?.();
+      };
+    },
+    [],
+    !disabled,
+  );
 }

@@ -1,10 +1,11 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
 
 import type { Product } from '@/content/products';
-import { EASE, gsap } from '@/lib/gsap';
+import { EASE } from '@/lib/motionTokens';
+import { useGsapEffect } from '@/hooks/useGsapEffect';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { ProductCard } from './ProductCard';
 
@@ -28,34 +29,38 @@ export function ProductGrid({
   const prefersReduced = useReducedMotion();
   const isFirstRender = useRef(true);
 
-  useEffect(() => {
-    const grid = gridRef.current;
-    if (!grid || prefersReduced) return;
+  useGsapEffect(
+    ({ gsap }) => {
+      const grid = gridRef.current;
+      if (!grid) return;
 
-    // The first paint is handled by the page's own reveal; only re-filters animate.
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      return;
-    }
+      // The first paint is handled by the page's own reveal; only re-filters animate.
+      if (isFirstRender.current) {
+        isFirstRender.current = false;
+        return;
+      }
 
-    const context = gsap.context(() => {
-      gsap.fromTo(
-        grid.children,
-        { opacity: 0, y: 16 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: DURATION_S,
-          ease: EASE.out,
-          stagger: STAGGER_S,
-          // Never leave a card stuck at opacity 0 if the tween is interrupted.
-          clearProps: 'opacity,transform',
-        },
-      );
-    }, grid);
+      const context = gsap.context(() => {
+        gsap.fromTo(
+          grid.children,
+          { opacity: 0, y: 16 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: DURATION_S,
+            ease: EASE.out,
+            stagger: STAGGER_S,
+            // Never leave a card stuck at opacity 0 if the tween is interrupted.
+            clearProps: 'opacity,transform',
+          },
+        );
+      }, grid);
 
-    return () => context.revert();
-  }, [signature, prefersReduced]);
+      return () => context.revert();
+    },
+    [signature],
+    !prefersReduced,
+  );
 
   if (products.length === 0) {
     return (

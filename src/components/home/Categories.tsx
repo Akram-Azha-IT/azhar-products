@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 
-import { gsap, ScrollTrigger } from '@/lib/gsap';
+import { useGsapEffect } from '@/hooks/useGsapEffect';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { useRevealText } from '@/hooks/useRevealText';
 import { CATEGORIES } from '@/content/categories';
@@ -21,43 +21,47 @@ export function Categories() {
   const [activeIndex, setActiveIndex] = useState(0);
   const prefersReduced = useReducedMotion();
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section || prefersReduced) return;
+  useGsapEffect(
+    ({ gsap, ScrollTrigger }) => {
+      const section = sectionRef.current;
+      if (!section) return;
 
-    const matcher = gsap.matchMedia();
+      const matcher = gsap.matchMedia();
 
-    /*
-     * Desktop only: pin the section and step through the four families as the
-     * user scrolls. Below 1024px — and under reduced motion — the same markup
-     * falls back to a plain stacked list, which is why the fallback is the
-     * default rendering rather than something this effect has to undo.
-     */
-    matcher.add(DESKTOP_PINNED, () => {
-      const steps = CATEGORIES.length;
+      /*
+       * Desktop only: pin the section and step through the four families as the
+       * user scrolls. Below 1024px — and under reduced motion — the same markup
+       * falls back to a plain stacked list, which is why the fallback is the
+       * default rendering rather than something this effect has to undo.
+       */
+      matcher.add(DESKTOP_PINNED, () => {
+        const steps = CATEGORIES.length;
 
-      const trigger = ScrollTrigger.create({
-        trigger: section,
-        start: 'top top',
-        end: `+=${(steps - 1) * 100}%`,
-        pin: true,
-        scrub: true,
-        onUpdate: (self) => {
-          const index = Math.min(
-            steps - 1,
-            Math.floor(self.progress * steps * 0.999),
-          );
-          setActiveIndex((previous) =>
-            previous === index ? previous : index,
-          );
-        },
+        const trigger = ScrollTrigger.create({
+          trigger: section,
+          start: 'top top',
+          end: `+=${(steps - 1) * 100}%`,
+          pin: true,
+          scrub: true,
+          onUpdate: (self) => {
+            const index = Math.min(
+              steps - 1,
+              Math.floor(self.progress * steps * 0.999),
+            );
+            setActiveIndex((previous) =>
+              previous === index ? previous : index,
+            );
+          },
+        });
+
+        return () => trigger.kill();
       });
 
-      return () => trigger.kill();
-    });
-
-    return () => matcher.revert();
-  }, [prefersReduced]);
+      return () => matcher.revert();
+    },
+    [],
+    !prefersReduced,
+  );
 
   return (
     <section

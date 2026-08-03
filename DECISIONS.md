@@ -234,12 +234,52 @@ Upstash or Vercel KV.
 
 ---
 
+## Phase 5 (partial) — Performance
+
+### D25. GSAP and Lenis load lazily; motion is progressive enhancement
+
+The landing route was 170 kB against a 150 kB budget, and GSAP + ScrollTrigger
+was roughly 65 kB of it. Nothing needs an animation engine before hydration.
+
+`src/lib/gsap.ts` is now a lazy loader — `loadGsap()` dynamic-imports GSAP and
+ScrollTrigger once per session and registers the plugin; `peekGsap()` returns the
+bundle only if it has already arrived, for synchronous paths like a link click.
+Timing constants moved to `src/lib/motionTokens.ts` so components can reference
+the motion language without pulling in the engine.
+
+`useGsapEffect(setup, deps, enabled)` wraps the pattern: it awaits the bundle,
+discards the result if the component unmounted meanwhile, and skips the import
+entirely when `enabled` is false — so a reduced-motion visitor never downloads
+GSAP at all.
+
+Result:
+
+| Route | Before | After |
+| --- | --- | --- |
+| `/` | 170 kB | **126 kB** |
+| `/products` | 174 kB | **130 kB** |
+| `/products/[slug]` | 173 kB | **128 kB** |
+| `/about` | 168 kB | **125 kB** |
+| `/contact` | 188 kB | **144 kB** |
+
+All five now sit under the 150 kB landing budget.
+
+The constraint this imposes, and the reason it is safe: **every animated element
+must already be correct before GSAP arrives, and must stay correct if it never
+does.** Headings are readable un-split, image wrappers are unclipped at rest,
+counters render their final value server-side, and `navigate()` falls through to
+a plain router push when the bundle is not ready — a link click is never delayed
+waiting on an animation library.
+
+---
+
 ## Open items
 
-- **First Load JS on `/` is 167 kB**, over the 150 kB landing budget. GSAP +
-  ScrollTrigger + Lenis account for nearly all of it. Phase 5 should confirm
-  whether `optimizePackageImports` is pulling its weight and consider deferring
-  the cursor/transition layer behind an idle import.
+- ~~First Load JS on `/` is over budget~~ — resolved in D25; `/` is now 126 kB.
+- **Not yet verified in a real browser.** Everything so far is type-checked,
+  built, and smoke-tested over HTTP. The reduced-motion audit, Lighthouse run and
+  cross-browser pass still need an actual browser — the Playwright bridge was not
+  available in this environment.
 - **Every value in `src/content/company.ts` is `TODO_CONFIRM`** — founding year,
   output capacity, mould count, address, phone, socials. Nothing is invented, and
   the trust-number section will render a dash until the real figures arrive.

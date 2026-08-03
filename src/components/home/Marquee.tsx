@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
 
-import { gsap, ScrollTrigger } from '@/lib/gsap';
+import { useGsapEffect } from '@/hooks/useGsapEffect';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 const BASE_DURATION_S = 40;
@@ -21,47 +21,51 @@ export function Marquee() {
     .map((item) => item.trim())
     .filter(Boolean);
 
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track || prefersReduced) return;
+  useGsapEffect(
+    ({ gsap, ScrollTrigger }) => {
+      const track = trackRef.current;
+      if (!track) return;
 
-    const context = gsap.context(() => {
-      // The track holds the list twice, so -50% lands exactly on a seam.
-      const loop = gsap.to(track, {
-        xPercent: -50,
-        duration: BASE_DURATION_S,
-        ease: 'none',
-        repeat: -1,
-      });
+      const context = gsap.context(() => {
+        // The track holds the list twice, so -50% lands exactly on a seam.
+        const loop = gsap.to(track, {
+          xPercent: -50,
+          duration: BASE_DURATION_S,
+          ease: 'none',
+          repeat: -1,
+        });
 
-      const trigger = ScrollTrigger.create({
-        trigger: track,
-        start: 'top bottom',
-        end: 'bottom top',
-        onUpdate: (self) => {
-          const velocity = self.getVelocity();
-          const boost = Math.min(
-            Math.abs(velocity) / VELOCITY_REFERENCE,
-            MAX_TIME_SCALE - 1,
-          );
-          // Scrolling up runs the strip backwards.
-          const direction = velocity < 0 ? -1 : 1;
-          gsap.to(loop, {
-            timeScale: (1 + boost) * direction,
-            duration: 0.4,
-            overwrite: true,
-          });
-        },
-      });
+        const trigger = ScrollTrigger.create({
+          trigger: track,
+          start: 'top bottom',
+          end: 'bottom top',
+          onUpdate: (self) => {
+            const velocity = self.getVelocity();
+            const boost = Math.min(
+              Math.abs(velocity) / VELOCITY_REFERENCE,
+              MAX_TIME_SCALE - 1,
+            );
+            // Scrolling up runs the strip backwards.
+            const direction = velocity < 0 ? -1 : 1;
+            gsap.to(loop, {
+              timeScale: (1 + boost) * direction,
+              duration: 0.4,
+              overwrite: true,
+            });
+          },
+        });
 
-      return () => {
-        trigger.kill();
-        loop.kill();
-      };
-    }, track);
+        return () => {
+          trigger.kill();
+          loop.kill();
+        };
+      }, track);
 
-    return () => context.revert();
-  }, [prefersReduced]);
+      return () => context.revert();
+    },
+    [],
+    !prefersReduced,
+  );
 
   return (
     <section

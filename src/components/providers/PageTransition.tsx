@@ -10,7 +10,8 @@ import {
 } from 'react';
 
 import { useRouter, usePathname } from '@/i18n/navigation';
-import { DURATION, EASE, gsap } from '@/lib/gsap';
+import { loadGsap, peekGsap } from '@/lib/gsap';
+import { DURATION, EASE } from '@/lib/motionTokens';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 interface PageTransitionValue {
@@ -30,8 +31,9 @@ export function usePageTransition(): PageTransitionValue {
  * reveal the incoming one.
  *
  * The panel starts and ends off-screen, so a first load never sees it. Under
- * reduced motion `navigate` is a plain router push and the panel never renders
- * a frame.
+ * reduced motion — or before GSAP has finished loading — `navigate` degrades to
+ * a plain router push and the panel never renders a frame. Navigation is never
+ * delayed waiting on an animation library.
  */
 export function PageTransitionProvider({ children }: { children: ReactNode }) {
   const panelRef = useRef<HTMLDivElement>(null);
@@ -40,18 +42,26 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
   const prefersReduced = useReducedMotion();
   const isCovered = useRef(false);
 
+  // Warm the bundle so the first link click is already able to animate.
+  useEffect(() => {
+    if (prefersReduced) return;
+    void loadGsap();
+  }, [prefersReduced]);
+
   const navigate = useCallback(
     (href: string) => {
       if (href === pathname) return;
 
       const panel = panelRef.current;
-      if (prefersReduced || !panel) {
+      const bundle = peekGsap();
+
+      if (prefersReduced || !panel || !bundle) {
         router.push(href);
         return;
       }
 
       isCovered.current = true;
-      gsap.to(panel, {
+      bundle.gsap.to(panel, {
         yPercent: 0,
         duration: DURATION.transition,
         ease: EASE.inOut,
@@ -64,10 +74,11 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
   // Reveal the incoming page once the new route has committed.
   useEffect(() => {
     const panel = panelRef.current;
-    if (!panel || !isCovered.current) return;
+    const bundle = peekGsap();
+    if (!panel || !bundle || !isCovered.current) return;
 
     isCovered.current = false;
-    gsap.to(panel, {
+    bundle.gsap.to(panel, {
       yPercent: 100,
       duration: DURATION.transition,
       ease: EASE.inOut,

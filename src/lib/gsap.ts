@@ -1,25 +1,49 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import type { gsap as GsapType } from 'gsap';
+import type { ScrollTrigger as ScrollTriggerType } from 'gsap/ScrollTrigger';
 
-/*
- * Single registration point. Only ScrollTrigger is imported — every other GSAP
- * plugin stays out of the bundle. Import `gsap`/`ScrollTrigger` from here, not
- * from the package, so registration is guaranteed to have run.
- */
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
+export interface GsapBundle {
+  gsap: typeof GsapType;
+  ScrollTrigger: typeof ScrollTriggerType;
 }
 
-export const EASE = {
-  out: 'power3.out',
-  inOut: 'power3.inOut',
-  ui: 'power2.out',
-} as const;
+let bundlePromise: Promise<GsapBundle> | null = null;
+let loadedBundle: GsapBundle | null = null;
 
-export const DURATION = {
-  ui: 0.4,
-  transition: 0.6,
-  reveal: 1.2,
-} as const;
+/**
+ * Loads GSAP and ScrollTrigger on demand, once per session.
+ *
+ * Every consumer is an effect that runs after hydration, so there is no reason
+ * for ~65 kB of animation engine to sit in the initial payload. Importing it
+ * lazily keeps it out of every route's First Load JS, and the module-level
+ * promise means the second caller reuses the first caller's request.
+ *
+ * Callers must tolerate the bundle never arriving: check a cancellation flag
+ * after awaiting, and make sure the un-animated state is already the correct
+ * one. Nothing may depend on this resolving.
+ */
+export function loadGsap(): Promise<GsapBundle> {
+  bundlePromise ??= (async () => {
+    const [{ gsap }, { ScrollTrigger }] = await Promise.all([
+      import('gsap'),
+      import('gsap/ScrollTrigger'),
+    ]);
 
-export { gsap, ScrollTrigger };
+    gsap.registerPlugin(ScrollTrigger);
+    loadedBundle = { gsap, ScrollTrigger };
+    return loadedBundle;
+  })();
+
+  return bundlePromise;
+}
+
+/**
+ * The bundle if it has already loaded, otherwise null. Never starts a load.
+ *
+ * For synchronous paths — a click handler that wants to animate if it can and
+ * fall straight through if it cannot.
+ */
+export function peekGsap(): GsapBundle | null {
+  return loadedBundle;
+}
+
+export { EASE, DURATION } from './motionTokens';

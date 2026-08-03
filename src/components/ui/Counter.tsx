@@ -1,9 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useLocale } from 'next-intl';
 
-import { EASE, gsap, ScrollTrigger } from '@/lib/gsap';
+import { EASE } from '@/lib/motionTokens';
+import { useGsapEffect } from '@/hooks/useGsapEffect';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
 const DURATION_S = 1.4;
@@ -28,35 +29,39 @@ export function Counter({ value, pending, suffix = '' }: CounterProps) {
   const locale = useLocale();
   const prefersReduced = useReducedMotion();
 
-  useEffect(() => {
-    const element = ref.current;
-    if (!element || prefersReduced || value === null) return;
+  useGsapEffect(
+    ({ gsap, ScrollTrigger }) => {
+      const element = ref.current;
+      if (!element || value === null) return;
 
-    const format = new Intl.NumberFormat(locale);
-    const counter = { current: 0 };
+      const format = new Intl.NumberFormat(locale);
+      const counter = { current: 0 };
 
-    const context = gsap.context(() => {
-      gsap.to(counter, {
-        current: value,
-        duration: DURATION_S,
-        ease: EASE.out,
-        scrollTrigger: { trigger: element, start: 'top 85%', once: true },
-        onUpdate: () => {
-          element.textContent = format.format(Math.round(counter.current));
-        },
-        onComplete: () => {
-          element.textContent = format.format(value);
-        },
-      });
-    }, element);
+      const context = gsap.context(() => {
+        gsap.to(counter, {
+          current: value,
+          duration: DURATION_S,
+          ease: EASE.out,
+          scrollTrigger: { trigger: element, start: 'top 85%', once: true },
+          onUpdate: () => {
+            element.textContent = format.format(Math.round(counter.current));
+          },
+          onComplete: () => {
+            element.textContent = format.format(value);
+          },
+        });
+      }, element);
 
-    ScrollTrigger.refresh();
+      ScrollTrigger.refresh();
 
-    return () => {
-      context.revert();
-      element.textContent = format.format(value);
-    };
-  }, [value, locale, prefersReduced]);
+      return () => {
+        context.revert();
+        element.textContent = format.format(value);
+      };
+    },
+    [value, locale],
+    !prefersReduced && value !== null,
+  );
 
   if (value === null) {
     return <span aria-label={pending}>{pending}</span>;

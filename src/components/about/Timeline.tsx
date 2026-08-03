@@ -1,10 +1,10 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
 
 import { MILESTONES } from '@/content/milestones';
-import { gsap, ScrollTrigger } from '@/lib/gsap';
+import { useGsapEffect } from '@/hooks/useGsapEffect';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { Eyebrow } from '@/components/ui/Eyebrow';
 
@@ -27,40 +27,44 @@ export function Timeline() {
   const trackRef = useRef<HTMLOListElement>(null);
   const prefersReduced = useReducedMotion();
 
-  useEffect(() => {
-    const section = sectionRef.current;
-    const track = trackRef.current;
-    if (!section || !track || prefersReduced) return;
+  useGsapEffect(
+    ({ gsap, ScrollTrigger }) => {
+      const section = sectionRef.current;
+      const track = trackRef.current;
+      if (!section || !track) return;
 
-    const matcher = gsap.matchMedia();
+      const matcher = gsap.matchMedia();
 
-    matcher.add(DESKTOP_HORIZONTAL, () => {
-      const distance = track.scrollWidth - track.clientWidth;
-      if (distance <= 0) return;
+      matcher.add(DESKTOP_HORIZONTAL, () => {
+        const distance = track.scrollWidth - track.clientWidth;
+        if (distance <= 0) return;
 
-      const tween = gsap.to(track, {
-        x: -distance,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: section,
-          start: 'top top',
-          end: `+=${distance}`,
-          pin: true,
-          scrub: true,
-          invalidateOnRefresh: true,
-        },
+        const tween = gsap.to(track, {
+          x: -distance,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top top',
+            end: `+=${distance}`,
+            pin: true,
+            scrub: true,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        return () => {
+          tween.scrollTrigger?.kill();
+          tween.kill();
+        };
       });
 
-      return () => {
-        tween.scrollTrigger?.kill();
-        tween.kill();
-      };
-    });
+      ScrollTrigger.refresh();
 
-    ScrollTrigger.refresh();
-
-    return () => matcher.revert();
-  }, [prefersReduced]);
+      return () => matcher.revert();
+    },
+    [],
+    !prefersReduced,
+  );
 
   return (
     <section

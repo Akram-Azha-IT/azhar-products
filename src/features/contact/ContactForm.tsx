@@ -7,7 +7,8 @@ import { useLocale, useTranslations } from 'next-intl';
 
 import type { Locale } from '@/i18n/routing';
 import { PRODUCTS } from '@/content/products';
-import { EASE, gsap } from '@/lib/gsap';
+import { EASE } from '@/lib/motionTokens';
+import { useGsapEffect } from '@/hooks/useGsapEffect';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { createQuoteSchema, type QuoteInput } from './schema';
 import { Field } from './Field';
@@ -58,20 +59,24 @@ export function ContactForm() {
   }, [setValue]);
 
   // Success replaces the form in place; animate it, never navigate away.
-  useEffect(() => {
-    const panel = panelRef.current;
-    if (submitState !== 'success' || !panel || prefersReduced) return;
+  useGsapEffect(
+    ({ gsap }) => {
+      const panel = panelRef.current;
+      if (!panel) return;
 
-    const context = gsap.context(() => {
-      gsap.fromTo(
-        panel,
-        { opacity: 0, y: 12 },
-        { opacity: 1, y: 0, duration: 0.5, ease: EASE.out },
-      );
-    }, panel);
+      const context = gsap.context(() => {
+        gsap.fromTo(
+          panel,
+          { opacity: 0, y: 12 },
+          { opacity: 1, y: 0, duration: 0.5, ease: EASE.out },
+        );
+      }, panel);
 
-    return () => context.revert();
-  }, [submitState, prefersReduced]);
+      return () => context.revert();
+    },
+    [submitState],
+    !prefersReduced && submitState === 'success',
+  );
 
   const onSubmit = handleSubmit(async (values) => {
     setSubmitState('submitting');
