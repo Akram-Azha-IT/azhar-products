@@ -1,0 +1,73 @@
+{
+  "nav": {
+    "products": "TODO_TRANSLATE: Products",
+    "about": "TODO_TRANSLATE: About",
+    "contact": "TODO_TRANSLATE: Contact",
+    "quote": "TODO_TRANSLATE: Request a quote",
+    "primaryLabel": "TODO_TRANSLATE: Main navigation",
+    "languageLabel": "TODO_TRANSLATE: Change language",
+    "homeLabel": "TODO_TRANSLATE: Azhar Products — home",
+    "openMenu": "TODO_TRANSLATE: Open menu",
+    "closeMenu": "TODO_TRANSLATE: Close menu",
+    "skipToContent": "TODO_TRANSLATE: Skip to main content"
+  },
+  "footer": {
+    "eyebrow": "TODO_TRANSLATE: Azhar Products",
+    "tagline": "TODO_TRANSLATE: Thermoformed food packaging, made to your specification.",
+    "rights": "TODO_TRANSLATE: All rights reserved.",
+    "builtFor": "TODO_TRANSLATE: Food-grade packaging for dairy, dessert and food service."
+  },
+  "metadata": {
+    "home": {
+      "title": "TODO_TRANSLATE: Azhar Products — Thermoformed food packaging",
+      "description": "TODO_TRANSLATE: Food-grade thermoformed cups and containers for yogurt, cream cheese, dairy, desserts and food service. Custom volumes, in-house tooling, volume runs."
+    },
+    "products": {
+      "title": "TODO_TRANSLATE: Products — Azhar Products",
+      "description": "TODO_TRANSLATE: Dairy packaging, clear cups and containers, food packaging solutions and carton packaging. Filter by category, material, capacity and application."
+    },
+    "about": {
+      "title": "TODO_TRANSLATE: About — Azhar Products",
+      "description": "TODO_TRANSLATE: Our facility, our quality and food-safety approach, and the equipment behind every run."
+    },
+    "contact": {
+      "title": "TODO_TRANSLATE: Request a quote — Azhar Products",
+      "description": "TODO_TRANSLATE: Tell us your product, volume and format. We will come back with specs and pricing."
+    }
+  },
+  "home": {
+    "hero": {
+      "headline": "TODO_TRANSLATE: Thermoformed packaging, built for food.",
+      "subline": "TODO_TRANSLATE: Food-grade cups and containers for yogurt, cream cheese, dairy and desserts — produced to your volume, your format and your lid standard.",
+      "primaryCta": "TODO_TRANSLATE: Request a quote",
+      "secondaryCta": "TODO_TRANSLATE: View products",
+      "scrollCue": "TODO_TRANSLATE: Scroll"
+    },
+    "placeholder": {
+      "eyebrow": "TODO_TRANSLATE: Phase 2",
+      "title": "TODO_TRANSLATE: Home sections land next.",
+      "body": "TODO_TRANSLATE: The marquee strip, category tiles, manufacturing chapter, capability grid and closing CTA band are built in Phase 2 against this foundation."
+    }
+  },
+  "products": {
+    "placeholder": {
+      "eyebrow": "TODO_TRANSLATE: Phase 3",
+      "title": "TODO_TRANSLATE: Catalogue.",
+      "body": "TODO_TRANSLATE: Product data model, sticky filter bar, animated grid and detail template are built in Phase 3."
+    }
+  },
+  "about": {
+    "placeholder": {
+      "eyebrow": "TODO_TRANSLATE: Phase 4",
+      "title": "TODO_TRANSLATE: The company.",
+      "body": "TODO_TRANSLATE: Origin, facility, quality and food-safety approach, equipment and the milestone timeline are built in Phase 4."
+    }
+  },
+  "contact": {
+    "placeholder": {
+      "eyebrow": "TODO_TRANSLATE: Phase 4",
+      "title": "TODO_TRANSLATE: Request a quote.",
+      "body": "TODO_TRANSLATE: The validated quote form and its route handler are built in Phase 4."
+    }
+  }
+}

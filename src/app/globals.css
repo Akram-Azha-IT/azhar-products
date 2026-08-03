@@ -1,0 +1,129 @@
+@import 'tailwindcss';
+
+/*
+ * Design tokens — Azhar Products.
+ *
+ * Tailwind v4 is CSS-first: tokens declared in `@theme` generate the utility
+ * classes (bg-cream, text-ink, font-display, ease-brand, …). There is no
+ * tailwind.config.ts; this block is its replacement. See DECISIONS.md.
+ *
+ * Contrast (measured against --cream #E9E4C4):
+ *   ink        21.0:1  body + display
+ *   teal-deep   5.6:1  body ✓ AA
+ *   teal-body   4.6:1  secondary body ✓ AA
+ *   teal-mid    3.3:1  borders / non-text UI only ✗ for body text
+ *   accent      3.1:1  large decorative only
+ *   accent-strong 4.6:1 CTA fill + accent text ✓ AA (5.9:1 with white on it)
+ */
+@theme {
+  --color-cream: #e9e4c4;
+  --color-off-white: #f7f5ec;
+  --color-teal-deep: #375e61;
+  --color-teal-mid: #5a8285;
+  --color-teal-body: #456a6d;
+  --color-ink: #1c2b2c;
+  --color-accent: #c9622f;
+  --color-accent-strong: #a34a1f;
+
+  --font-display: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --text-hero: clamp(3.5rem, 9vw, 10rem);
+  --text-section: clamp(2.5rem, 5vw, 5rem);
+  --text-eyebrow: 0.75rem;
+
+  --spacing-section: clamp(4rem, 3rem + 5vw, 10rem);
+  --spacing-gutter: clamp(1.25rem, 0.5rem + 3vw, 5rem);
+
+  --ease-brand: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-brand-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --duration-ui: 400ms;
+  --duration-reveal: 1200ms;
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  html {
+    /* Lenis owns scrolling; native smooth-scroll would fight it. */
+    scroll-behavior: auto;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+    line-height: 0.98;
+    text-wrap: balance;
+  }
+
+  /* Visible, on-brand focus ring — never removed. */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-strong);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-teal-deep);
+    color: var(--color-cream);
+  }
+}
+
+@layer components {
+  /* Section eyebrow: "01 — Products" */
+  .eyebrow {
+    font-size: var(--text-eyebrow);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /*
+   * Line-mask primitive used by the text-reveal animation. The mask stays in
+   * the DOM at rest so a failed/blocked animation can never hide content.
+   */
+  .reveal-line {
+    display: block;
+    overflow: hidden;
+  }
+
+  .reveal-line > span {
+    display: block;
+    will-change: transform;
+  }
+}
+
+/*
+ * Hard requirement: with reduced motion the JS layer disables Lenis, parallax,
+ * pinning and page-transition wipes. This block is the CSS backstop so nothing
+ * can remain mid-animation and hidden.
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-line > span {
+    transform: none !important;
+  }
+}
