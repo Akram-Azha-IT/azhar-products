@@ -7,35 +7,43 @@
  * classes (bg-paper, text-ink, font-display, ease-brand, …). There is no
  * tailwind.config.ts; this block is its replacement. See DECISIONS.md.
  *
- * Palette follows the existing brand — white ground, navy structure, blue
- * accent — taken from the logo and the current site. The earlier cream/teal/rust
- * scheme fought the product: this is white packaging shot on a white sweep, and
- * a warm ground made every product image look like a cut-out pasted on top.
+ * Light-and-round direction: white ground, very pale grey panels with generous
+ * radii, 3D product renders floating on them, one bright blue accent. Navy is
+ * gone — it read as heavy and dark against white packaging.
  *
  * Contrast (measured against --paper #FFFFFF):
- *   ink            18.6:1  body + display
- *   navy-deep      16.4:1  dark section ground
- *   navy            9.2:1  headings, links ✓ AA
- *   steel           5.2:1  secondary body ✓ AA
- *   steel-light     2.4:1  borders / rules only ✗ for any text
- *   accent          4.4:1  large decorative only
- *   accent-strong   6.2:1  CTA fill + accent text ✓ AA in both directions
+ *   ink             17.9:1  display + body
+ *   muted            6.3:1  secondary body ✓ AA
+ *   accent           5.8:1  buttons, links ✓ AA (white on it: 5.8:1)
+ *   accent-bright    3.0:1  decorative blobs only ✗ for any text
+ *   line             1.3:1  hairlines only
  */
 @theme {
   --color-paper: #ffffff;
-  --color-mist: #f4f7fa;
-  --color-navy-deep: #10263f;
-  --color-navy: #1b4a73;
-  --color-steel-light: #8fa6bc;
-  --color-steel: #54708b;
-  --color-ink: #0e1b2a;
-  --color-accent: #2e7bc4;
-  --color-accent-strong: #1f62a8;
+  --color-panel: #f1f4f8;
+  --color-panel-deep: #e4ebf3;
+  --color-line: #dde4ec;
+  --color-ink: #10151c;
+  --color-muted: #56616e;
+  --color-accent: #0a63c9;
+  --color-accent-bright: #2e9bff;
+  --color-shell: #16202b;
+
+  /* Generous, consistent radii are most of what makes this direction read. */
+  --radius-panel: 2.5rem;
+  --radius-card: 1.75rem;
+  --radius-pill: 999px;
 
   --font-display: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  --text-hero: clamp(3.5rem, 9vw, 10rem);
+  /*
+   * Sized so the longest single word in the hero ("Thermoformed", measured at
+   * 6.27em wide in this face) fits the hero column at every breakpoint. At 9vw
+   * that word needed 812px in a 710px column and was silently chopped by its
+   * overflow-hidden reveal mask. Ceiling is 710/6.27 ≈ 113px at 1440.
+   */
+  --text-hero: clamp(3.25rem, 7.5vw, 7rem);
   --text-section: clamp(2.5rem, 5vw, 5rem);
   --text-eyebrow: 0.75rem;
 
@@ -74,19 +82,24 @@
   h3 {
     font-family: var(--font-display);
     letter-spacing: -0.03em;
-    line-height: 0.98;
+    /*
+     * Not below 1. At 0.98 the line box was shorter than the glyphs, so the
+     * descenders in "Packaging" and "dairy" were sliced off by the reveal
+     * mask's overflow:hidden.
+     */
+    line-height: 1.04;
     text-wrap: balance;
   }
 
   /* Visible, on-brand focus ring — never removed. */
   :focus-visible {
-    outline: 2px solid var(--color-accent-strong);
+    outline: 2px solid var(--color-accent);
     outline-offset: 3px;
     border-radius: 2px;
   }
 
   ::selection {
-    background-color: var(--color-navy-deep);
+    background-color: var(--color-shell);
     color: var(--color-paper);
   }
 }
@@ -106,15 +119,16 @@
     width: 100%;
     min-height: 3rem;
     padding: 0.75rem 1rem;
-    background-color: var(--color-mist);
-    border: 1px solid color-mix(in oklab, var(--color-steel-light) 40%, transparent);
+    background-color: var(--color-panel);
+    border: 1px solid var(--color-line);
     color: var(--color-ink);
+    border-radius: var(--radius-card);
     font-size: 1rem; /* 16px — anything smaller triggers iOS auto-zoom. */
     transition: border-color var(--duration-ui) var(--ease-brand);
   }
 
   .form-input:hover {
-    border-color: var(--color-navy-deep);
+    border-color: var(--color-shell);
   }
 
   /*
@@ -124,6 +138,12 @@
   .reveal-line {
     display: block;
     overflow: hidden;
+    /*
+     * Widen the visible window past the baseline so descenders clear the mask,
+     * then pull the extra space back out so vertical rhythm is unchanged.
+     */
+    padding-bottom: 0.14em;
+    margin-bottom: -0.14em;
   }
 
   .reveal-line > span {

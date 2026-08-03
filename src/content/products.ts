@@ -47,8 +47,17 @@ export interface Product {
  * Alt text describes the packaging, never the customer's printed brand.
  */
 
+/**
+ * Product copy is authored in English only for now.
+ *
+ * Every locale gets the English source rather than a `TODO_TRANSLATE:`-prefixed
+ * string: the marker belongs in the translation files as a record of what is
+ * outstanding, not on the page, where it inflates every string and breaks the
+ * layout. Swap the `fr`/`de` values here when the real translations arrive —
+ * packaging terminology should not be machine-translated.
+ */
 function localised(en: string): Record<Locale, string> {
-  return { en, fr: `TODO_TRANSLATE: ${en}`, de: `TODO_TRANSLATE: ${en}` };
+  return { en, fr: en, de: en };
 }
 
 function image(src: string, description: string): ProductImage {

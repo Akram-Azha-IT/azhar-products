@@ -15,11 +15,22 @@ export interface TrustStat {
   suffix?: string;
 }
 
+/**
+ * True once a placeholder has been replaced with a real value.
+ *
+ * Matches bare `TODO` rather than the exact `TODO_CONFIRM` token: the phone
+ * number was written `+212 TODO CONFIRM`, with a space, so an exact-token check
+ * passed it as confirmed and the placeholder was printed on the page.
+ */
+export function isConfirmed(value: string): boolean {
+  return !/TODO/i.test(value);
+}
+
 export const COMPANY = {
   email: 'TODO_CONFIRM@azhar-products.com',
-  phone: '+212 TODO CONFIRM',
+  phone: 'TODO_CONFIRM',
   whatsapp: 'TODO_CONFIRM',
-  address: 'TODO_CONFIRM — full facility address',
+  address: 'TODO_CONFIRM',
   social: {
     // Taken from the current site. Facebook and LinkedIn are referenced there
     // but only as share widgets, with no canonical page URL exposed.

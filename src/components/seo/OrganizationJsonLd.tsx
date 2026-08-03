@@ -1,10 +1,5 @@
 import type { Locale } from '@/i18n/routing';
-import { COMPANY } from '@/content/company';
-
-/** True once the placeholder has been replaced with a real value. */
-function isConfirmed(value: string): boolean {
-  return !value.includes('TODO_CONFIRM');
-}
+import { COMPANY, isConfirmed } from '@/content/company';
 
 /**
  * Organization schema for the site root.

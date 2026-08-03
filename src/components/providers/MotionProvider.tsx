@@ -5,13 +5,14 @@ import { useEffect, useState, type ReactNode } from 'react';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 import { CustomCursor } from './CustomCursor';
-import { PageTransitionProvider } from './PageTransition';
 
 /**
- * Owns every global motion concern: Lenis, the custom cursor and the page
- * transition wipe. All three are opt-out under reduced motion; Lenis
- * additionally stands down on coarse pointers, where it degrades native
- * momentum scrolling.
+ * Global motion concerns: Lenis smooth scroll and the custom cursor.
+ *
+ * Both stand down under reduced motion; Lenis additionally stands down on
+ * coarse pointers, where it degrades native momentum scrolling. The page
+ * transition wipe is gone with the multi-page structure — the site is one
+ * document now, so navigation is an in-page scroll.
  */
 export function MotionProvider({ children }: { children: ReactNode }) {
   const prefersReduced = useReducedMotion();
@@ -24,9 +25,9 @@ export function MotionProvider({ children }: { children: ReactNode }) {
   useSmoothScroll({ disabled: prefersReduced || isCoarsePointer });
 
   return (
-    <PageTransitionProvider>
+    <>
       {children}
       {!prefersReduced && !isCoarsePointer ? <CustomCursor /> : null}
-    </PageTransitionProvider>
+    </>
   );
 }

@@ -120,11 +120,11 @@ export function ContactForm() {
 
   if (submitState === 'success') {
     return (
-      <div ref={panelRef} role="status" className="border-t border-steel-light/30 pt-10">
+      <div ref={panelRef} role="status" className="border-t border-line/30 pt-10">
         <h2 className="font-display text-3xl tracking-[-0.03em]">
           {t('status.successTitle')}
         </h2>
-        <p className="mt-4 max-w-[46ch] text-steel">
+        <p className="mt-4 max-w-[46ch] text-muted">
           {t('status.successBody')}
         </p>
       </div>
@@ -215,11 +215,11 @@ export function ContactForm() {
       <fieldset className="mt-10">
         <legend className="text-sm font-medium">
           {t('fields.productInterest')}
-          <span aria-hidden className="text-accent-strong">
+          <span aria-hidden className="text-accent">
             {' *'}
           </span>
         </legend>
-        <p className="mt-1 text-sm text-steel">
+        <p className="mt-1 text-sm text-muted">
           {t('hints.productInterest')}
         </p>
 
@@ -227,7 +227,7 @@ export function ContactForm() {
           {PRODUCTS.map((product) => (
             <label
               key={product.slug}
-              className="flex cursor-pointer items-center gap-2 border border-steel-light/40 px-4 py-2.5 text-sm transition-colors duration-[var(--duration-ui)] hover:border-navy-deep has-checked:border-accent-strong has-checked:bg-accent-strong has-checked:text-mist"
+              className="flex cursor-pointer items-center gap-2 border border-line/40 px-4 py-2.5 text-sm transition-colors duration-[var(--duration-ui)] hover:border-shell has-checked:border-accent has-checked:bg-accent has-checked:text-panel"
             >
               <input
                 type="checkbox"
@@ -241,7 +241,7 @@ export function ContactForm() {
         </div>
 
         {errors.productInterest ? (
-          <p role="alert" className="mt-3 text-sm text-accent-strong">
+          <p role="alert" className="mt-3 text-sm text-accent">
             {errors.productInterest.message}
           </p>
         ) : null}
@@ -270,7 +270,7 @@ export function ContactForm() {
       </div>
 
       {submitError ? (
-        <p role="alert" className="mt-8 border-l-2 border-accent-strong pl-4 text-sm text-accent-strong">
+        <p role="alert" className="mt-8 border-l-2 border-accent pl-4 text-sm text-accent">
           {submitError}
         </p>
       ) : null}
@@ -278,11 +278,11 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={submitState === 'submitting'}
-        className="group relative isolate mt-10 inline-flex cursor-pointer items-center justify-center overflow-hidden bg-accent-strong px-8 py-4 text-sm font-medium tracking-[0.04em] text-mist uppercase transition-colors duration-[var(--duration-ui)] hover:text-accent-strong disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:text-mist"
+        className="group relative isolate mt-10 inline-flex cursor-pointer items-center justify-center overflow-hidden bg-accent px-8 py-4 text-sm font-medium tracking-[0.04em] text-panel uppercase transition-colors duration-[var(--duration-ui)] hover:text-accent disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:text-panel"
       >
         <span
           aria-hidden
-          className="absolute inset-0 -z-10 origin-bottom scale-y-0 bg-mist transition-transform duration-[var(--duration-ui)] ease-[var(--ease-brand)] group-hover:scale-y-100 group-disabled:scale-y-0 motion-reduce:transition-none"
+          className="absolute inset-0 -z-10 origin-bottom scale-y-0 bg-panel transition-transform duration-[var(--duration-ui)] ease-[var(--ease-brand)] group-hover:scale-y-100 group-disabled:scale-y-0 motion-reduce:transition-none"
         />
         {submitState === 'submitting' ? t('status.submitting') : t('submit')}
       </button>

@@ -1,45 +1,30 @@
 'use client';
 
-import type { ButtonHTMLAttributes, ReactNode } from 'react';
+import type { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from 'react';
 
-import { TransitionLink } from './TransitionLink';
-
-type Variant = 'primary' | 'ghost';
+type Variant = 'primary' | 'soft' | 'ghost';
 
 const BASE =
-  'group relative isolate inline-flex cursor-pointer items-center justify-center overflow-hidden ' +
-  'px-8 py-4 text-sm font-medium tracking-[0.04em] uppercase transition-colors ' +
-  'duration-[var(--duration-ui)] ease-[var(--ease-brand)] disabled:cursor-not-allowed disabled:opacity-50';
+  'inline-flex cursor-pointer items-center justify-center gap-2 rounded-(--radius-pill) ' +
+  'px-7 py-3.5 text-sm font-semibold tracking-[0.01em] ' +
+  'transition-[background-color,color,transform,box-shadow] duration-[var(--duration-ui)] ' +
+  'ease-[var(--ease-brand)] active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 ' +
+  'motion-reduce:transition-none motion-reduce:active:scale-100';
 
 const VARIANT: Record<Variant, string> = {
-  primary: 'bg-accent-strong text-paper hover:text-accent-strong',
-  ghost:
-    'border border-steel-light text-navy hover:border-navy hover:text-paper focus-visible:text-navy',
+  primary:
+    'bg-accent text-paper shadow-[0_8px_20px_-8px_rgba(10,99,201,0.7)] hover:bg-ink hover:shadow-[0_10px_24px_-8px_rgba(16,21,28,0.5)]',
+  soft: 'bg-panel text-ink hover:bg-panel-deep',
+  ghost: 'border border-line text-ink hover:border-ink',
 };
 
-/** The wipe surface: scales up from the bottom edge on hover. */
-const FILL: Record<Variant, string> = {
-  primary: 'bg-mist',
-  ghost: 'bg-navy-deep',
-};
-
-interface ButtonContentProps {
-  variant: Variant;
+interface CommonProps {
+  variant?: Variant;
+  className?: string;
   children: ReactNode;
 }
 
-function Fill({ variant }: { variant: Variant }) {
-  return (
-    <span
-      aria-hidden
-      className={`absolute inset-0 -z-10 origin-bottom scale-y-0 transition-transform duration-[var(--duration-ui)] ease-[var(--ease-brand)] group-hover:scale-y-100 motion-reduce:transition-none ${FILL[variant]}`}
-    />
-  );
-}
-
-interface ButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    Partial<ButtonContentProps> {}
+type ButtonProps = CommonProps & ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function Button({
   variant = 'primary',
@@ -49,30 +34,26 @@ export function Button({
 }: ButtonProps) {
   return (
     <button className={`${BASE} ${VARIANT[variant]} ${className}`} {...props}>
-      <Fill variant={variant} />
       {children}
     </button>
   );
 }
 
-interface ButtonLinkProps extends ButtonContentProps {
-  href: string;
-  className?: string;
-}
+type ButtonLinkProps = CommonProps & AnchorHTMLAttributes<HTMLAnchorElement>;
 
+/**
+ * Anchor-styled button. The site is one page, so these are in-page jumps — a
+ * plain `<a href="#id">` keeps them shareable and keyboard-native.
+ */
 export function ButtonLink({
-  href,
   variant = 'primary',
   className = '',
   children,
+  ...props
 }: ButtonLinkProps) {
   return (
-    <TransitionLink
-      href={href}
-      className={`${BASE} ${VARIANT[variant]} ${className}`}
-    >
-      <Fill variant={variant} />
+    <a className={`${BASE} ${VARIANT[variant]} ${className}`} {...props}>
       {children}
-    </TransitionLink>
+    </a>
   );
 }

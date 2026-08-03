@@ -1,253 +1,122 @@
 {
   "nav": {
     "products": "Products",
-    "about": "About",
+    "expertise": "Expertise",
     "contact": "Contact",
-    "quote": "Request a quote",
+    "quote": "Get a quote",
     "primaryLabel": "Main navigation",
     "languageLabel": "Change language",
-    "homeLabel": "Azhar Products — home",
+    "homeLabel": "back to top",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "skipToContent": "Skip to main content"
   },
   "footer": {
-    "eyebrow": "Azhar Products",
-    "tagline": "Thermoformed food packaging, made to your specification.",
-    "rights": "All rights reserved.",
-    "builtFor": "Food-grade packaging for dairy, dessert and food service."
+    "tagline": "Thermoformed food packaging for dairy, dessert and food-service producers. Your format, your print, your volume.",
+    "rights": "All rights reserved."
   },
   "metadata": {
     "home": {
       "title": "Azhar Products — Thermoformed food packaging",
-      "description": "Food-grade thermoformed cups and containers for yogurt, cream cheese, dairy, desserts and food service. Custom volumes, in-house tooling, volume runs."
-    },
-    "products": {
-      "title": "Products — Azhar Products",
-      "description": "Dairy packaging, clear cups and containers, food packaging solutions and carton packaging. Filter by category, material, capacity and application."
-    },
-    "about": {
-      "title": "About — Azhar Products",
-      "description": "Our facility, our quality and food-safety approach, and the equipment behind every run."
-    },
-    "contact": {
-      "title": "Request a quote — Azhar Products",
-      "description": "Tell us your product, volume and format. We will come back with specs and pricing."
+      "description": "Food-grade thermoformed cups and pots for yogurt, cream cheese, dairy and desserts. Custom moulds, in-house tooling, volume runs."
     }
   },
-  "home": {
+  "notFound": {
+    "title": "That page does not exist.",
+    "body": "Everything lives on one page now. Jump to the formats, or tell us what you need.",
+    "products": "See the formats",
+    "contact": "Get a quote"
+  },
+  "landing": {
     "hero": {
-      "headline": "Thermoformed packaging, built for food.",
-      "subline": "Food-grade cups and containers for yogurt, cream cheese, dairy and desserts — produced to your volume, your format and your lid standard.",
-      "primaryCta": "Request a quote",
-      "secondaryCta": "View products",
-      "scrollCue": "Scroll",
-      "imageAlt": "Tall tapered thermoformed yogurt cup with a rolled rim and full-wrap printed sleeve"
+      "headline": "Packaging that keeps dairy fresh.",
+      "subline": "Food-grade thermoformed cups and pots for yogurt, cream cheese and desserts — made to your format, your print and your monthly volume.",
+      "primaryCta": "Get a quote",
+      "secondaryCta": "See the formats"
     },
-    "marquee": {
-      "label": "Capabilities at a glance",
-      "items": "Food-grade materials · Custom moulds · In-house tooling · Yogurt & fermented dairy · Cream cheese · Desserts & chilled · Food service · Volume runs · Lid compatibility · Print-ready surfaces"
-    },
-    "categories": {
-      "eyebrow": "What we make",
-      "title": "Four families, one line.",
-      "skuLabel": "references",
-      "skuPending": "—",
-      "cta": "See the catalogue",
-      "items": {
-        "dairy": {
-          "name": "Dairy Packaging",
-          "descriptor": "Cups and pots for yogurt, raib, fermented milk and cream cheese."
-        },
-        "clear": {
-          "name": "Clear Cups & Containers",
-          "descriptor": "Transparent formats where the product is the packaging's argument."
-        },
-        "foodservice": {
-          "name": "Food Packaging Solutions",
-          "descriptor": "Portion, takeaway and chilled formats built for handling volume."
-        },
-        "carton": {
-          "name": "Carton Packaging",
-          "descriptor": "Secondary packaging and shipping cases matched to your cup counts."
-        }
+    "products": {
+      "eyebrow": "Our formats",
+      "title": "Three families. Endless prints.",
+      "intro": "Every format below is produced to order — your capacity, your lid standard, your artwork. Hover a card to see the format from a second angle.",
+      "cta": "Request these formats",
+      "ctaNote": "Tell us the fill and the volume. We come back with specs and pricing.",
+      "applications": {
+        "yogurt": "Yogurt",
+        "creamCheese": "Cream cheese",
+        "dessert": "Dessert",
+        "foodService": "Food service"
       }
     },
-    "manufacturing": {
-      "eyebrow": "Manufacturing",
-      "title": "Thermoforming, tooling and finishing under one roof.",
-      "body": "Sheet extrusion, forming, trimming and stacking run as a single line, which is what makes a custom format economic rather than exceptional. Tooling is built and maintained in-house, so a new mould is a scheduling question, not a supply-chain one.",
-      "cta": "About the facility",
+    "expertise": {
+      "eyebrow": "How we work",
+      "title": "One line, from sheet to carton.",
+      "body": "Extrusion, forming, trimming, stacking and packing run as a single line, with tooling built and maintained on site. That is what makes a custom format a scheduling question rather than a supply-chain one.",
       "statsPending": "—",
       "stats": {
         "yearsOperating": "Years in operation",
         "monthlyOutput": "Units per month",
         "formats": "Moulds & formats"
-      }
-    },
-    "capabilities": {
-      "eyebrow": "Capability",
-      "title": "What a buyer actually needs to know.",
+      },
       "items": {
         "materials": {
           "title": "Food-grade materials",
-          "body": "PP, PS, PET and PVC selected against your fill temperature, barrier requirement and shelf life."
+          "body": "PP, PS, PET and PVC chosen against your fill temperature and shelf life."
         },
         "moulds": {
           "title": "Custom moulds",
-          "body": "Your volume, your diameter, your stacking height. Existing formats are a starting point, not a limit."
+          "body": "Your volume, diameter and stacking height. Existing formats are a starting point."
         },
         "tooling": {
           "title": "In-house tooling",
-          "body": "Moulds are cut and maintained on site, which keeps lead time and revision cost under our control."
+          "body": "Moulds cut and maintained on site, so revisions stay fast and cheap."
         },
         "volume": {
           "title": "Volume runs",
-          "body": "Production is planned around recurring monthly commitments rather than one-off batches."
+          "body": "Planned around recurring monthly commitments, not one-off batches."
         },
         "hygiene": {
           "title": "Hygiene standards",
-          "body": "Forming, stacking and packing follow documented food-contact handling procedures throughout."
+          "body": "Documented food-contact handling from resin lot to finished carton."
         },
         "leadTimes": {
           "title": "Lead times",
-          "body": "Repeat formats ship from planned stock; new tooling is quoted with a firm date, not an estimate."
+          "body": "Repeat formats ship from planned stock; new tooling gets a firm date."
         }
       }
     },
-    "cta": {
-      "title": "Let's talk about your packaging.",
-      "body": "Send us the format, the fill and the monthly volume. We will come back with specifications and pricing.",
-      "button": "Request a quote"
-    }
-  },
-  "notFound": {
-    "title": "That page does not exist.",
-    "body": "The link may be out of date. The catalogue is the fastest way to find a format, or tell us what you need and we will quote it.",
-    "products": "Browse products",
-    "contact": "Request a quote"
-  },
-  "catalogue": {
-    "eyebrow": "Catalogue",
-    "title": "Formats, materials and volumes.",
-    "intro": "Filter by what matters to your line. Every format can be quoted with your own print, your own lid standard and your own carton count.",
-    "specPending": "Specification pending",
-    "capacity": "{value} ml",
-    "capacityUpTo": "Up to {value} ml",
-    "resultCount": "{count, plural, =0 {No products} one {# product} other {# products}}",
-    "filters": {
-      "category": "Category",
-      "material": "Material",
-      "application": "Application",
-      "capacity": "Capacity",
-      "clear": "Clear filters"
-    },
-    "applications": {
-      "yogurt": "Yogurt",
-      "creamCheese": "Cream cheese",
-      "dessert": "Dessert",
-      "foodService": "Food service"
-    },
-    "empty": {
-      "title": "Nothing matches that combination.",
-      "body": "Loosen a filter, or send us the format you need — most requests end in a custom mould anyway.",
-      "reset": "Clear filters"
-    }
-  },
-  "product": {
-    "backToCatalogue": "All products",
-    "specsTitle": "Specification",
-    "pending": "—",
-    "quoteCta": "Request a quote for this item",
-    "relatedTitle": "Related products",
-    "specs": {
-      "capacityMl": "Capacity",
-      "diameterMm": "Diameter",
-      "heightMm": "Height",
-      "material": "Material",
-      "lidCompatibility": "Lid compatibility",
-      "unitsPerCarton": "Units per carton",
-      "moq": "Minimum order"
-    },
-    "units": {
-      "ml": "ml",
-      "mm": "mm",
-      "units": "units"
-    }
-  },
-  "about": {
-    "eyebrow": "The company",
-    "title": "A packaging line, not a catalogue.",
-    "intro": "Azhar Products makes thermoformed food packaging for dairy, dessert and food-service producers. The short version: we build the tool, run the sheet, and ship the format you actually need.",
-    "chapters": {
-      "origin": {
-        "eyebrow": "Origin",
-        "title": "Built around one question from buyers.",
-        "body": "Every enquiry starts the same way — can you make this format, at this volume, for this fill? The company was organised around answering yes more often than a catalogue supplier can, which is why tooling sits alongside production rather than at a vendor."
-      },
-      "facility": {
-        "eyebrow": "Facility",
-        "title": "Extrusion, forming and finishing in sequence.",
-        "body": "Sheet extrusion, thermoforming, trimming, stacking and packing run as one line. Material moves in a single pass, which keeps handling low and makes short runs of a custom format economic rather than exceptional."
-      },
-      "quality": {
-        "eyebrow": "Quality & food safety",
-        "title": "Food contact is a process, not a certificate on a wall.",
-        "body": "Material selection, forming temperature, handling and packing all follow documented food-contact procedures, with traceability from resin lot to finished carton. Certification details are supplied on request with the quote."
-      },
-      "equipment": {
-        "eyebrow": "Equipment",
-        "title": "Tooling built and maintained on site.",
-        "body": "Moulds are cut, trialled and maintained in-house. That is the difference between a new format being a scheduling question and a supply-chain one, and it is what keeps revision cost and lead time under our own control."
-      }
-    },
-    "timeline": {
-      "eyebrow": "Milestones",
-      "title": "How the line grew.",
-      "yearPending": "—",
+    "faq": {
+      "eyebrow": "Questions",
+      "title": "What buyers ask first.",
       "items": {
-        "founded": {
-          "title": "Founded",
-          "body": "TODO_CONFIRM — founding year and the original product focus."
+        "custom": {
+          "q": "Can you make a format we design ourselves?",
+          "a": "Yes. Tooling is built in-house, so a new diameter, height or stacking profile is a scheduling question rather than a supply-chain one. Send a drawing or a sample and we will come back with a tooling cost and a date."
         },
-        "firstLine": {
-          "title": "First thermoforming line",
-          "body": "TODO_CONFIRM — when forming was brought in-house, and at what capacity."
+        "moq": {
+          "q": "What is the minimum order?",
+          "a": "It depends on the format and whether the mould already exists. Existing formats run at a far lower minimum than new tooling. Tell us the monthly volume you expect and we will quote against it."
         },
-        "toolingInHouse": {
-          "title": "Tooling brought in-house",
-          "body": "TODO_CONFIRM — when mould-making moved on site."
+        "materials": {
+          "q": "Which materials do you offer?",
+          "a": "PP, PS, PET and PVC. The right one depends on your fill temperature, barrier requirement and shelf life — we will recommend a material with the quote rather than default to one."
         },
-        "dairyPartnerships": {
-          "title": "Dairy partnerships",
-          "body": "TODO_CONFIRM — first long-run dairy customers, if these may be named."
+        "lidding": {
+          "q": "Do your cups take standard foil lids?",
+          "a": "Every format is designed around a rolled sealing rim. Tell us the lidding equipment and foil standard you already run and we will match it."
         },
-        "capacityExpansion": {
-          "title": "Capacity expansion",
-          "body": "TODO_CONFIRM — the expansion that set current monthly output."
-        },
-        "today": {
-          "title": "Today",
-          "body": "TODO_CONFIRM — current output, format count and export markets."
+        "leadTime": {
+          "q": "How fast can you deliver?",
+          "a": "Repeat formats ship from planned stock. A new mould adds tooling time, quoted as a firm date rather than an estimate before you commit."
         }
       }
+    },
+    "quote": {
+      "eyebrow": "Get in touch",
+      "title": "Tell us what you need.",
+      "body": "Fill, capacity, lid standard and monthly volume are usually enough for us to quote from."
     }
   },
   "contact": {
-    "eyebrow": "Request a quote",
-    "title": "Tell us the format and the volume.",
-    "intro": "The more specific the brief, the faster the answer. Fill, capacity, lid standard and monthly volume are usually enough to quote from.",
-    "panel": {
-      "title": "Direct",
-      "pending": "Contact details pending confirmation.",
-      "whatsapp": "WhatsApp",
-      "mapPending": "Map appears once the facility address is confirmed.",
-      "social": {
-        "instagram": "Instagram",
-        "facebook": "Facebook",
-        "linkedin": "LinkedIn"
-      }
-    },
     "form": {
       "submit": "Send request",
       "fields": {
@@ -256,8 +125,8 @@
         "email": "Email",
         "phone": "Phone",
         "country": "Country",
-        "monthlyVolume": "Estimated monthly volume",
-        "productInterest": "Product interest",
+        "monthlyVolume": "Monthly volume",
+        "productInterest": "Which format?",
         "message": "Message"
       },
       "hints": {
@@ -276,10 +145,10 @@
       "status": {
         "submitting": "Sending…",
         "successTitle": "Request received.",
-        "successBody": "We will come back with specifications and pricing. If it is urgent, call or message on WhatsApp.",
+        "successBody": "We will come back with specifications and pricing.",
         "error": "Something went wrong sending your request. Please try again.",
         "network": "Could not reach the server. Check your connection and try again.",
-        "notConfigured": "The quote inbox is not connected yet. Please email or call us directly in the meantime."
+        "notConfigured": "The quote inbox is not connected yet. Please email us directly in the meantime."
       }
     }
   }

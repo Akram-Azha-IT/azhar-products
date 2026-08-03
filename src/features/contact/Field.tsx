@@ -29,14 +29,14 @@ export function Field({
       <label htmlFor={id} className="block text-sm font-medium">
         {label}
         {required ? (
-          <span aria-hidden className="text-accent-strong">
+          <span aria-hidden className="text-accent">
             {' *'}
           </span>
         ) : null}
       </label>
 
       {hint ? (
-        <p id={`${id}-hint`} className="mt-1 text-sm text-steel">
+        <p id={`${id}-hint`} className="mt-1 text-sm text-muted">
           {hint}
         </p>
       ) : null}
@@ -44,7 +44,7 @@ export function Field({
       <div className="mt-2">{children}</div>
 
       {error ? (
-        <p id={`${id}-error`} role="alert" className="mt-2 text-sm text-accent-strong">
+        <p id={`${id}-error`} role="alert" className="mt-2 text-sm text-accent">
           {error}
         </p>
       ) : null}

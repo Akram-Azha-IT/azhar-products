@@ -1,253 +1,122 @@
 {
   "nav": {
     "products": "TODO_TRANSLATE: Products",
-    "about": "TODO_TRANSLATE: About",
+    "expertise": "TODO_TRANSLATE: Expertise",
     "contact": "TODO_TRANSLATE: Contact",
-    "quote": "TODO_TRANSLATE: Request a quote",
+    "quote": "TODO_TRANSLATE: Get a quote",
     "primaryLabel": "TODO_TRANSLATE: Main navigation",
     "languageLabel": "TODO_TRANSLATE: Change language",
-    "homeLabel": "TODO_TRANSLATE: Azhar Products — home",
+    "homeLabel": "TODO_TRANSLATE: back to top",
     "openMenu": "TODO_TRANSLATE: Open menu",
     "closeMenu": "TODO_TRANSLATE: Close menu",
     "skipToContent": "TODO_TRANSLATE: Skip to main content"
   },
   "footer": {
-    "eyebrow": "TODO_TRANSLATE: Azhar Products",
-    "tagline": "TODO_TRANSLATE: Thermoformed food packaging, made to your specification.",
-    "rights": "TODO_TRANSLATE: All rights reserved.",
-    "builtFor": "TODO_TRANSLATE: Food-grade packaging for dairy, dessert and food service."
+    "tagline": "TODO_TRANSLATE: Thermoformed food packaging for dairy, dessert and food-service producers. Your format, your print, your volume.",
+    "rights": "TODO_TRANSLATE: All rights reserved."
   },
   "metadata": {
     "home": {
       "title": "TODO_TRANSLATE: Azhar Products — Thermoformed food packaging",
-      "description": "TODO_TRANSLATE: Food-grade thermoformed cups and containers for yogurt, cream cheese, dairy, desserts and food service. Custom volumes, in-house tooling, volume runs."
-    },
-    "products": {
-      "title": "TODO_TRANSLATE: Products — Azhar Products",
-      "description": "TODO_TRANSLATE: Dairy packaging, clear cups and containers, food packaging solutions and carton packaging. Filter by category, material, capacity and application."
-    },
-    "about": {
-      "title": "TODO_TRANSLATE: About — Azhar Products",
-      "description": "TODO_TRANSLATE: Our facility, our quality and food-safety approach, and the equipment behind every run."
-    },
-    "contact": {
-      "title": "TODO_TRANSLATE: Request a quote — Azhar Products",
-      "description": "TODO_TRANSLATE: Tell us your product, volume and format. We will come back with specs and pricing."
+      "description": "TODO_TRANSLATE: Food-grade thermoformed cups and pots for yogurt, cream cheese, dairy and desserts. Custom moulds, in-house tooling, volume runs."
     }
   },
-  "home": {
+  "notFound": {
+    "title": "TODO_TRANSLATE: That page does not exist.",
+    "body": "TODO_TRANSLATE: Everything lives on one page now. Jump to the formats, or tell us what you need.",
+    "products": "TODO_TRANSLATE: See the formats",
+    "contact": "TODO_TRANSLATE: Get a quote"
+  },
+  "landing": {
     "hero": {
-      "headline": "TODO_TRANSLATE: Thermoformed packaging, built for food.",
-      "subline": "TODO_TRANSLATE: Food-grade cups and containers for yogurt, cream cheese, dairy and desserts — produced to your volume, your format and your lid standard.",
-      "primaryCta": "TODO_TRANSLATE: Request a quote",
-      "secondaryCta": "TODO_TRANSLATE: View products",
-      "scrollCue": "TODO_TRANSLATE: Scroll",
-      "imageAlt": "TODO_TRANSLATE: Tall tapered thermoformed yogurt cup with a rolled rim and full-wrap printed sleeve"
+      "headline": "TODO_TRANSLATE: Packaging that keeps dairy fresh.",
+      "subline": "TODO_TRANSLATE: Food-grade thermoformed cups and pots for yogurt, cream cheese and desserts — made to your format, your print and your monthly volume.",
+      "primaryCta": "TODO_TRANSLATE: Get a quote",
+      "secondaryCta": "TODO_TRANSLATE: See the formats"
     },
-    "marquee": {
-      "label": "TODO_TRANSLATE: Capabilities at a glance",
-      "items": "TODO_TRANSLATE: Food-grade materials · Custom moulds · In-house tooling · Yogurt & fermented dairy · Cream cheese · Desserts & chilled · Food service · Volume runs · Lid compatibility · Print-ready surfaces"
-    },
-    "categories": {
-      "eyebrow": "TODO_TRANSLATE: What we make",
-      "title": "TODO_TRANSLATE: Four families, one line.",
-      "skuLabel": "TODO_TRANSLATE: references",
-      "skuPending": "TODO_TRANSLATE: —",
-      "cta": "TODO_TRANSLATE: See the catalogue",
-      "items": {
-        "dairy": {
-          "name": "TODO_TRANSLATE: Dairy Packaging",
-          "descriptor": "TODO_TRANSLATE: Cups and pots for yogurt, raib, fermented milk and cream cheese."
-        },
-        "clear": {
-          "name": "TODO_TRANSLATE: Clear Cups & Containers",
-          "descriptor": "TODO_TRANSLATE: Transparent formats where the product is the packaging's argument."
-        },
-        "foodservice": {
-          "name": "TODO_TRANSLATE: Food Packaging Solutions",
-          "descriptor": "TODO_TRANSLATE: Portion, takeaway and chilled formats built for handling volume."
-        },
-        "carton": {
-          "name": "TODO_TRANSLATE: Carton Packaging",
-          "descriptor": "TODO_TRANSLATE: Secondary packaging and shipping cases matched to your cup counts."
-        }
+    "products": {
+      "eyebrow": "TODO_TRANSLATE: Our formats",
+      "title": "TODO_TRANSLATE: Three families. Endless prints.",
+      "intro": "TODO_TRANSLATE: Every format below is produced to order — your capacity, your lid standard, your artwork. Hover a card to see the format from a second angle.",
+      "cta": "TODO_TRANSLATE: Request these formats",
+      "ctaNote": "TODO_TRANSLATE: Tell us the fill and the volume. We come back with specs and pricing.",
+      "applications": {
+        "yogurt": "TODO_TRANSLATE: Yogurt",
+        "creamCheese": "TODO_TRANSLATE: Cream cheese",
+        "dessert": "TODO_TRANSLATE: Dessert",
+        "foodService": "TODO_TRANSLATE: Food service"
       }
     },
-    "manufacturing": {
-      "eyebrow": "TODO_TRANSLATE: Manufacturing",
-      "title": "TODO_TRANSLATE: Thermoforming, tooling and finishing under one roof.",
-      "body": "TODO_TRANSLATE: Sheet extrusion, forming, trimming and stacking run as a single line, which is what makes a custom format economic rather than exceptional. Tooling is built and maintained in-house, so a new mould is a scheduling question, not a supply-chain one.",
-      "cta": "TODO_TRANSLATE: About the facility",
+    "expertise": {
+      "eyebrow": "TODO_TRANSLATE: How we work",
+      "title": "TODO_TRANSLATE: One line, from sheet to carton.",
+      "body": "TODO_TRANSLATE: Extrusion, forming, trimming, stacking and packing run as a single line, with tooling built and maintained on site. That is what makes a custom format a scheduling question rather than a supply-chain one.",
       "statsPending": "TODO_TRANSLATE: —",
       "stats": {
         "yearsOperating": "TODO_TRANSLATE: Years in operation",
         "monthlyOutput": "TODO_TRANSLATE: Units per month",
         "formats": "TODO_TRANSLATE: Moulds & formats"
-      }
-    },
-    "capabilities": {
-      "eyebrow": "TODO_TRANSLATE: Capability",
-      "title": "TODO_TRANSLATE: What a buyer actually needs to know.",
+      },
       "items": {
         "materials": {
           "title": "TODO_TRANSLATE: Food-grade materials",
-          "body": "TODO_TRANSLATE: PP, PS, PET and PVC selected against your fill temperature, barrier requirement and shelf life."
+          "body": "TODO_TRANSLATE: PP, PS, PET and PVC chosen against your fill temperature and shelf life."
         },
         "moulds": {
           "title": "TODO_TRANSLATE: Custom moulds",
-          "body": "TODO_TRANSLATE: Your volume, your diameter, your stacking height. Existing formats are a starting point, not a limit."
+          "body": "TODO_TRANSLATE: Your volume, diameter and stacking height. Existing formats are a starting point."
         },
         "tooling": {
           "title": "TODO_TRANSLATE: In-house tooling",
-          "body": "TODO_TRANSLATE: Moulds are cut and maintained on site, which keeps lead time and revision cost under our control."
+          "body": "TODO_TRANSLATE: Moulds cut and maintained on site, so revisions stay fast and cheap."
         },
         "volume": {
           "title": "TODO_TRANSLATE: Volume runs",
-          "body": "TODO_TRANSLATE: Production is planned around recurring monthly commitments rather than one-off batches."
+          "body": "TODO_TRANSLATE: Planned around recurring monthly commitments, not one-off batches."
         },
         "hygiene": {
           "title": "TODO_TRANSLATE: Hygiene standards",
-          "body": "TODO_TRANSLATE: Forming, stacking and packing follow documented food-contact handling procedures throughout."
+          "body": "TODO_TRANSLATE: Documented food-contact handling from resin lot to finished carton."
         },
         "leadTimes": {
           "title": "TODO_TRANSLATE: Lead times",
-          "body": "TODO_TRANSLATE: Repeat formats ship from planned stock; new tooling is quoted with a firm date, not an estimate."
+          "body": "TODO_TRANSLATE: Repeat formats ship from planned stock; new tooling gets a firm date."
         }
       }
     },
-    "cta": {
-      "title": "TODO_TRANSLATE: Let's talk about your packaging.",
-      "body": "TODO_TRANSLATE: Send us the format, the fill and the monthly volume. We will come back with specifications and pricing.",
-      "button": "TODO_TRANSLATE: Request a quote"
-    }
-  },
-  "notFound": {
-    "title": "TODO_TRANSLATE: That page does not exist.",
-    "body": "TODO_TRANSLATE: The link may be out of date. The catalogue is the fastest way to find a format, or tell us what you need and we will quote it.",
-    "products": "TODO_TRANSLATE: Browse products",
-    "contact": "TODO_TRANSLATE: Request a quote"
-  },
-  "catalogue": {
-    "eyebrow": "TODO_TRANSLATE: Catalogue",
-    "title": "TODO_TRANSLATE: Formats, materials and volumes.",
-    "intro": "TODO_TRANSLATE: Filter by what matters to your line. Every format can be quoted with your own print, your own lid standard and your own carton count.",
-    "specPending": "TODO_TRANSLATE: Specification pending",
-    "capacity": "TODO_TRANSLATE: {value} ml",
-    "capacityUpTo": "TODO_TRANSLATE: Up to {value} ml",
-    "resultCount": "TODO_TRANSLATE: {count, plural, =0 {No products} one {# product} other {# products}}",
-    "filters": {
-      "category": "TODO_TRANSLATE: Category",
-      "material": "TODO_TRANSLATE: Material",
-      "application": "TODO_TRANSLATE: Application",
-      "capacity": "TODO_TRANSLATE: Capacity",
-      "clear": "TODO_TRANSLATE: Clear filters"
-    },
-    "applications": {
-      "yogurt": "TODO_TRANSLATE: Yogurt",
-      "creamCheese": "TODO_TRANSLATE: Cream cheese",
-      "dessert": "TODO_TRANSLATE: Dessert",
-      "foodService": "TODO_TRANSLATE: Food service"
-    },
-    "empty": {
-      "title": "TODO_TRANSLATE: Nothing matches that combination.",
-      "body": "TODO_TRANSLATE: Loosen a filter, or send us the format you need — most requests end in a custom mould anyway.",
-      "reset": "TODO_TRANSLATE: Clear filters"
-    }
-  },
-  "product": {
-    "backToCatalogue": "TODO_TRANSLATE: All products",
-    "specsTitle": "TODO_TRANSLATE: Specification",
-    "pending": "TODO_TRANSLATE: —",
-    "quoteCta": "TODO_TRANSLATE: Request a quote for this item",
-    "relatedTitle": "TODO_TRANSLATE: Related products",
-    "specs": {
-      "capacityMl": "TODO_TRANSLATE: Capacity",
-      "diameterMm": "TODO_TRANSLATE: Diameter",
-      "heightMm": "TODO_TRANSLATE: Height",
-      "material": "TODO_TRANSLATE: Material",
-      "lidCompatibility": "TODO_TRANSLATE: Lid compatibility",
-      "unitsPerCarton": "TODO_TRANSLATE: Units per carton",
-      "moq": "TODO_TRANSLATE: Minimum order"
-    },
-    "units": {
-      "ml": "TODO_TRANSLATE: ml",
-      "mm": "TODO_TRANSLATE: mm",
-      "units": "TODO_TRANSLATE: units"
-    }
-  },
-  "about": {
-    "eyebrow": "TODO_TRANSLATE: The company",
-    "title": "TODO_TRANSLATE: A packaging line, not a catalogue.",
-    "intro": "TODO_TRANSLATE: Azhar Products makes thermoformed food packaging for dairy, dessert and food-service producers. The short version: we build the tool, run the sheet, and ship the format you actually need.",
-    "chapters": {
-      "origin": {
-        "eyebrow": "TODO_TRANSLATE: Origin",
-        "title": "TODO_TRANSLATE: Built around one question from buyers.",
-        "body": "TODO_TRANSLATE: Every enquiry starts the same way — can you make this format, at this volume, for this fill? The company was organised around answering yes more often than a catalogue supplier can, which is why tooling sits alongside production rather than at a vendor."
-      },
-      "facility": {
-        "eyebrow": "TODO_TRANSLATE: Facility",
-        "title": "TODO_TRANSLATE: Extrusion, forming and finishing in sequence.",
-        "body": "TODO_TRANSLATE: Sheet extrusion, thermoforming, trimming, stacking and packing run as one line. Material moves in a single pass, which keeps handling low and makes short runs of a custom format economic rather than exceptional."
-      },
-      "quality": {
-        "eyebrow": "TODO_TRANSLATE: Quality & food safety",
-        "title": "TODO_TRANSLATE: Food contact is a process, not a certificate on a wall.",
-        "body": "TODO_TRANSLATE: Material selection, forming temperature, handling and packing all follow documented food-contact procedures, with traceability from resin lot to finished carton. Certification details are supplied on request with the quote."
-      },
-      "equipment": {
-        "eyebrow": "TODO_TRANSLATE: Equipment",
-        "title": "TODO_TRANSLATE: Tooling built and maintained on site.",
-        "body": "TODO_TRANSLATE: Moulds are cut, trialled and maintained in-house. That is the difference between a new format being a scheduling question and a supply-chain one, and it is what keeps revision cost and lead time under our own control."
-      }
-    },
-    "timeline": {
-      "eyebrow": "TODO_TRANSLATE: Milestones",
-      "title": "TODO_TRANSLATE: How the line grew.",
-      "yearPending": "TODO_TRANSLATE: —",
+    "faq": {
+      "eyebrow": "TODO_TRANSLATE: Questions",
+      "title": "TODO_TRANSLATE: What buyers ask first.",
       "items": {
-        "founded": {
-          "title": "TODO_TRANSLATE: Founded",
-          "body": "TODO_TRANSLATE: TODO_CONFIRM — founding year and the original product focus."
+        "custom": {
+          "q": "TODO_TRANSLATE: Can you make a format we design ourselves?",
+          "a": "TODO_TRANSLATE: Yes. Tooling is built in-house, so a new diameter, height or stacking profile is a scheduling question rather than a supply-chain one. Send a drawing or a sample and we will come back with a tooling cost and a date."
         },
-        "firstLine": {
-          "title": "TODO_TRANSLATE: First thermoforming line",
-          "body": "TODO_TRANSLATE: TODO_CONFIRM — when forming was brought in-house, and at what capacity."
+        "moq": {
+          "q": "TODO_TRANSLATE: What is the minimum order?",
+          "a": "TODO_TRANSLATE: It depends on the format and whether the mould already exists. Existing formats run at a far lower minimum than new tooling. Tell us the monthly volume you expect and we will quote against it."
         },
-        "toolingInHouse": {
-          "title": "TODO_TRANSLATE: Tooling brought in-house",
-          "body": "TODO_TRANSLATE: TODO_CONFIRM — when mould-making moved on site."
+        "materials": {
+          "q": "TODO_TRANSLATE: Which materials do you offer?",
+          "a": "TODO_TRANSLATE: PP, PS, PET and PVC. The right one depends on your fill temperature, barrier requirement and shelf life — we will recommend a material with the quote rather than default to one."
         },
-        "dairyPartnerships": {
-          "title": "TODO_TRANSLATE: Dairy partnerships",
-          "body": "TODO_TRANSLATE: TODO_CONFIRM — first long-run dairy customers, if these may be named."
+        "lidding": {
+          "q": "TODO_TRANSLATE: Do your cups take standard foil lids?",
+          "a": "TODO_TRANSLATE: Every format is designed around a rolled sealing rim. Tell us the lidding equipment and foil standard you already run and we will match it."
         },
-        "capacityExpansion": {
-          "title": "TODO_TRANSLATE: Capacity expansion",
-          "body": "TODO_TRANSLATE: TODO_CONFIRM — the expansion that set current monthly output."
-        },
-        "today": {
-          "title": "TODO_TRANSLATE: Today",
-          "body": "TODO_TRANSLATE: TODO_CONFIRM — current output, format count and export markets."
+        "leadTime": {
+          "q": "TODO_TRANSLATE: How fast can you deliver?",
+          "a": "TODO_TRANSLATE: Repeat formats ship from planned stock. A new mould adds tooling time, quoted as a firm date rather than an estimate before you commit."
         }
       }
+    },
+    "quote": {
+      "eyebrow": "TODO_TRANSLATE: Get in touch",
+      "title": "TODO_TRANSLATE: Tell us what you need.",
+      "body": "TODO_TRANSLATE: Fill, capacity, lid standard and monthly volume are usually enough for us to quote from."
     }
   },
   "contact": {
-    "eyebrow": "TODO_TRANSLATE: Request a quote",
-    "title": "TODO_TRANSLATE: Tell us the format and the volume.",
-    "intro": "TODO_TRANSLATE: The more specific the brief, the faster the answer. Fill, capacity, lid standard and monthly volume are usually enough to quote from.",
-    "panel": {
-      "title": "TODO_TRANSLATE: Direct",
-      "pending": "TODO_TRANSLATE: Contact details pending confirmation.",
-      "whatsapp": "TODO_TRANSLATE: WhatsApp",
-      "mapPending": "TODO_TRANSLATE: Map appears once the facility address is confirmed.",
-      "social": {
-        "instagram": "TODO_TRANSLATE: Instagram",
-        "facebook": "TODO_TRANSLATE: Facebook",
-        "linkedin": "TODO_TRANSLATE: LinkedIn"
-      }
-    },
     "form": {
       "submit": "TODO_TRANSLATE: Send request",
       "fields": {
@@ -256,8 +125,8 @@
         "email": "TODO_TRANSLATE: Email",
         "phone": "TODO_TRANSLATE: Phone",
         "country": "TODO_TRANSLATE: Country",
-        "monthlyVolume": "TODO_TRANSLATE: Estimated monthly volume",
-        "productInterest": "TODO_TRANSLATE: Product interest",
+        "monthlyVolume": "TODO_TRANSLATE: Monthly volume",
+        "productInterest": "TODO_TRANSLATE: Which format?",
         "message": "TODO_TRANSLATE: Message"
       },
       "hints": {
@@ -276,10 +145,10 @@
       "status": {
         "submitting": "TODO_TRANSLATE: Sending…",
         "successTitle": "TODO_TRANSLATE: Request received.",
-        "successBody": "TODO_TRANSLATE: We will come back with specifications and pricing. If it is urgent, call or message on WhatsApp.",
+        "successBody": "TODO_TRANSLATE: We will come back with specifications and pricing.",
         "error": "TODO_TRANSLATE: Something went wrong sending your request. Please try again.",
         "network": "TODO_TRANSLATE: Could not reach the server. Check your connection and try again.",
-        "notConfigured": "TODO_TRANSLATE: The quote inbox is not connected yet. Please email or call us directly in the meantime."
+        "notConfigured": "TODO_TRANSLATE: The quote inbox is not connected yet. Please email us directly in the meantime."
       }
     }
   }

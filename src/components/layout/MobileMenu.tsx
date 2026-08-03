@@ -3,9 +3,8 @@
 import { useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 
-import { ButtonLink } from '@/components/ui/Button';
-import { TransitionLink } from '@/components/ui/TransitionLink';
 import { NAV_ITEMS } from '@/content/nav';
+import { ButtonLink } from '@/components/ui/Button';
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -15,13 +14,11 @@ interface MobileMenuProps {
 /**
  * Full-screen navigation overlay for small viewports.
  *
- * Escape closes it, background scroll is locked while it is open, and focus
- * moves into the panel on open and back to the page on close — an animation
- * must never trap focus.
+ * Escape closes it, background scroll is locked while open, and focus moves
+ * into the panel on open — an animation must never trap focus.
  */
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   const t = useTranslations('nav');
-  const panelRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -34,7 +31,6 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') onClose();
     };
-
     document.addEventListener('keydown', onKeyDown);
 
     return () => {
@@ -46,15 +42,14 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   return (
     <div
       id="mobile-menu"
-      ref={panelRef}
       role="dialog"
       aria-modal="true"
       aria-label={t('primaryLabel')}
       inert={!isOpen}
-      className={`fixed inset-0 z-100 flex flex-col bg-navy-deep text-paper transition-[opacity,transform] duration-[var(--duration-ui)] ease-[var(--ease-brand)] motion-reduce:transition-none md:hidden ${
+      className={`fixed inset-0 z-100 flex flex-col bg-paper transition-opacity duration-[var(--duration-ui)] ease-[var(--ease-brand)] motion-reduce:transition-none md:hidden ${
         isOpen
-          ? 'pointer-events-auto translate-y-0 opacity-100'
-          : 'pointer-events-none -translate-y-4 opacity-0'
+          ? 'pointer-events-auto opacity-100'
+          : 'pointer-events-none opacity-0'
       }`}
     >
       <div className="flex justify-end px-(--spacing-gutter) py-4">
@@ -62,38 +57,34 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           ref={closeRef}
           type="button"
           onClick={onClose}
-          className="flex h-11 w-11 cursor-pointer items-center justify-center"
+          className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-(--radius-pill) bg-panel"
         >
           <span className="sr-only">{t('closeMenu')}</span>
           <svg
             aria-hidden
             viewBox="0 0 24 24"
-            className="h-6 w-6"
+            className="h-5 w-5"
             fill="none"
             stroke="currentColor"
-            strokeWidth={1.5}
+            strokeWidth={1.75}
           >
-            <path d="M5 5l14 14M19 5L5 19" strokeLinecap="square" />
+            <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
           </svg>
         </button>
       </div>
 
       <nav className="flex flex-1 flex-col justify-center gap-2 px-(--spacing-gutter) pb-24">
         {NAV_ITEMS.map((item) => (
-          <TransitionLink
+          <a
             key={item.href}
             href={item.href}
             onClick={onClose}
-            className="py-3 font-display text-4xl tracking-[-0.03em]"
+            className="py-3 text-4xl font-semibold tracking-[-0.03em]"
           >
             {t(item.key)}
-          </TransitionLink>
+          </a>
         ))}
-        <ButtonLink
-          href="/contact"
-          variant="primary"
-          className="mt-8 self-start"
-        >
+        <ButtonLink href="#contact" onClick={onClose} className="mt-8 self-start">
           {t('quote')}
         </ButtonLink>
       </nav>
