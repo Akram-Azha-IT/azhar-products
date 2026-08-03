@@ -43,10 +43,81 @@
       "secondaryCta": "View products",
       "scrollCue": "Scroll"
     },
-    "placeholder": {
-      "eyebrow": "Phase 2",
-      "title": "Home sections land next.",
-      "body": "The marquee strip, category tiles, manufacturing chapter, capability grid and closing CTA band are built in Phase 2 against this foundation."
+    "marquee": {
+      "label": "Capabilities at a glance",
+      "items": "Food-grade materials · Custom moulds · In-house tooling · Yogurt & fermented dairy · Cream cheese · Desserts & chilled · Food service · Volume runs · Lid compatibility · Print-ready surfaces"
+    },
+    "categories": {
+      "eyebrow": "What we make",
+      "title": "Four families, one line.",
+      "skuLabel": "references",
+      "skuPending": "—",
+      "cta": "See the catalogue",
+      "items": {
+        "dairy": {
+          "name": "Dairy Packaging",
+          "descriptor": "Cups and pots for yogurt, raib, fermented milk and cream cheese."
+        },
+        "clear": {
+          "name": "Clear Cups & Containers",
+          "descriptor": "Transparent formats where the product is the packaging's argument."
+        },
+        "foodservice": {
+          "name": "Food Packaging Solutions",
+          "descriptor": "Portion, takeaway and chilled formats built for handling volume."
+        },
+        "carton": {
+          "name": "Carton Packaging",
+          "descriptor": "Secondary packaging and shipping cases matched to your cup counts."
+        }
+      }
+    },
+    "manufacturing": {
+      "eyebrow": "Manufacturing",
+      "title": "Thermoforming, tooling and finishing under one roof.",
+      "body": "Sheet extrusion, forming, trimming and stacking run as a single line, which is what makes a custom format economic rather than exceptional. Tooling is built and maintained in-house, so a new mould is a scheduling question, not a supply-chain one.",
+      "cta": "About the facility",
+      "statsPending": "—",
+      "stats": {
+        "yearsOperating": "Years in operation",
+        "monthlyOutput": "Units per month",
+        "formats": "Moulds & formats"
+      }
+    },
+    "capabilities": {
+      "eyebrow": "Capability",
+      "title": "What a buyer actually needs to know.",
+      "items": {
+        "materials": {
+          "title": "Food-grade materials",
+          "body": "PP, PS, PET and PVC selected against your fill temperature, barrier requirement and shelf life."
+        },
+        "moulds": {
+          "title": "Custom moulds",
+          "body": "Your volume, your diameter, your stacking height. Existing formats are a starting point, not a limit."
+        },
+        "tooling": {
+          "title": "In-house tooling",
+          "body": "Moulds are cut and maintained on site, which keeps lead time and revision cost under our control."
+        },
+        "volume": {
+          "title": "Volume runs",
+          "body": "Production is planned around recurring monthly commitments rather than one-off batches."
+        },
+        "hygiene": {
+          "title": "Hygiene standards",
+          "body": "Forming, stacking and packing follow documented food-contact handling procedures throughout."
+        },
+        "leadTimes": {
+          "title": "Lead times",
+          "body": "Repeat formats ship from planned stock; new tooling is quoted with a firm date, not an estimate."
+        }
+      }
+    },
+    "cta": {
+      "title": "Let's talk about your packaging.",
+      "body": "Send us the format, the fill and the monthly volume. We will come back with specifications and pricing.",
+      "button": "Request a quote"
     }
   },
   "products": {

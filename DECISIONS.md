@@ -85,6 +85,45 @@ a plain router push and the panel never renders a frame.
 
 ---
 
+## Phase 2 — Home
+
+### D9. No certification is named anywhere
+
+The brief's capability list includes "hygiene standards". Naming a scheme —
+HACCP, BRCGS, ISO 22000, FSSC — would be a verifiable claim about your business,
+so the copy describes *practice* ("documented food-contact handling procedures")
+and stops short of certification. Send the certificates you actually hold and the
+capability card becomes considerably stronger.
+
+### D10. Trust numbers render an em dash, not a number
+
+`TRUST_STATS` in `src/content/company.ts` holds `value: null` for all three
+figures. `Counter` renders the `pending` string when the value is null and skips
+the count-up entirely. Fill the three values in and the animation switches itself
+on — no component changes needed.
+
+Same pattern for `skuCount` on the four category tiles: the tile shows
+"— references" until the Phase 3 product data exists.
+
+### D11. The pinned section's fallback is the default rendering
+
+"What we make" is authored as a plain stacked list with an image per item. The
+desktop pin, the cross-fading pane and the active-item highlight are added on top
+via `gsap.matchMedia('(min-width: 1024px) and (prefers-reduced-motion: no-preference)')`.
+
+This is deliberate: the brief asks for a mobile fallback rather than a disabled
+section, and building the fallback as the base means there is no state in which
+the section can be pinned but broken. The cross-fade pane is `aria-hidden` — it
+duplicates images already present in the list.
+
+### D12. Marquee spacing is trailing padding, not a flex gap
+
+With a flex `gap`, N duplicated items produce 2N−1 gaps and the −50% loop point
+lands half a gap off the seam. Each item carries its own `pr-12` instead, so every
+slot is identical width and the loop is exact.
+
+---
+
 ## Open items
 
 - **First Load JS on `/` is 167 kB**, over the 150 kB landing budget. GSAP +

@@ -43,10 +43,81 @@
       "secondaryCta": "TODO_TRANSLATE: View products",
       "scrollCue": "TODO_TRANSLATE: Scroll"
     },
-    "placeholder": {
-      "eyebrow": "TODO_TRANSLATE: Phase 2",
-      "title": "TODO_TRANSLATE: Home sections land next.",
-      "body": "TODO_TRANSLATE: The marquee strip, category tiles, manufacturing chapter, capability grid and closing CTA band are built in Phase 2 against this foundation."
+    "marquee": {
+      "label": "TODO_TRANSLATE: Capabilities at a glance",
+      "items": "TODO_TRANSLATE: Food-grade materials · Custom moulds · In-house tooling · Yogurt & fermented dairy · Cream cheese · Desserts & chilled · Food service · Volume runs · Lid compatibility · Print-ready surfaces"
+    },
+    "categories": {
+      "eyebrow": "TODO_TRANSLATE: What we make",
+      "title": "TODO_TRANSLATE: Four families, one line.",
+      "skuLabel": "TODO_TRANSLATE: references",
+      "skuPending": "TODO_TRANSLATE: —",
+      "cta": "TODO_TRANSLATE: See the catalogue",
+      "items": {
+        "dairy": {
+          "name": "TODO_TRANSLATE: Dairy Packaging",
+          "descriptor": "TODO_TRANSLATE: Cups and pots for yogurt, raib, fermented milk and cream cheese."
+        },
+        "clear": {
+          "name": "TODO_TRANSLATE: Clear Cups & Containers",
+          "descriptor": "TODO_TRANSLATE: Transparent formats where the product is the packaging's argument."
+        },
+        "foodservice": {
+          "name": "TODO_TRANSLATE: Food Packaging Solutions",
+          "descriptor": "TODO_TRANSLATE: Portion, takeaway and chilled formats built for handling volume."
+        },
+        "carton": {
+          "name": "TODO_TRANSLATE: Carton Packaging",
+          "descriptor": "TODO_TRANSLATE: Secondary packaging and shipping cases matched to your cup counts."
+        }
+      }
+    },
+    "manufacturing": {
+      "eyebrow": "TODO_TRANSLATE: Manufacturing",
+      "title": "TODO_TRANSLATE: Thermoforming, tooling and finishing under one roof.",
+      "body": "TODO_TRANSLATE: Sheet extrusion, forming, trimming and stacking run as a single line, which is what makes a custom format economic rather than exceptional. Tooling is built and maintained in-house, so a new mould is a scheduling question, not a supply-chain one.",
+      "cta": "TODO_TRANSLATE: About the facility",
+      "statsPending": "TODO_TRANSLATE: —",
+      "stats": {
+        "yearsOperating": "TODO_TRANSLATE: Years in operation",
+        "monthlyOutput": "TODO_TRANSLATE: Units per month",
+        "formats": "TODO_TRANSLATE: Moulds & formats"
+      }
+    },
+    "capabilities": {
+      "eyebrow": "TODO_TRANSLATE: Capability",
+      "title": "TODO_TRANSLATE: What a buyer actually needs to know.",
+      "items": {
+        "materials": {
+          "title": "TODO_TRANSLATE: Food-grade materials",
+          "body": "TODO_TRANSLATE: PP, PS, PET and PVC selected against your fill temperature, barrier requirement and shelf life."
+        },
+        "moulds": {
+          "title": "TODO_TRANSLATE: Custom moulds",
+          "body": "TODO_TRANSLATE: Your volume, your diameter, your stacking height. Existing formats are a starting point, not a limit."
+        },
+        "tooling": {
+          "title": "TODO_TRANSLATE: In-house tooling",
+          "body": "TODO_TRANSLATE: Moulds are cut and maintained on site, which keeps lead time and revision cost under our control."
+        },
+        "volume": {
+          "title": "TODO_TRANSLATE: Volume runs",
+          "body": "TODO_TRANSLATE: Production is planned around recurring monthly commitments rather than one-off batches."
+        },
+        "hygiene": {
+          "title": "TODO_TRANSLATE: Hygiene standards",
+          "body": "TODO_TRANSLATE: Forming, stacking and packing follow documented food-contact handling procedures throughout."
+        },
+        "leadTimes": {
+          "title": "TODO_TRANSLATE: Lead times",
+          "body": "TODO_TRANSLATE: Repeat formats ship from planned stock; new tooling is quoted with a firm date, not an estimate."
+        }
+      }
+    },
+    "cta": {
+      "title": "TODO_TRANSLATE: Let's talk about your packaging.",
+      "body": "TODO_TRANSLATE: Send us the format, the fill and the monthly volume. We will come back with specifications and pricing.",
+      "button": "TODO_TRANSLATE: Request a quote"
     }
   },
   "products": {
