@@ -181,6 +181,59 @@ PNGs with real transparency and the script gets a cream branch instead.
 
 ---
 
+## Phase 4 — About + Contact
+
+### D19. An unconfigured quote endpoint returns 503, it does not fake success
+
+`getEmailProvider()` returns an `UnconfiguredProvider` that **throws** until
+`RESEND_API_KEY` and `QUOTE_INBOX` are set. The route maps that to `503` and the
+form shows "the quote inbox is not connected yet — email or call us directly".
+
+The tempting alternative — return 200 and log the payload — produces a site that
+looks like it is collecting enquiries while silently dropping them. A visible
+error is recoverable; a lost quote request is not.
+
+To enable: `npm install resend`, set both env vars, and fill in the client call in
+`src/lib/email.ts`. Nothing else changes; the route only knows `EmailProvider`.
+
+### D20. The honeypot is permissive in the schema on purpose
+
+First cut used `z.string().max(0)`, which made a filled honeypot fail validation —
+and the 422 response named the `website` field, telling a bot exactly which field
+caught it. The field now accepts input, and the **route** checks it after parsing
+and returns a silent `202`. Caught by the API smoke test, not by review.
+
+### D21. Required-field messages need the error on the constructor too
+
+Also caught by the smoke test: `z.string().min(2, msg)` only covers a value that
+is present but too short. A missing field raises `invalid_type` and fell back to
+zod's default "Invalid input", so an untouched form showed seven generic errors.
+Each field now passes the message to `z.string({ error })` **and** to `.min()`.
+
+### D22. Timeline: horizontal scroller first, pinning second
+
+The base rendering is a real horizontally scrollable, keyboard-focusable track
+that works on every viewport. The desktop pin is layered on via `gsap.matchMedia`.
+Same reasoning as D11 — the brief asks for a deliberate mobile fallback, and
+building the fallback as the base means there is no broken intermediate state.
+
+### D23. The contact panel hides what it cannot confirm
+
+`isConfirmed()` checks for the `TODO_CONFIRM` marker. Phone, WhatsApp, address and
+each social link render only once real. The map is omitted entirely rather than
+pointed at a guessed location — which also avoids loading a third-party frame to
+show the wrong place.
+
+### D24. Rate limiting is in-process and will not survive multi-region
+
+`src/lib/rateLimit.ts` is a fixed window, 5 requests per minute per IP, held in
+module memory. Verified working (6th request returns 429). It is enough for a
+single-instance marketing site and stops a script hammering the endpoint — but it
+is per-instance. If this deploys to more than one Vercel region, move it to
+Upstash or Vercel KV.
+
+---
+
 ## Open items
 
 - **First Load JS on `/` is 167 kB**, over the 150 kB landing budget. GSAP +

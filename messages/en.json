@@ -169,17 +169,111 @@
     }
   },
   "about": {
-    "placeholder": {
-      "eyebrow": "Phase 4",
-      "title": "The company.",
-      "body": "Origin, facility, quality and food-safety approach, equipment and the milestone timeline are built in Phase 4."
+    "eyebrow": "The company",
+    "title": "A packaging line, not a catalogue.",
+    "intro": "Azhar Products makes thermoformed food packaging for dairy, dessert and food-service producers. The short version: we build the tool, run the sheet, and ship the format you actually need.",
+    "chapters": {
+      "origin": {
+        "eyebrow": "Origin",
+        "title": "Built around one question from buyers.",
+        "body": "Every enquiry starts the same way — can you make this format, at this volume, for this fill? The company was organised around answering yes more often than a catalogue supplier can, which is why tooling sits alongside production rather than at a vendor."
+      },
+      "facility": {
+        "eyebrow": "Facility",
+        "title": "Extrusion, forming and finishing in sequence.",
+        "body": "Sheet extrusion, thermoforming, trimming, stacking and packing run as one line. Material moves in a single pass, which keeps handling low and makes short runs of a custom format economic rather than exceptional."
+      },
+      "quality": {
+        "eyebrow": "Quality & food safety",
+        "title": "Food contact is a process, not a certificate on a wall.",
+        "body": "Material selection, forming temperature, handling and packing all follow documented food-contact procedures, with traceability from resin lot to finished carton. Certification details are supplied on request with the quote."
+      },
+      "equipment": {
+        "eyebrow": "Equipment",
+        "title": "Tooling built and maintained on site.",
+        "body": "Moulds are cut, trialled and maintained in-house. That is the difference between a new format being a scheduling question and a supply-chain one, and it is what keeps revision cost and lead time under our own control."
+      }
+    },
+    "timeline": {
+      "eyebrow": "Milestones",
+      "title": "How the line grew.",
+      "yearPending": "—",
+      "items": {
+        "founded": {
+          "title": "Founded",
+          "body": "TODO_CONFIRM — founding year and the original product focus."
+        },
+        "firstLine": {
+          "title": "First thermoforming line",
+          "body": "TODO_CONFIRM — when forming was brought in-house, and at what capacity."
+        },
+        "toolingInHouse": {
+          "title": "Tooling brought in-house",
+          "body": "TODO_CONFIRM — when mould-making moved on site."
+        },
+        "dairyPartnerships": {
+          "title": "Dairy partnerships",
+          "body": "TODO_CONFIRM — first long-run dairy customers, if these may be named."
+        },
+        "capacityExpansion": {
+          "title": "Capacity expansion",
+          "body": "TODO_CONFIRM — the expansion that set current monthly output."
+        },
+        "today": {
+          "title": "Today",
+          "body": "TODO_CONFIRM — current output, format count and export markets."
+        }
+      }
     }
   },
   "contact": {
-    "placeholder": {
-      "eyebrow": "Phase 4",
-      "title": "Request a quote.",
-      "body": "The validated quote form and its route handler are built in Phase 4."
+    "eyebrow": "Request a quote",
+    "title": "Tell us the format and the volume.",
+    "intro": "The more specific the brief, the faster the answer. Fill, capacity, lid standard and monthly volume are usually enough to quote from.",
+    "panel": {
+      "title": "Direct",
+      "pending": "Contact details pending confirmation.",
+      "whatsapp": "WhatsApp",
+      "mapPending": "Map appears once the facility address is confirmed.",
+      "social": {
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "linkedin": "LinkedIn"
+      }
+    },
+    "form": {
+      "submit": "Send request",
+      "fields": {
+        "name": "Name",
+        "company": "Company",
+        "email": "Email",
+        "phone": "Phone",
+        "country": "Country",
+        "monthlyVolume": "Estimated monthly volume",
+        "productInterest": "Product interest",
+        "message": "Message"
+      },
+      "hints": {
+        "monthlyVolume": "Units per month, even approximate.",
+        "productInterest": "Select every format you want quoted."
+      },
+      "errors": {
+        "nameRequired": "Enter your name.",
+        "companyRequired": "Enter your company name.",
+        "emailInvalid": "Enter a valid email address.",
+        "phoneRequired": "Enter a phone number we can reach you on.",
+        "countryRequired": "Enter the destination country.",
+        "productRequired": "Select at least one format.",
+        "messageTooShort": "Tell us a little more — fill, capacity or lid standard."
+      },
+      "status": {
+        "submitting": "Sending…",
+        "successTitle": "Request received.",
+        "successBody": "We will come back with specifications and pricing. If it is urgent, call or message on WhatsApp.",
+        "error": "Something went wrong sending your request. Please try again.",
+        "network": "Could not reach the server. Check your connection and try again.",
+        "notConfigured": "The quote inbox is not connected yet. Please email or call us directly in the meantime."
+      }
     }
   }
 }

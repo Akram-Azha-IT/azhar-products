@@ -93,6 +93,23 @@
     font-weight: 500;
   }
 
+  /* Form control. 48px min height clears the 44px touch target on mobile. */
+  .form-input {
+    display: block;
+    width: 100%;
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+    background-color: var(--color-off-white);
+    border: 1px solid color-mix(in oklab, var(--color-teal-mid) 40%, transparent);
+    color: var(--color-ink);
+    font-size: 1rem; /* 16px — anything smaller triggers iOS auto-zoom. */
+    transition: border-color var(--duration-ui) var(--ease-brand);
+  }
+
+  .form-input:hover {
+    border-color: var(--color-teal-deep);
+  }
+
   /*
    * Line-mask primitive used by the text-reveal animation. The mask stays in
    * the DOM at rest so a failed/blocked animation can never hide content.
