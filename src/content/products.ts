@@ -55,74 +55,85 @@ function image(src: string, description: string): ProductImage {
   return { src, alt: localised(description) };
 }
 
+/*
+ * Slot order is deliberate: odd slots are single-unit shots, even slots are the
+ * matching stack shot. The card's hover swap uses images[1], so it always
+ * reveals the same format from a second angle rather than a different product.
+ */
 const WIDE_TUB_IMAGES: readonly ProductImage[] = [
   image(
     '/products/dairy/yogurt-tub-wide-1.webp',
-    'Wide thermoformed dairy tub with a rolled sealing rim and full-wrap printed sleeve',
+    'Wide thermoformed dairy tub with a rolled sealing rim, beaded foot and full-wrap printed sleeve',
   ),
   image(
     '/products/dairy/yogurt-tub-wide-2.webp',
-    'Wide dairy tub at a three-quarter angle, print running to the base',
+    'Wide dairy tubs nested in a stack beside two filled units, showing the beaded foot detail',
   ),
   image(
     '/products/dairy/yogurt-tub-wide-3.webp',
-    'Wide dairy tub with a banded print and reinforced stacking rib',
+    'Wide dairy tub with a deep banded print and reinforced stacking rib below the rim',
   ),
   image(
     '/products/dairy/yogurt-tub-wide-4.webp',
-    'Wide dairy tubs nested in a stack beside a single filled unit',
+    'Wide dairy tubs nested in a tall stack beside a single filled unit and one laid on its side',
   ),
-  image('/products/dairy/yogurt-tub-wide-5.webp', 'Wide dairy tub, side view'),
+  image(
+    '/products/dairy/yogurt-tub-wide-5.webp',
+    'Wide dairy tub with a shallow profile and print running from rim to foot',
+  ),
   image(
     '/products/dairy/yogurt-tub-wide-6.webp',
-    'Wide dairy tub with an alternate print treatment',
+    'Wide dairy tub, three-quarter view showing the rim roll and inner wall',
   ),
   image(
     '/products/dairy/yogurt-tub-wide-7.webp',
-    'Wide dairy tub showing its stacking profile',
+    'Wide dairy tub with a minimal print treatment, front view',
+  ),
+  image(
+    '/products/dairy/yogurt-tub-wide-8.webp',
+    'Wide dairy tubs nested in a stack beside a single unit, minimal print treatment',
+  ),
+  image(
+    '/products/dairy/yogurt-tub-wide-9.webp',
+    'Wide dairy tub in a lighter format, showing the stacking step under the rim',
+  ),
+  image(
+    '/products/dairy/yogurt-tub-wide-10.webp',
+    'Wide dairy tubs nested in a stack beside a single unit and one laid on its side',
   ),
 ];
 
 const TALL_CUP_IMAGES: readonly ProductImage[] = [
   image(
     '/products/dairy/yogurt-cup-tall-1.webp',
-    'Tall thermoformed yogurt cup with a printed sleeve, shown with a nested stack',
+    'Tall tapered thermoformed yogurt cup with a rolled rim and full-wrap printed sleeve',
   ),
   image(
     '/products/dairy/yogurt-cup-tall-2.webp',
-    'Tall yogurt cups, one tipped to show the base and stacking ribs',
-  ),
-  image('/products/dairy/yogurt-cup-tall-3.webp', 'Tall yogurt cup, front view'),
-  image(
-    '/products/dairy/yogurt-cup-tall-4.webp',
-    'Tall yogurt cup, three-quarter view',
+    'Tall yogurt cups nested in a stack beside a single unit and one laid on its side',
   ),
   image(
-    '/products/dairy/yogurt-cup-tall-5.webp',
-    'Tall yogurt cup with an alternate print treatment',
-  ),
-  image(
-    '/products/dairy/yogurt-cup-tall-6.webp',
-    'Tall yogurt cup showing its rim detail',
+    '/products/dairy/yogurt-cup-tall-3.webp',
+    'Tall yogurt cups shown as a deep nested stack beside two filled units',
   ),
 ];
 
 const POT_IMAGES: readonly ProductImage[] = [
   image(
     '/products/dairy/cream-cheese-pot-1.webp',
-    'Small cream cheese pot with a wide rim and full-wrap printed sleeve',
+    'Small cream cheese pot with a wide rolled rim, shallow body and full-wrap printed sleeve',
   ),
   image(
     '/products/dairy/cream-cheese-pot-2.webp',
-    'Cream cheese pots nested in a stack beside a single filled unit',
+    'Cream cheese pots nested in a stack beside a single unit and one laid on its side',
   ),
   image(
     '/products/dairy/cream-cheese-pot-3.webp',
-    'Cream cheese pot, three-quarter view',
+    'Cream cheese pot, three-quarter view showing the deep lid seat below the rim',
   ),
   image(
     '/products/dairy/cream-cheese-pot-4.webp',
-    'Cream cheese pot showing its lid seat',
+    'Cream cheese pots nested in a stack beside a single filled unit',
   ),
 ];
 

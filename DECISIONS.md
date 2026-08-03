@@ -322,11 +322,28 @@ The 17 files are all white thermoformed dairy packaging with customer print.
 They are grouped into three families by **shape**, which is what a buyer selects
 on: wide tub, tall cup, cream cheese pot.
 
-I visually inspected 8 of the 17 and placed those confidently. **The other 9 were
-distributed across the three galleries by inference, not inspection** — they may
-sit in the wrong family. Re-map any that are wrong in `scripts/image-map.json`
-and re-run `node scripts/process-images.mjs --map scripts/image-map.json`; no
-code changes needed.
+**All 17 have now been visually inspected and placed.** The first pass inferred
+9 of them from filename order without looking; on inspection **5 of those 9 were
+in the wrong family** — a 44% error rate, which is a fair measure of what
+guessing at this is worth. Corrected placements:
+
+| Render | Inferred | Actual |
+| --- | --- | --- |
+| `11.01.23 AM (2)` | tall cup | **cream cheese pot** |
+| `11.01.24 AM (2)` | tall cup | **wide tub** |
+| `11.01.24 AM (3)` | cream cheese pot | **wide tub** |
+| `11.01.25 AM (2)` | cream cheese pot | **wide tub** |
+| `11.01.25 AM (3)` | tall cup | **cream cheese pot** |
+
+Final split: 10 wide tubs, 3 tall cups, 4 cream cheese pots.
+
+Slot order within each family is deliberate — odd slots are single-unit shots,
+even slots the matching stack shot — because the card's hover swap uses
+`images[1]`, so it reveals the same format from a second angle rather than a
+different product.
+
+To change any placement: edit `scripts/image-map.json` and re-run
+`node scripts/process-images.mjs --map scripts/image-map.json`. No code changes.
 
 Alt text describes the packaging — rim, stacking ribs, lid seat — never the
 customer's printed brand.
