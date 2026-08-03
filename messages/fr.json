@@ -120,11 +120,52 @@
       "button": "TODO_TRANSLATE: Request a quote"
     }
   },
-  "products": {
-    "placeholder": {
-      "eyebrow": "TODO_TRANSLATE: Phase 3",
-      "title": "TODO_TRANSLATE: Catalogue.",
-      "body": "TODO_TRANSLATE: Product data model, sticky filter bar, animated grid and detail template are built in Phase 3."
+  "catalogue": {
+    "eyebrow": "TODO_TRANSLATE: Catalogue",
+    "title": "TODO_TRANSLATE: Formats, materials and volumes.",
+    "intro": "TODO_TRANSLATE: Filter by what matters to your line. Every format can be quoted with your own print, your own lid standard and your own carton count.",
+    "specPending": "TODO_TRANSLATE: Specification pending",
+    "capacity": "TODO_TRANSLATE: {value} ml",
+    "capacityUpTo": "TODO_TRANSLATE: Up to {value} ml",
+    "resultCount": "TODO_TRANSLATE: {count, plural, =0 {No products} one {# product} other {# products}}",
+    "filters": {
+      "category": "TODO_TRANSLATE: Category",
+      "material": "TODO_TRANSLATE: Material",
+      "application": "TODO_TRANSLATE: Application",
+      "capacity": "TODO_TRANSLATE: Capacity",
+      "clear": "TODO_TRANSLATE: Clear filters"
+    },
+    "applications": {
+      "yogurt": "TODO_TRANSLATE: Yogurt",
+      "creamCheese": "TODO_TRANSLATE: Cream cheese",
+      "dessert": "TODO_TRANSLATE: Dessert",
+      "foodService": "TODO_TRANSLATE: Food service"
+    },
+    "empty": {
+      "title": "TODO_TRANSLATE: Nothing matches that combination.",
+      "body": "TODO_TRANSLATE: Loosen a filter, or send us the format you need — most requests end in a custom mould anyway.",
+      "reset": "TODO_TRANSLATE: Clear filters"
+    }
+  },
+  "product": {
+    "backToCatalogue": "TODO_TRANSLATE: All products",
+    "specsTitle": "TODO_TRANSLATE: Specification",
+    "pending": "TODO_TRANSLATE: —",
+    "quoteCta": "TODO_TRANSLATE: Request a quote for this item",
+    "relatedTitle": "TODO_TRANSLATE: Related products",
+    "specs": {
+      "capacityMl": "TODO_TRANSLATE: Capacity",
+      "diameterMm": "TODO_TRANSLATE: Diameter",
+      "heightMm": "TODO_TRANSLATE: Height",
+      "material": "TODO_TRANSLATE: Material",
+      "lidCompatibility": "TODO_TRANSLATE: Lid compatibility",
+      "unitsPerCarton": "TODO_TRANSLATE: Units per carton",
+      "moq": "TODO_TRANSLATE: Minimum order"
+    },
+    "units": {
+      "ml": "TODO_TRANSLATE: ml",
+      "mm": "TODO_TRANSLATE: mm",
+      "units": "TODO_TRANSLATE: units"
     }
   },
   "about": {

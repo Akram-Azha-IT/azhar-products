@@ -2,12 +2,18 @@ import type { MetadataRoute } from 'next';
 
 import { COMPANY } from '@/content/company';
 import { locales } from '@/i18n/routing';
+import { PRODUCTS } from '@/content/products';
 
-const ROUTES = ['', '/products', '/about', '/contact'] as const;
+const STATIC_ROUTES = ['', '/products', '/about', '/contact'] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const routes = [
+    ...STATIC_ROUTES,
+    ...PRODUCTS.map((product) => `/products/${product.slug}` as const),
+  ];
+
   return locales.flatMap((locale) =>
-    ROUTES.map((route) => ({
+    routes.map((route) => ({
       url: `${COMPANY.siteUrl}/${locale}${route}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,

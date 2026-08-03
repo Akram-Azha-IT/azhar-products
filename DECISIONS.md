@@ -124,6 +124,63 @@ slot is identical width and the loop is exact.
 
 ---
 
+## Phase 3 — Catalogue
+
+### D13. Built against the conservative reading of the imagery question
+
+`images/` holds customer-branded packaging — RAiB, Activia/Danone, Yopolis, GADO.
+Whether Azhar may publish those is a question only you can answer, so Phase 3 was
+built assuming **it may not**: no client imagery is referenced anywhere, and every
+image slot renders a placeholder block naming the file it wants.
+
+Switching to "cleared reference work" is a content edit — fill in
+`scripts/image-map.json`, run the pipeline, point `images` arrays at the output.
+No component changes. The full question is written up at the top of `IMAGES.md`.
+
+### D14. The catalogue is scaffold data, and says so
+
+`PRODUCTS` holds eight positional entries (`dairy-format-a` …) with **every spec
+null**. The brief forbids inventing specs, and a catalogue is nothing but specs,
+so the alternative was an empty array that makes the whole feature unreviewable.
+
+The machinery is real: filtering, URL state, stagger animation, spec table,
+related products, JSON-LD and 24 statically-generated detail pages all work. Only
+the values are pending. Replace the entries and everything lights up.
+
+### D15. Filter facets are derived from data, never hardcoded
+
+`deriveFacets()` reads the available values out of `PRODUCTS`. A filter group with
+no values does not render — which is why the bar currently shows only Category.
+As materials, capacities and applications get filled in, their groups appear on
+their own. This also means the bar can never offer a filter that returns nothing.
+
+### D16. Filter state syncs to the URL without `useSearchParams`
+
+Same reasoning as D7: `useSearchParams()` would deopt `/products` out of static
+rendering. Instead the hook reads `window.location.search` once on mount and
+writes back with `history.replaceState`. Filtered URLs stay shareable and the page
+stays statically served.
+
+### D17. JSON-LD omits unconfirmed fields rather than emitting placeholders
+
+`ProductJsonLd` only writes `material` and `image` when real values exist. Feeding
+an em dash or a guessed capacity into structured data would publish a claim to
+search engines that nobody can stand behind.
+
+### D18. The image pipeline pads to white, not cream
+
+The brief's instinct — pad product shots out to the cream background — cannot work
+here. These are white cups on a white sweep; any threshold separating background
+from product also eats the rim, lid seat and stacking ribs. Proper cut-outs are
+retouching, not scripting.
+
+So `process-images.mjs` trims, re-pads to 4:5 **on white**, resizes to 1600px,
+writes WebP + AVIF and a blur placeholder — and the UI presents product images on
+an `--off-white` surface so the plate reads as an editorial choice. Supply cut-out
+PNGs with real transparency and the script gets a cream branch instead.
+
+---
+
 ## Open items
 
 - **First Load JS on `/` is 167 kB**, over the 150 kB landing budget. GSAP +

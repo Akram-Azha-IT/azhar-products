@@ -120,11 +120,52 @@
       "button": "Request a quote"
     }
   },
-  "products": {
-    "placeholder": {
-      "eyebrow": "Phase 3",
-      "title": "Catalogue.",
-      "body": "Product data model, sticky filter bar, animated grid and detail template are built in Phase 3."
+  "catalogue": {
+    "eyebrow": "Catalogue",
+    "title": "Formats, materials and volumes.",
+    "intro": "Filter by what matters to your line. Every format can be quoted with your own print, your own lid standard and your own carton count.",
+    "specPending": "Specification pending",
+    "capacity": "{value} ml",
+    "capacityUpTo": "Up to {value} ml",
+    "resultCount": "{count, plural, =0 {No products} one {# product} other {# products}}",
+    "filters": {
+      "category": "Category",
+      "material": "Material",
+      "application": "Application",
+      "capacity": "Capacity",
+      "clear": "Clear filters"
+    },
+    "applications": {
+      "yogurt": "Yogurt",
+      "creamCheese": "Cream cheese",
+      "dessert": "Dessert",
+      "foodService": "Food service"
+    },
+    "empty": {
+      "title": "Nothing matches that combination.",
+      "body": "Loosen a filter, or send us the format you need — most requests end in a custom mould anyway.",
+      "reset": "Clear filters"
+    }
+  },
+  "product": {
+    "backToCatalogue": "All products",
+    "specsTitle": "Specification",
+    "pending": "—",
+    "quoteCta": "Request a quote for this item",
+    "relatedTitle": "Related products",
+    "specs": {
+      "capacityMl": "Capacity",
+      "diameterMm": "Diameter",
+      "heightMm": "Height",
+      "material": "Material",
+      "lidCompatibility": "Lid compatibility",
+      "unitsPerCarton": "Units per carton",
+      "moq": "Minimum order"
+    },
+    "units": {
+      "ml": "ml",
+      "mm": "mm",
+      "units": "units"
     }
   },
   "about": {
