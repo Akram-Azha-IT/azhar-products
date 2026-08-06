@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 
-/** `true` tant que la requête média correspond. Sûr au premier rendu côté serveur. */
-export function useMediaQuery(query: string): boolean {
-  const [matches, setMatches] = useState(() =>
-    typeof window === 'undefined' ? false : window.matchMedia(query).matches,
-  );
+/**
+ * `true` tant que la requête média correspond.
+ *
+ * La valeur n'est lue qu'après montage : le premier rendu client est donc
+ * identique au rendu prérendu, sans écart d'hydratation. `defaultValue` décrit
+ * ce que voit le serveur, donc l'hypothèse mobile par défaut.
+ */
+export function useMediaQuery(query: string, defaultValue = false): boolean {
+  const [matches, setMatches] = useState(defaultValue);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia(query);

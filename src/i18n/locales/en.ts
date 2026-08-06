@@ -2,9 +2,62 @@ import type { Dictionary } from '../types';
 
 export const en: Dictionary = {
   meta: {
-    title: 'Azhar Products: packaging, PET preforms, plastic fittings and bins',
+    title: 'Azhar Products: food packaging, PET preforms and plastic fittings in Mohammedia',
     description:
-      'Azhar Products: food and deli packaging, PET preforms and closures, PE, PVC and PP plastic fittings, logistics crates and pallets, HDPE bins in 120, 240 and 360 litres. Mohammedia, Morocco.',
+      'Manufacturer and distributor in Mohammedia, Morocco: food and deli packaging, PET preforms and closures, PE, PVC and PP plastic fittings, logistics crates and pallets, HDPE bins in 120, 240 and 360 litres. Quotes within 48 hours across Morocco.',
+    summary:
+      'Azhar Products is a Moroccan manufacturer and distributor of plastic and board packaging based in Mohammedia, covering five families: food packaging, PET preforms and closures, plastic building fittings, logistics crates and pallets, and HDPE bins.',
+    areaServed: ['Mohammedia', 'Casablanca', 'Rabat', 'Morocco', 'North Africa'],
+  },
+  h1: 'Azhar Products, manufacturer of food packaging, PET preforms and plastic fittings in Mohammedia, Morocco',
+  faq: {
+    eyebrow: 'Frequently asked questions',
+    title: 'What buyers\nask us first',
+    lead: 'The questions that come up in every consultation. For anything specific, write to us: the answer comes back with a sample and a price.',
+    items: [
+      {
+        id: 'produits',
+        question: 'What does Azhar Products manufacture and distribute?',
+        answer:
+          'Five families. Food and deli packaging: thermoformed dairy pots, cups, PET trays, kraft and bagasse. PET preforms and closures, with PCO, 1881, 1810 and 30/25 necks. Plastic building fittings in PE, PVC and PP, together with PPR pipes. Logistics crates, palox bins and pallets. HDPE bins in 120, 240 and 360 litres.',
+      },
+      {
+        id: 'contenances',
+        question: 'What pot and cup capacities are available?',
+        answer:
+          'From a 100 ml pot to a 1 litre bowl. The most requested formats are the 105 g high-speed pot, the 170 g stackable tapered pot, the 200 g wide-opening low pot, the 250 ml cup and the 500 ml wide-flange pot. Sauce cups run from 30 to 120 ml.',
+      },
+      {
+        id: 'decor',
+        question: 'What decoration methods do you offer?',
+        answer:
+          'Three techniques, chosen for the run size, the shelf life and the budget. In-mould labelling, fused into the material so it never peels along the cold chain. Four-colour shrink sleeves covering the full body. Direct offset printing up to six colours plus gold. All decoration is done in house.',
+      },
+      {
+        id: 'zone',
+        question: 'Do you deliver outside Mohammedia?',
+        answer:
+          'Yes. The site sits in Mohammedia, between Casablanca and Rabat, and we deliver across Morocco. Export orders ship palletised and wrapped, with a thickened container base on references built for long-distance transport.',
+      },
+      {
+        id: 'conformite',
+        question: 'Is your packaging food-contact compliant?',
+        answer:
+          'Yes. The virgin materials we use are certified for food contact, with batch traceability and a dimensional check at every production start-up. Materials in use are PS, PP, PET, HDPE and sugarcane fibre.',
+      },
+      {
+        id: 'devis',
+        question: 'How do I get a quote and a sample?',
+        answer:
+          'Send the annual volume, target capacity, material and decoration type by email to info@azhar-cons.com, or call +212 521 226 130. The reply includes a sample and a price. For an existing container, a photo and a capacity are enough to start.',
+      },
+      {
+        id: 'personnalisation',
+        question: 'Can a container be customised to our brand?',
+        answer:
+          'Yes, and in most cases without new tooling. The same pot body carries different brand decorations in turn: only the decoration module changes. That is what shortens the time between an approved mock-up and the first pallet delivered.',
+      },
+    ],
   },
   nav: {
     links: {

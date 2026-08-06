@@ -5,6 +5,7 @@ import Ranges from './components/Ranges';
 import Catalogue from './components/Catalogue';
 import Expertise from './components/Expertise';
 import Atelier from './components/Atelier';
+import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -19,6 +20,7 @@ export default function App() {
         <Catalogue />
         <Expertise />
         <Atelier />
+        <Faq />
         <Contact />
       </main>
       <Footer />

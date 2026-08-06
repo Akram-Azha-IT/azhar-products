@@ -7,9 +7,18 @@ import type { ProductCopy } from '../i18n';
 /** Secondes par carte : une famille longue défile plus longtemps, pas plus vite. */
 const SECONDS_PER_CARD = 5.2;
 
-function ProductCard({ product, copy }: { product: Product; copy: ProductCopy }) {
+function ProductCard({
+  product,
+  copy,
+  isDuplicate,
+}: {
+  product: Product;
+  copy: ProductCopy;
+  isDuplicate: boolean;
+}) {
   return (
     <article
+      aria-hidden={isDuplicate || undefined}
       className="group relative mr-3 w-[248px] shrink-0 overflow-hidden rounded-2xl p-5 sm:mr-5 sm:w-[288px] sm:rounded-3xl"
       style={{ backgroundColor: product.panel }}
     >
@@ -117,11 +126,17 @@ export default function Catalogue() {
                     n: items.length,
                   })}
                 >
+                  {/*
+                   * La piste contient deux fois la liste pour boucler. Le second
+                   * exemplaire est masqué aux lecteurs d'écran et aux moteurs :
+                   * sans cela, chaque référence compterait en double.
+                   */}
                   {[...items, ...items].map((product, cardIndex) => (
                     <ProductCard
                       key={`${product.id}-${cardIndex}`}
                       product={product}
                       copy={t.catalogue.products[product.id]}
+                      isDuplicate={cardIndex >= items.length}
                     />
                   ))}
                 </div>

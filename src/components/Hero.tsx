@@ -76,9 +76,8 @@ export default function Hero() {
   const [isAnimating, setIsAnimating] = useState(false);
   // En dessous de cette largeur, le bloc de texte ne tient plus à côté du produit :
   // on passe à l'empilement vertical (produit au-dessus, texte dessous).
-  const [isCompact, setIsCompact] = useState(
-    () => typeof window === 'undefined' || window.innerWidth < COMPACT_BREAKPOINT,
-  );
+  // Le prérendu part de l'hypothèse compacte, corrigée après montage.
+  const [isCompact, setIsCompact] = useState(true);
 
   useEffect(() => {
     HERO_PRODUCTS.forEach((product) => {
@@ -89,6 +88,7 @@ export default function Hero() {
 
   useEffect(() => {
     const onResize = () => setIsCompact(window.innerWidth < COMPACT_BREAKPOINT);
+    onResize();
     window.addEventListener('resize', onResize);
     return () => window.removeEventListener('resize', onResize);
   }, []);
@@ -132,6 +132,13 @@ export default function Hero() {
         transition: `background-color ${SWAP_MS}ms ${EASE}`,
       }}
     >
+      {/*
+       * Seul titre de niveau 1 de la page. Il porte la requête réelle des
+       * prospects ; le visuel du héros ne peut pas la porter puisqu'il change
+       * de produit toutes les 2,6 secondes.
+       */}
+      <h1 className="sr-only">{t.h1}</h1>
+
       <div className="relative h-[100svh] w-full overflow-hidden">
         <div className="grain pointer-events-none absolute inset-0 z-50" />
 

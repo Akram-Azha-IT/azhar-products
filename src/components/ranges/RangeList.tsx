@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from 'motion/react';
+import { motion } from 'motion/react';
 import { Plus } from 'lucide-react';
 import { RANGES } from '../../data/ranges';
 import { useI18n } from '../../i18n';
@@ -53,49 +53,42 @@ export default function RangeList({ activeIndex, onActivate }: RangeListProps) {
               />
             </button>
 
-            <AnimatePresence initial={false}>
-              {isActive && (
-                <motion.div
-                  id={panelId}
-                  key="panel"
-                  initial={{ height: 0, opacity: 0 }}
-                  animate={{ height: 'auto', opacity: 1 }}
-                  exit={{ height: 0, opacity: 0 }}
-                  transition={{ duration: 0.42, ease: EASE }}
-                  className="overflow-hidden"
-                >
-                  <div className="px-4 pb-4">
-                    <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-xl">
-                      <img
-                        src={range.image}
-                        alt={copy.alt}
-                        loading="lazy"
-                        className="h-full w-full object-cover"
-                      />
-                      <div className="grain pointer-events-none absolute inset-0" />
-                    </div>
-                    <p className="text-ink-soft mb-3 text-[13px] leading-relaxed">{copy.lead}</p>
-                    <ul className="flex flex-wrap gap-1.5">
-                      {copy.bullets.map((bullet, bulletIndex) => (
-                        <motion.li
-                          key={bullet}
-                          initial={{ opacity: 0, y: 8 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{
-                            duration: 0.3,
-                            ease: EASE,
-                            delay: 0.12 + bulletIndex * 0.05,
-                          }}
-                          className="border-ink/15 text-ink/70 rounded-full border px-2.5 py-1 text-[11px] leading-none"
-                        >
-                          {bullet}
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+            {/*
+             * Le contenu reste monté et se replie par la hauteur. Démonter le
+             * panneau le retirerait du HTML, donc de tout ce qu'un robot sans
+             * moteur de script peut lire.
+             */}
+            <motion.div
+              id={panelId}
+              initial={false}
+              animate={{ height: isActive ? 'auto' : 0, opacity: isActive ? 1 : 0 }}
+              transition={{ duration: 0.42, ease: EASE }}
+              aria-hidden={!isActive}
+              className="overflow-hidden"
+            >
+              <div className="px-4 pb-4">
+                <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-xl">
+                  <img
+                    src={range.image}
+                    alt={copy.alt}
+                    loading="lazy"
+                    className="h-full w-full object-cover"
+                  />
+                  <div className="grain pointer-events-none absolute inset-0" />
+                </div>
+                <p className="text-ink-soft mb-3 text-[13px] leading-relaxed">{copy.lead}</p>
+                <ul className="flex flex-wrap gap-1.5">
+                  {copy.bullets.map((bullet) => (
+                    <li
+                      key={bullet}
+                      className="border-ink/15 text-ink/70 rounded-full border px-2.5 py-1 text-[11px] leading-none"
+                    >
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
           </li>
         );
       })}

@@ -2,9 +2,62 @@ import type { Dictionary } from '../types';
 
 export const de: Dictionary = {
   meta: {
-    title: 'Azhar Products: Verpackung, PET-Preforms, Kunststoff-Fittings und Tonnen',
+    title: 'Azhar Products: Lebensmittelverpackung, PET-Preforms und Fittings in Mohammedia',
     description:
-      'Azhar Products: Lebensmittel- und Cateringverpackung, PET-Preforms und Verschlüsse, Kunststoff-Fittings aus PE, PVC und PP, Logistikbehälter und Paletten, HDPE-Tonnen mit 120, 240 und 360 Litern. Mohammedia, Marokko.',
+      'Hersteller und Händler in Mohammedia, Marokko: Lebensmittel- und Cateringverpackung, PET-Preforms und Verschlüsse, Kunststoff-Fittings aus PE, PVC und PP, Logistikbehälter und Paletten, HDPE-Tonnen mit 120, 240 und 360 Litern. Angebot innerhalb von 48 Stunden.',
+    summary:
+      'Azhar Products ist ein marokkanischer Hersteller und Händler für Kunststoff- und Kartonverpackungen mit Sitz in Mohammedia und deckt fünf Familien ab: Lebensmittelverpackung, PET-Preforms und Verschlüsse, Kunststoff-Fittings für den Bau, Logistikbehälter und Paletten sowie HDPE-Tonnen.',
+    areaServed: ['Mohammedia', 'Casablanca', 'Rabat', 'Marokko', 'Nordafrika'],
+  },
+  h1: 'Azhar Products, Hersteller von Lebensmittelverpackung, PET-Preforms und Kunststoff-Fittings in Mohammedia, Marokko',
+  faq: {
+    eyebrow: 'Häufige Fragen',
+    title: 'Was Einkäufer\nzuerst fragen',
+    lead: 'Die Fragen, die in jeder Beratung wiederkehren. Für konkrete Fälle schreiben Sie uns: die Antwort kommt mit Muster und Preis.',
+    items: [
+      {
+        id: 'produits',
+        question: 'Was stellt Azhar Products her und vertreibt es?',
+        answer:
+          'Fünf Familien. Lebensmittel- und Cateringverpackung: tiefgezogene Molkereibecher, Becher, PET-Schalen, Kraft und Bagasse. PET-Preforms und Verschlüsse mit den Hälsen PCO, 1881, 1810 und 30/25. Kunststoff-Fittings für den Bau aus PE, PVC und PP samt PPR-Rohren. Logistikbehälter, Palox und Paletten. HDPE-Tonnen mit 120, 240 und 360 Litern.',
+      },
+      {
+        id: 'contenances',
+        question: 'Welche Becher- und Schalengrößen sind verfügbar?',
+        answer:
+          'Vom 100-ml-Becher bis zur 1-Liter-Schale. Am häufigsten gefragt sind der 105-g-Hochleistungsbecher, der konische 170-g-Stapelbecher, der flache 200-g-Becher mit weiter Öffnung, der 250-ml-Becher und der 500-ml-Becher mit breitem Bördelrand. Saucenbecher gibt es von 30 bis 120 ml.',
+      },
+      {
+        id: 'decor',
+        question: 'Welche Dekorverfahren bieten Sie an?',
+        answer:
+          'Drei Techniken, gewählt nach Auflage, Haltbarkeit und Budget. In-Mould-Label, fest im Material, das sich in der Kühlkette nicht ablöst. Vierfarbiger Schrumpfsleeve über den gesamten Mantel. Direkter Offsetdruck bis zu sechs Farben plus Gold. Das Dekor entsteht im eigenen Haus.',
+      },
+      {
+        id: 'zone',
+        question: 'Liefern Sie auch außerhalb von Mohammedia?',
+        answer:
+          'Ja. Der Standort liegt in Mohammedia zwischen Casablanca und Rabat, und wir liefern in ganz Marokko. Exportaufträge gehen palettiert und gewickelt hinaus, mit verstärktem Behälterboden bei Referenzen für den Ferntransport.',
+      },
+      {
+        id: 'conformite',
+        question: 'Sind Ihre Verpackungen lebensmittelecht?',
+        answer:
+          'Ja. Die eingesetzte Neuware ist für den Lebensmittelkontakt zertifiziert, mit Chargenrückverfolgung und Maßkontrolle bei jedem Serienanlauf. Verwendet werden PS, PP, PET, HDPE und Zuckerrohrfaser.',
+      },
+      {
+        id: 'devis',
+        question: 'Wie erhalte ich ein Angebot und ein Muster?',
+        answer:
+          'Senden Sie Jahresmenge, Zielvolumen, Material und Dekorart per E-Mail an info@azhar-cons.com oder rufen Sie +212 521 226 130 an. Die Antwort enthält Muster und Preis. Für einen bestehenden Behälter genügen ein Foto und eine Volumenangabe.',
+      },
+      {
+        id: 'personnalisation',
+        question: 'Lässt sich ein Behälter auf unsere Marke anpassen?',
+        answer:
+          'Ja, in den meisten Fällen ohne neues Werkzeug. Derselbe Becherkörper trägt abwechselnd Dekore verschiedener Marken: nur das Dekormodul wechselt. Genau das verkürzt die Zeit vom freigegebenen Muster bis zur ersten gelieferten Palette.',
+      },
+    ],
   },
   nav: {
     links: {

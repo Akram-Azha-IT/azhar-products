@@ -2,9 +2,63 @@ import type { Dictionary } from '../types';
 
 export const fr: Dictionary = {
   meta: {
-    title: 'Azhar Products : emballage, préformes PET, raccords plastiques et poubelles',
+    title:
+      'Azhar Products : emballage alimentaire, préformes PET et raccords plastiques à Mohammedia',
     description:
-      'Azhar Products : emballage alimentaire et traiteur, préformes PET et bouchons, raccords plastiques PE, PVC et PP, bacs et palettes logistiques, poubelles PEHD 120, 240 et 360 litres. Mohammedia, Maroc.',
+      'Fabricant et distributeur à Mohammedia : emballage alimentaire et traiteur, préformes PET et bouchons, raccords plastiques PE, PVC et PP, bacs et palettes logistiques, poubelles PEHD 120, 240 et 360 litres. Devis sous 48 h pour tout le Maroc.',
+    summary:
+      "Azhar Products est un fabricant et distributeur marocain d'emballages plastiques et carton basé à Mohammedia, qui couvre cinq familles : emballage alimentaire, préformes PET et bouchons, raccords plastiques bâtiment, bacs et palettes logistiques, poubelles PEHD.",
+    areaServed: ['Mohammedia', 'Casablanca', 'Rabat', 'Maroc', 'Afrique du Nord'],
+  },
+  h1: "Azhar Products, fabricant d'emballage alimentaire, de préformes PET et de raccords plastiques à Mohammedia, Maroc",
+  faq: {
+    eyebrow: 'Questions fréquentes',
+    title: 'Ce que\nles clients demandent',
+    lead: 'Les réponses aux questions qui reviennent en consultation. Pour un cas précis, écrivez-nous : la réponse arrive avec un échantillon et un prix.',
+    items: [
+      {
+        id: 'produits',
+        question: 'Quels produits Azhar Products fabrique-t-il et distribue-t-il ?',
+        answer:
+          "Cinq familles. L'emballage alimentaire et traiteur : pots laitiers thermoformés, gobelets, barquettes PET, kraft et bagasse. Les préformes PET et bouchons, cols PCO, 1881, 1810 et 30/25. Les raccords plastiques bâtiment en PE, PVC et PP, avec les tubes PPR. Les bacs, palox et palettes logistiques. Les poubelles PEHD de 120, 240 et 360 litres.",
+      },
+      {
+        id: 'contenances',
+        question: 'Quelles contenances de pots et de gobelets sont disponibles ?',
+        answer:
+          "Du pot de 100 ml au bol de 1 litre. Les formats les plus demandés sont le pot 105 g haute cadence, le pot conique 170 g empilable, le pot bas 200 g à large ouverture, le gobelet 250 ml et le pot à collerette large 500 ml. Les godets à sauce vont de 30 à 120 ml.",
+      },
+      {
+        id: 'decor',
+        question: 'Quels types de décor proposez-vous ?',
+        answer:
+          "Trois techniques, choisies selon la série, la durée de vie et le budget. L'étiquette in-mould intégrée à la matière, qui ne se décolle pas en chaîne du froid. Le sleeve rétractable quadri, qui habille toute la robe. L'impression offset directe jusqu'à six couleurs plus or. Le décor est réalisé en interne.",
+      },
+      {
+        id: 'zone',
+        question: 'Livrez-vous en dehors de Mohammedia ?',
+        answer:
+          "Oui. Le site est à Mohammedia, entre Casablanca et Rabat, et nous livrons tout le Maroc. Les commandes export partent palettisées et filmées, avec un fond de contenant épaissi sur les références destinées au transport longue distance.",
+      },
+      {
+        id: 'conformite',
+        question: 'Vos emballages sont-ils conformes au contact alimentaire ?',
+        answer:
+          'Oui. Les matières vierges utilisées sont certifiées contact alimentaire, avec traçabilité par lot et contrôle dimensionnel à chaque démarrage de série. Les matières employées sont le PS, le PP, le PET, le PEHD et la fibre de canne à sucre.',
+      },
+      {
+        id: 'devis',
+        question: 'Comment obtenir un devis et un échantillon ?',
+        answer:
+          "Envoyez le volume annuel, la contenance visée, la matière et le type de décor par e-mail à info@azhar-cons.com ou appelez le +212 521 226 130. La réponse comprend un échantillon et un prix. Pour un contenant existant, une photo et une contenance suffisent à lancer l'étude.",
+      },
+      {
+        id: 'personnalisation',
+        question: 'Peut-on personnaliser un contenant à notre marque ?',
+        answer:
+          "Oui, et sans nouvel outillage dans la plupart des cas. Le même corps de pot porte tour à tour des décors de marques différentes : seul le module de décor change. C'est ce qui raccourcit le délai entre la maquette validée et la première palette livrée.",
+      },
+    ],
   },
   nav: {
     links: {

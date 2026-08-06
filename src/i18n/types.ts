@@ -46,11 +46,30 @@ export type NavKey = 'univers' | 'catalogue' | 'savoirFaire' | 'atelier' | 'cont
 
 export type StepId = 'matiere' | 'decor' | 'conformite' | 'recyclage';
 
+/** Question visible dans la page et reprise en JSON-LD `FAQPage`. */
+export type FaqItem = {
+  id: string;
+  question: string;
+  answer: string;
+};
+
 export type Dictionary = {
-  /** Titre et description injectés dans le `<head>` au changement de langue. */
+  /** Titre et description écrits dans le `<head>` de la page prérendue. */
   meta: {
     title: string;
     description: string;
+    /** Résumé d'une phrase repris par les moteurs génératifs. */
+    summary: string;
+    /** Zone couverte, citée en JSON-LD et dans le pied de page. */
+    areaServed: string[];
+  };
+  /** Titre de niveau 1, réservé aux lecteurs d'écran et aux robots. */
+  h1: string;
+  faq: {
+    eyebrow: string;
+    title: string;
+    lead: string;
+    items: FaqItem[];
   };
   nav: {
     links: Record<NavKey, string>;

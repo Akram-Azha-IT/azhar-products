@@ -1,0 +1,8 @@
+# Photos sources uniquement utiles au détourage local : les visuels finaux
+# servis par le site sont déjà dans public/.
+images/
+
+# scripts/ n'est PAS exclu : le build appelle scripts/prerender.mjs.
+
+*.local
+.vite
