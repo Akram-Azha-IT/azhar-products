@@ -54,14 +54,15 @@ export default function LanguageSwitcher({
         aria-label={t.nav.ariaLanguage}
         aria-expanded={isOpen}
         onClick={() => setIsOpen((open) => !open)}
-        className={`flex items-center gap-2 rounded-full py-1.5 pl-2 pr-2.5 text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors duration-200 ${
+        className={`flex shrink-0 items-center gap-1.5 rounded-full py-1.5 pl-2 pr-2 text-[11px] font-semibold uppercase tracking-[0.12em] transition-colors duration-200 sm:gap-2 sm:pr-2.5 ${
           isDark
             ? 'bg-bone/10 text-bone hover:bg-bone/20'
             : 'bg-ink/[0.07] text-ink hover:bg-ink/[0.12]'
         }`}
       >
         <FlagIcon locale={locale} uid={`trigger-${tone}`} className="h-3.5 w-5" />
-        {SHORT_LABELS[locale]}
+        {/* Sur très petit écran, le drapeau suffit à identifier la langue. */}
+        <span className="hidden sm:inline">{SHORT_LABELS[locale]}</span>
         <ChevronDown
           size={13}
           strokeWidth={2.5}

@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from 'motion/react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { HERO_PRODUCTS } from '../data/products';
 import { useI18n } from '../i18n';
+import HeroBrand from './HeroBrand';
 
 const SWAP_MS = 650;
 /** Enchaînement le plus court possible : la transition dure déjà SWAP_MS. */
@@ -141,6 +142,8 @@ export default function Hero() {
 
       <div className="relative h-[100svh] w-full overflow-hidden">
         <div className="grain pointer-events-none absolute inset-0 z-50" />
+
+        <HeroBrand />
 
         {/* Halo clair sous le pot central : détache le produit du fond coloré. */}
         <div

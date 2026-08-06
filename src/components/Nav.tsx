@@ -38,9 +38,18 @@ export default function Nav() {
           isScrolled ? 'py-3' : 'py-5'
         }`}
       >
-        <a href="#accueil" className="flex items-center gap-3">
-          <img src="/brand/logo.png" alt={COMPANY.name} className="h-10 w-auto" />
-          <span className="text-ink whitespace-nowrap text-xs font-semibold uppercase tracking-[0.18em]">
+        <a href="#accueil" className="flex min-w-0 shrink items-center gap-3">
+          <img
+            src="/brand/logo.png"
+            alt={COMPANY.name}
+            className="h-9 w-auto shrink-0 sm:h-10"
+          />
+          {/*
+           * Sous 640 px, le nom ne tient plus à côté du sélecteur de langue et du
+           * bouton de devis : le logo porte seul la marque, son texte alternatif
+           * garde le nom accessible.
+           */}
+          <span className="text-ink hidden whitespace-nowrap text-xs font-semibold uppercase tracking-[0.18em] sm:inline">
             {COMPANY.name}
           </span>
         </a>
@@ -66,11 +75,11 @@ export default function Nav() {
           </a>
         </nav>
 
-        <div className="flex items-center gap-2 lg:hidden">
+        <div className="flex shrink-0 items-center gap-2 lg:hidden">
           <LanguageSwitcher />
           <a
             href="#contact"
-            className="bg-ink text-bone rounded-full px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em]"
+            className="bg-ink text-bone shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.14em]"
           >
             {t.nav.quoteShort}
           </a>
