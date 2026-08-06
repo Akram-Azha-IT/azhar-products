@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Azhar Products : site vitrine
 
-## Getting Started
+Site vitrine Azhar Products : emballage alimentaire et traiteur, préformes PET et bouchons,
+raccords plastiques bâtiment, bacs et palettes logistiques, poubelles PEHD. React 19 +
+TypeScript + Vite + Tailwind CSS v4, animations avec `motion` (Framer Motion) et icônes
+`lucide-react`.
 
-First, run the development server:
+Convention de rédaction : pas de tiret cadratin dans les textes du site.
+
+## Démarrer
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # tsc + build production dans dist/
+npm run preview
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+images/                  photos sources (fond studio blanc) et fiches de gamme
+public/products/*.webp   produits détourés servis par le site
+public/ranges/*.webp     photos produit extraites des fiches de gamme (section Univers)
+public/brand/logo.png    logo
+scripts/cutout.mjs       détourage automatique des photos produits
+scripts/banners.mjs      extraction de la zone photo des fiches de gamme
+src/data/products.ts     catalogue (27 références) et 3 familles filtrables
+src/data/ranges.ts       les 5 univers présentés en section Univers
+src/data/company.ts      raison sociale, téléphone, e-mail, adresse
+src/components/          Hero, Nav, Marquee, Ranges, Catalogue, Expertise, Atelier, Contact, Footer
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Détourage des visuels
 
-## Learn More
+`npm run cutout` régénère `public/products/*.webp` à partir de `images/`. Le fond studio blanc
+est supprimé par remplissage par diffusion depuis les bords, suivi d'une ouverture
+morphologique (les hautes lumières à l'intérieur du pot sont préservées) puis d'un adoucissement
+du canal alpha.
 
-To learn more about Next.js, take a look at the following resources:
+Variables utiles :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `BG_LUMA` (défaut `241`) : seuil de luminance du fond. Plus bas = plus d'ombre retirée, mais
+  risque de percer le corps blanc du pot.
+- `ONLY=raib-solo,gado` : ne retraiter que certaines images.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Un seuil par image se déclare directement dans la table `FILES` :
+`'image21.png': { name: 'kraft-cup-carrier', luma: 210 }`. Utile pour les fonds gris et les
+produits sombres (kraft, PPR noir), dont l'ombre portée reste trop foncée pour le seuil global.
 
-## Deploy on Vercel
+`node scripts/banners.mjs` régénère `public/ranges/*.webp` : les bandes noires des captures
+d'écran sont détectées ligne par ligne, puis la zone photo est extraite via le champ `crop`
+(fractions left, top, width, height). Le texte et les coordonnées des fiches ne sont jamais
+repris dans le site.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Pour ajouter un produit : ajouter la photo dans `images/`, la référencer dans la table `FILES`
+de `scripts/cutout.mjs`, relancer `npm run cutout`, puis ajouter l'entrée dans
+`src/data/products.ts`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## À compléter avant mise en ligne
+
+Les coordonnées (`src/data/company.ts`) proviennent des fiches de gamme Azhar Products. En
+revanche, les caractéristiques produits (contenances, décors, diamètres) et les chiffres de
+`src/components/Atelier.tsx` ont été déduits des visuels : à relire et corriger.
