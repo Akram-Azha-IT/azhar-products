@@ -11,7 +11,7 @@ const DIST = 'dist';
 const SERVER_ENTRY = pathToFileURL(join(process.cwd(), 'dist-ssr/entry-server.js')).href;
 
 /** Domaine canonique. Une seule valeur à changer pour un domaine personnalisé. */
-const SITE_URL = process.env.SITE_URL ?? 'https://azhar-products.vercel.app';
+const SITE_URL = process.env.SITE_URL ?? 'https://azhar-products.com';
 
 const LOCALES = ['fr', 'en', 'de'];
 const LOCALE_PATHS = { fr: '/', en: '/en/', de: '/de/' };

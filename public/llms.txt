@@ -12,9 +12,9 @@ Langues du site : français, anglais, allemand
 
 ## Pages
 
-- [Site en français](https://azhar-products.vercel.app/) : catalogue complet, savoir-faire, FAQ
-- [Site en anglais](https://azhar-products.vercel.app/en/) : same content in English
-- [Site en allemand](https://azhar-products.vercel.app/de/) : gleicher Inhalt auf Deutsch
+- [Site en français](https://azhar-products.com/) : catalogue complet, savoir-faire, FAQ
+- [Site en anglais](https://azhar-products.com/en/) : same content in English
+- [Site en allemand](https://azhar-products.com/de/) : gleicher Inhalt auf Deutsch
 
 ## Familles de produits
 

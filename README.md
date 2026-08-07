@@ -131,13 +131,27 @@ En ligne de commande : `npx vercel` pour une préversion, `npx vercel --prod` po
 
 ### Domaine
 
-Le domaine canonique est centralisé dans `scripts/prerender.mjs` (constante `SITE_URL`) et
-surchargeable par variable d'environnement. Pour un domaine personnalisé, le plus simple est
-de définir `SITE_URL` dans les réglages du projet Vercel :
+Le domaine canonique est `https://azhar-products.com`, centralisé dans
+`scripts/prerender.mjs` (constante `SITE_URL`) et surchargeable par variable
+d'environnement dans les réglages du projet Vercel :
 
 ```
 SITE_URL=https://www.exemple.ma
 ```
+
+### DNS sur Cloudflare
+
+Le domaine est géré par Cloudflare. Deux règles à ne pas enfreindre :
+
+- **Proxy désactivé** (nuage gris, « DNS only ») sur les enregistrements pointant vers
+  Vercel. Le proxy orange placé devant Vercel provoque des boucles de redirection et des
+  échecs d'émission du certificat.
+- Si le proxy devait être activé plus tard, le mode SSL/TLS de Cloudflare doit être
+  **Full (strict)**, jamais « Flexible ».
+
+Les valeurs exactes des enregistrements sont affichées par Vercel dans
+`Project → Settings → Domains` après ajout du domaine : ce sont elles qui font foi, les
+adresses IP d'apex de Vercel ayant déjà changé par le passé.
 
 Trois fichiers gardent le domaine en dur et doivent être modifiés à la main, car ils sont
 servis tels quels depuis `public/` :

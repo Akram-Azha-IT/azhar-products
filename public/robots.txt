@@ -44,4 +44,4 @@ Allow: /
 User-agent: DuckDuckBot
 Allow: /
 
-Sitemap: https://azhar-products.vercel.app/sitemap.xml
+Sitemap: https://azhar-products.com/sitemap.xml
