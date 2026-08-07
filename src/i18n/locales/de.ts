@@ -496,11 +496,6 @@ export const de: Dictionary = {
   },
   company: {
     baseline: 'Verpacken · Schützen · Aufwerten',
-    addressLines: [
-      'Kamal Park Center, Büro 30',
-      'Ecke Bd Zerktouni und Bd de Fès',
-      'Gebäude B, 5. Etage, Nr. 30',
-      '20200 Mohammedia, Marokko',
-    ],
+    addressLines: ['Kamal Park Center, Gebäude B, Büro 30', '20200 Mohammedia, Marokko'],
   },
 };

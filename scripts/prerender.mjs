@@ -22,7 +22,7 @@ const COMPANY = {
   name: 'Azhar Products',
   email: 'info@azhar-cons.com',
   phone: '+212521226130',
-  street: 'Kamal Park Center, Bureau 30, Angle Bd Zerktouni et Bd de Fès',
+  street: 'Kamal Park Center, Imm B, Bureau 30',
   locality: 'Mohammedia',
   postalCode: '20200',
   country: 'MA',

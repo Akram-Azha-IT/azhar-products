@@ -488,11 +488,6 @@ export const en: Dictionary = {
   },
   company: {
     baseline: 'Package · Protect · Add value',
-    addressLines: [
-      'Kamal Park Center, Office 30',
-      'Corner of Bd Zerktouni and Bd de Fès',
-      'Building B, 5th floor, No. 30',
-      '20200 Mohammedia, Morocco',
-    ],
+    addressLines: ['Kamal Park Center, Building B, Office 30', '20200 Mohammedia, Morocco'],
   },
 };

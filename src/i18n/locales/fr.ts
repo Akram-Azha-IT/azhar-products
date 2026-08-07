@@ -494,11 +494,6 @@ export const fr: Dictionary = {
   },
   company: {
     baseline: 'Emballer · Protéger · Valoriser',
-    addressLines: [
-      'Kamal Park Center, Bureau 30',
-      'Angle Bd Zerktouni et Bd de Fès',
-      'Immeuble B, 5e étage, N°30',
-      '20200 Mohammedia, Maroc',
-    ],
+    addressLines: ['Kamal Park Center, Imm B, Bureau 30', '20200 Mohammedia, Maroc'],
   },
 };
