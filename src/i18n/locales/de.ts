@@ -4,12 +4,12 @@ export const de: Dictionary = {
   meta: {
     title: 'Azhar Products: Lebensmittelverpackung, PET-Preforms und Fittings in Mohammedia',
     description:
-      'Hersteller und Händler in Mohammedia, Marokko: Lebensmittel- und Cateringverpackung, PET-Preforms und Verschlüsse, Kunststoff-Fittings aus PE, PVC und PP, Logistikbehälter und Paletten, HDPE-Tonnen mit 120, 240 und 360 Litern. Angebot innerhalb von 48 Stunden.',
+      'Händler in Mohammedia, Marokko: Lebensmittel- und Cateringverpackung, PET-Preforms und Verschlüsse, Kunststoff-Fittings aus PE, PVC und PP, Logistikbehälter und Paletten, HDPE-Tonnen mit 120, 240 und 360 Litern. Angebot innerhalb von 48 Stunden.',
     summary:
-      'Azhar Products ist ein marokkanischer Hersteller und Händler für Kunststoff- und Kartonverpackungen mit Sitz in Mohammedia und deckt fünf Familien ab: Lebensmittelverpackung, PET-Preforms und Verschlüsse, Kunststoff-Fittings für den Bau, Logistikbehälter und Paletten sowie HDPE-Tonnen.',
+      'Azhar Products ist ein marokkanischer Händler für Kunststoff- und Kartonverpackungen mit Sitz in Mohammedia und deckt fünf Familien ab: Lebensmittelverpackung, PET-Preforms und Verschlüsse, Kunststoff-Fittings für den Bau, Logistikbehälter und Paletten sowie HDPE-Tonnen.',
     areaServed: ['Mohammedia', 'Casablanca', 'Rabat', 'Marokko', 'Nordafrika'],
   },
-  h1: 'Azhar Products, Hersteller von Lebensmittelverpackung, PET-Preforms und Kunststoff-Fittings in Mohammedia, Marokko',
+  h1: 'Azhar Products, Händler für Lebensmittelverpackung, PET-Preforms und Kunststoff-Fittings in Mohammedia, Marokko',
   faq: {
     eyebrow: 'Häufige Fragen',
     title: 'Was Einkäufer\nzuerst fragen',
@@ -17,7 +17,7 @@ export const de: Dictionary = {
     items: [
       {
         id: 'produits',
-        question: 'Was stellt Azhar Products her und vertreibt es?',
+        question: 'Welche Produkte vertreibt Azhar Products?',
         answer:
           'Fünf Familien. Lebensmittel- und Cateringverpackung: tiefgezogene Molkereibecher, Becher, PET-Schalen, Kraft und Bagasse. PET-Preforms und Verschlüsse mit den Hälsen PCO, 1881, 1810 und 30/25. Kunststoff-Fittings für den Bau aus PE, PVC und PP samt PPR-Rohren. Logistikbehälter, Palox und Paletten. HDPE-Tonnen mit 120, 240 und 360 Litern.',
       },
@@ -31,7 +31,7 @@ export const de: Dictionary = {
         id: 'decor',
         question: 'Welche Dekorverfahren bieten Sie an?',
         answer:
-          'Drei Techniken, gewählt nach Auflage, Haltbarkeit und Budget. In-Mould-Label, fest im Material, das sich in der Kühlkette nicht ablöst. Vierfarbiger Schrumpfsleeve über den gesamten Mantel. Direkter Offsetdruck bis zu sechs Farben plus Gold. Das Dekor entsteht im eigenen Haus.',
+          'Drei Techniken, gewählt nach Auflage, Haltbarkeit und Budget. In-Mould-Label, fest im Material, das sich in der Kühlkette nicht ablöst. Vierfarbiger Schrumpfsleeve über den gesamten Mantel. Direkter Offsetdruck bis zu sechs Farben plus Gold. Die Dekoroptionen hängen vom Artikel und den Möglichkeiten des Herstellers ab.',
       },
       {
         id: 'zone',
@@ -43,7 +43,7 @@ export const de: Dictionary = {
         id: 'conformite',
         question: 'Sind Ihre Verpackungen lebensmittelecht?',
         answer:
-          'Ja. Die eingesetzte Neuware ist für den Lebensmittelkontakt zertifiziert, mit Chargenrückverfolgung und Maßkontrolle bei jedem Serienanlauf. Verwendet werden PS, PP, PET, HDPE und Zuckerrohrfaser.',
+          "Die Eignung für den Lebensmittelkontakt hängt vom Artikel und der vorgesehenen Verwendung ab. Kontaktieren Sie uns zu technischen Angaben und verfügbaren Konformitätsunterlagen der Hersteller.",
       },
       {
         id: 'devis',
@@ -55,7 +55,7 @@ export const de: Dictionary = {
         id: 'personnalisation',
         question: 'Lässt sich ein Behälter auf unsere Marke anpassen?',
         answer:
-          'Ja, in den meisten Fällen ohne neues Werkzeug. Derselbe Becherkörper trägt abwechselnd Dekore verschiedener Marken: nur das Dekormodul wechselt. Genau das verkürzt die Zeit vom freigegebenen Muster bis zur ersten gelieferten Palette.',
+          "Je nach Artikel und Hersteller können individuelle Dekoroptionen verfügbar sein. Senden Sie uns Ihren Bedarf, damit wir Optionen, Mengen und Lieferzeiten prüfen können.",
       },
     ],
   },
@@ -64,7 +64,7 @@ export const de: Dictionary = {
       univers: 'Sortimente',
       catalogue: 'Katalog',
       savoirFaire: 'Know-how',
-      atelier: 'Werk',
+      atelier: 'Über uns',
       contact: 'Kontakt',
     },
     quote: 'Angebot anfordern',
@@ -90,7 +90,7 @@ export const de: Dictionary = {
   ranges: {
     eyebrow: 'Unsere Sortimente · {n} Familien',
     title: 'Verpacken, schützen,\naufwerten',
-    lead: 'Fünf Familien, von uns produziert und vertrieben, von der Lebensmittelschale bis zum Sammelbehälter.',
+    lead: 'Fünf Produktfamilien im Vertrieb von Azhar Products, von der Lebensmittelschale bis zum Sammelbehälter.',
     items: {
       alimentaire: {
         title: 'Lebensmittelverpackung',
@@ -147,7 +147,7 @@ export const de: Dictionary = {
   catalogue: {
     eyebrow: 'Produktkatalog · {n} Referenzen',
     title: 'Unsere Behälter,\nIhre Marken',
-    lead: 'Drei Familien, ein Werk. Fahren Sie über eine Reihe, um sie anzuhalten und eine Referenz zu lesen.',
+    lead: 'Drei Produktfamilien zum Entdecken. Fahren Sie über eine Reihe, um sie anzuhalten und eine Referenz zu lesen.',
     railLabel: '{label}: {n} Referenzen',
     categories: {
       laitier: {
@@ -437,39 +437,24 @@ export const de: Dictionary = {
     },
   },
   expertise: {
-    title: 'Vom Granulat\nauf die Baustelle',
-    lead: 'Vier Schritte, eine Verantwortungskette. Das Produkt verlässt den Standort erst dekoriert, geprüft und palettiert.',
+    title: "Von Ihrem Bedarf\nzum passenden Produkt",
+    lead: "Wir unterstützen Sie bei der Auswahl und Beschaffung passender Produkte für Ihren Betrieb.",
     steps: {
-      matiere: {
-        title: 'Material und Formgebung',
-        text: 'PS, PP, PET, HDPE und Zuckerrohrfaser. Tiefziehen, Spritzguss und Blasformen: das Material richtet sich nach dem Einsatz, nicht umgekehrt.',
-      },
-      decor: {
-        title: 'Integriertes Dekor',
-        text: 'In-Mould-Label, Schrumpfsleeve oder direkter Offsetdruck: das Dekor richtet sich nach Auflage, Haltbarkeit und Budget.',
-      },
-      conformite: {
-        title: 'Geprüfte Konformität',
-        text: 'Neuware mit Lebensmittelkontakt-Zertifikat, Chargenrückverfolgung und Maßkontrolle bei jedem Serienanlauf.',
-      },
-      recyclage: {
-        title: 'Material im Kreislauf',
-        text: 'Stanzabfälle gehen zurück in die interne Mahlung. Tonnen, Paletten und Behälter sind auf Recycling am Lebensende ausgelegt.',
-      },
+      matiere: { title: "Produktauswahl", text: "Lebensmittelverpackungen, Preforms, Fittings, Behälter und Tonnen: Wir vertreiben Artikel für den professionellen Einsatz." },
+      decor: { title: "Dekoroptionen", text: "IML, Sleeve oder Offsetdruck: Wir informieren über verfügbare Optionen je nach Artikel und Hersteller." },
+      conformite: { title: "Konformitätsinformationen", text: "Wir informieren über die verfügbaren technischen Angaben und Konformitätsunterlagen der angebotenen Artikel." },
+      recyclage: { title: "Materialauswahl", text: "Wir helfen bei der Materialauswahl anhand Ihres Einsatzzwecks und der geltenden Sortierhinweise." },
     },
   },
   atelier: {
-    eyebrow: 'Das Werk',
-    title: 'Eine Form,\ntausend Marken',
-    paragraphs: [
-      'Azhar Products fertigt die Behälter, die Molkereien jeden Morgen befüllen. Derselbe Becherkörper trägt abwechselnd ein Dekor von Danone, Yopolis oder Milkman: nur das Dekormodul wechselt, nie das Werkzeug.',
-      'Dieselbe Logik gilt in den anderen Sortimenten: Preforms, Fittings, Behälter und Tonnen gehen von gemeinsamen Materialien und Prozessen aus, was die Zeit vom freigegebenen Muster bis zur ersten gelieferten Palette verkürzt.',
-    ],
+    eyebrow: "Azhar Products",
+    title: "Ihr Partner\nim Produktvertrieb",
+    paragraphs: ["Azhar Products vertreibt Lebensmittelverpackungen und Kunststoffprodukte für professionelle Kunden. Das Unternehmen mit Sitz in Mohammedia unterstützt Sie bei der Auswahl passender Artikel.", "Unser Angebot umfasst fünf Familien: Lebensmittelverpackungen, PET-Preforms und Verschlüsse, Kunststoff-Fittings für den Bau, Logistikbehälter und Paletten sowie Tonnen und Container."],
     stats: [
-      { value: '05', label: 'Abgedeckte Produktsortimente' },
-      { value: '40.000', label: 'Stück pro Stunde und Linie' },
-      { value: '27', label: 'Aktive Katalogreferenzen' },
-      { value: '100 %', label: 'Dekor im eigenen Haus' },
+      { value: "05", label: "Angebotene Produktfamilien" },
+      { value: "27", label: "Katalogartikel" },
+      { value: "PET", label: "Preforms und Verpackungen" },
+      { value: "PPR", label: "Rohre und Fittings" },
     ],
     alt: {
       danone: 'Gestapelte Becher Danone Natural Plain',

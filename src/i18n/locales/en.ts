@@ -4,12 +4,12 @@ export const en: Dictionary = {
   meta: {
     title: 'Azhar Products: food packaging, PET preforms and plastic fittings in Mohammedia',
     description:
-      'Manufacturer and distributor in Mohammedia, Morocco: food and deli packaging, PET preforms and closures, PE, PVC and PP plastic fittings, logistics crates and pallets, HDPE bins in 120, 240 and 360 litres. Quotes within 48 hours across Morocco.',
+      'Distributor in Mohammedia, Morocco: food and deli packaging, PET preforms and closures, PE, PVC and PP plastic fittings, logistics crates and pallets, HDPE bins in 120, 240 and 360 litres. Quotes within 48 hours across Morocco.',
     summary:
-      'Azhar Products is a Moroccan manufacturer and distributor of plastic and board packaging based in Mohammedia, covering five families: food packaging, PET preforms and closures, plastic building fittings, logistics crates and pallets, and HDPE bins.',
+      'Azhar Products is a Moroccan distributor of plastic and board packaging based in Mohammedia, covering five families: food packaging, PET preforms and closures, plastic building fittings, logistics crates and pallets, and HDPE bins.',
     areaServed: ['Mohammedia', 'Casablanca', 'Rabat', 'Morocco', 'North Africa'],
   },
-  h1: 'Azhar Products, manufacturer of food packaging, PET preforms and plastic fittings in Mohammedia, Morocco',
+  h1: 'Azhar Products, distributor of food packaging, PET preforms and plastic fittings in Mohammedia, Morocco',
   faq: {
     eyebrow: 'Frequently asked questions',
     title: 'What buyers\nask us first',
@@ -17,7 +17,7 @@ export const en: Dictionary = {
     items: [
       {
         id: 'produits',
-        question: 'What does Azhar Products manufacture and distribute?',
+        question: 'What does Azhar Products sell?',
         answer:
           'Five families. Food and deli packaging: thermoformed dairy pots, cups, PET trays, kraft and bagasse. PET preforms and closures, with PCO, 1881, 1810 and 30/25 necks. Plastic building fittings in PE, PVC and PP, together with PPR pipes. Logistics crates, palox bins and pallets. HDPE bins in 120, 240 and 360 litres.',
       },
@@ -31,7 +31,7 @@ export const en: Dictionary = {
         id: 'decor',
         question: 'What decoration methods do you offer?',
         answer:
-          'Three techniques, chosen for the run size, the shelf life and the budget. In-mould labelling, fused into the material so it never peels along the cold chain. Four-colour shrink sleeves covering the full body. Direct offset printing up to six colours plus gold. All decoration is done in house.',
+          'Three techniques, chosen for the run size, the shelf life and the budget. In-mould labelling, fused into the material so it never peels along the cold chain. Four-colour shrink sleeves covering the full body. Direct offset printing up to six colours plus gold. Decoration options depend on the reference and the options offered by the manufacturer.',
       },
       {
         id: 'zone',
@@ -43,7 +43,7 @@ export const en: Dictionary = {
         id: 'conformite',
         question: 'Is your packaging food-contact compliant?',
         answer:
-          'Yes. The virgin materials we use are certified for food contact, with batch traceability and a dimensional check at every production start-up. Materials in use are PS, PP, PET, HDPE and sugarcane fibre.',
+          "Food-contact suitability depends on the reference and intended use. Contact us for specifications and compliance documents available from the manufacturers.",
       },
       {
         id: 'devis',
@@ -55,7 +55,7 @@ export const en: Dictionary = {
         id: 'personnalisation',
         question: 'Can a container be customised to our brand?',
         answer:
-          'Yes, and in most cases without new tooling. The same pot body carries different brand decorations in turn: only the decoration module changes. That is what shortens the time between an approved mock-up and the first pallet delivered.',
+          "Customisation may be available depending on the reference and the options offered by the manufacturer. Send us your requirements so we can check decoration options, quantities and lead times.",
       },
     ],
   },
@@ -64,7 +64,7 @@ export const en: Dictionary = {
       univers: 'Ranges',
       catalogue: 'Catalogue',
       savoirFaire: 'Know-how',
-      atelier: 'Workshop',
+      atelier: 'About us',
       contact: 'Contact',
     },
     quote: 'Request a quote',
@@ -90,7 +90,7 @@ export const en: Dictionary = {
   ranges: {
     eyebrow: 'Our ranges · {n} families',
     title: 'Package, protect,\nadd value',
-    lead: 'Five families produced and distributed in house, from the food tray to the waste container.',
+    lead: 'Five product families marketed by Azhar Products, from the food tray to the waste container.',
     items: {
       alimentaire: {
         title: 'Food packaging',
@@ -139,7 +139,7 @@ export const en: Dictionary = {
   catalogue: {
     eyebrow: 'Product catalogue · {n} references',
     title: 'Our containers,\nyour brands',
-    lead: 'Three families, one workshop. Hover a rail to stop it and read a reference.',
+    lead: 'Three product families to explore. Hover a rail to stop it and read a reference.',
     railLabel: '{label}: {n} references',
     categories: {
       laitier: {
@@ -429,39 +429,24 @@ export const en: Dictionary = {
     },
   },
   expertise: {
-    title: 'From pellet\nto site',
-    lead: 'Four steps, one chain of responsibility. Nothing leaves the site until it is decorated, checked and palletised.',
+    title: "From your needs\nto the right product",
+    lead: "We help you select and source products suited to your business.",
     steps: {
-      matiere: {
-        title: 'Material and forming',
-        text: 'PS, PP, PET, HDPE and cane fibre. Thermoforming, injection and blow moulding: the material is chosen for the use, never the reverse.',
-      },
-      decor: {
-        title: 'Integrated decoration',
-        text: 'In-mould label, shrink sleeve or direct offset print: the decoration is chosen for the run size, the shelf life and the budget.',
-      },
-      conformite: {
-        title: 'Verified compliance',
-        text: 'Virgin materials certified for food contact, batch traceability and a dimensional check at every production start-up.',
-      },
-      recyclage: {
-        title: 'Material recovered',
-        text: 'Trim offcuts go back through in-house grinding. Bins, pallets and crates are designed to be recycled at end of life.',
-      },
+      matiere: { title: "Product selection", text: "Food packaging, preforms, fittings, crates and bins: we sell references suited to professional uses." },
+      decor: { title: "Decoration options", text: "IML, sleeves or offset printing: we guide you through the options available for each reference and manufacturer." },
+      conformite: { title: "Compliance information", text: "We provide information on the specifications and compliance documents available for the references offered." },
+      recyclage: { title: "Material selection", text: "We help you choose from the materials offered according to your use and applicable sorting guidelines." },
     },
   },
   atelier: {
-    eyebrow: 'The workshop',
-    title: 'One mould,\na thousand brands',
-    paragraphs: [
-      'Azhar Products makes the containers dairies fill every morning. The same pot body carries a Danone, Yopolis or Milkman decoration in turn: only the decoration module changes, never the tooling.',
-      'The same logic applies across the other ranges: preforms, fittings, crates and bins start from shared materials and processes, which shortens the time between an approved mock-up and the first pallet delivered.',
-    ],
+    eyebrow: "Azhar Products",
+    title: "Your partner\nin product distribution",
+    paragraphs: ["Azhar Products sells food packaging and plastic products for professionals. Based in Mohammedia, the company helps you choose references suited to your business.", "Our offer covers five families: food packaging, PET preforms and closures, plastic building fittings, logistics crates and pallets, and bins and containers."],
     stats: [
-      { value: '05', label: 'Product ranges covered' },
-      { value: '40,000', label: 'Units per hour per line' },
-      { value: '27', label: 'Active catalogue references' },
-      { value: '100%', label: 'Decoration done in house' },
+      { value: "05", label: "Product families offered" },
+      { value: "27", label: "Catalogue references" },
+      { value: "PET", label: "Preforms and packaging" },
+      { value: "PPR", label: "Pipes and fittings" },
     ],
     alt: {
       danone: 'Stacked Danone Natural Plain pots',

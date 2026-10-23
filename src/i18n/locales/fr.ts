@@ -5,12 +5,12 @@ export const fr: Dictionary = {
     title:
       'Azhar Products : emballage alimentaire, préformes PET et raccords plastiques à Mohammedia',
     description:
-      'Fabricant et distributeur à Mohammedia : emballage alimentaire et traiteur, préformes PET et bouchons, raccords plastiques PE, PVC et PP, bacs et palettes logistiques, poubelles PEHD 120, 240 et 360 litres. Devis sous 48 h pour tout le Maroc.',
+      'Distributeur à Mohammedia : emballage alimentaire et traiteur, préformes PET et bouchons, raccords plastiques PE, PVC et PP, bacs et palettes logistiques, poubelles PEHD 120, 240 et 360 litres. Devis sous 48 h pour tout le Maroc.',
     summary:
-      "Azhar Products est un fabricant et distributeur marocain d'emballages plastiques et carton basé à Mohammedia, qui couvre cinq familles : emballage alimentaire, préformes PET et bouchons, raccords plastiques bâtiment, bacs et palettes logistiques, poubelles PEHD.",
+      "Azhar Products est un distributeur marocain d'emballages plastiques et carton basé à Mohammedia, qui couvre cinq familles : emballage alimentaire, préformes PET et bouchons, raccords plastiques bâtiment, bacs et palettes logistiques, poubelles PEHD.",
     areaServed: ['Mohammedia', 'Casablanca', 'Rabat', 'Maroc', 'Afrique du Nord'],
   },
-  h1: "Azhar Products, fabricant d'emballage alimentaire, de préformes PET et de raccords plastiques à Mohammedia, Maroc",
+  h1: "Azhar Products, distributeur d'emballage alimentaire, de préformes PET et de raccords plastiques à Mohammedia, Maroc",
   faq: {
     eyebrow: 'Questions fréquentes',
     title: 'Ce que\nles clients demandent',
@@ -18,7 +18,7 @@ export const fr: Dictionary = {
     items: [
       {
         id: 'produits',
-        question: 'Quels produits Azhar Products fabrique-t-il et distribue-t-il ?',
+        question: 'Quels produits Azhar Products commercialise-t-il ?',
         answer:
           "Cinq familles. L'emballage alimentaire et traiteur : pots laitiers thermoformés, gobelets, barquettes PET, kraft et bagasse. Les préformes PET et bouchons, cols PCO, 1881, 1810 et 30/25. Les raccords plastiques bâtiment en PE, PVC et PP, avec les tubes PPR. Les bacs, palox et palettes logistiques. Les poubelles PEHD de 120, 240 et 360 litres.",
       },
@@ -32,7 +32,7 @@ export const fr: Dictionary = {
         id: 'decor',
         question: 'Quels types de décor proposez-vous ?',
         answer:
-          "Trois techniques, choisies selon la série, la durée de vie et le budget. L'étiquette in-mould intégrée à la matière, qui ne se décolle pas en chaîne du froid. Le sleeve rétractable quadri, qui habille toute la robe. L'impression offset directe jusqu'à six couleurs plus or. Le décor est réalisé en interne.",
+          "Trois techniques, choisies selon la série, la durée de vie et le budget. L'étiquette in-mould intégrée à la matière, qui ne se décolle pas en chaîne du froid. Le sleeve rétractable quadri, qui habille toute la robe. L'impression offset directe jusqu'à six couleurs plus or. Les options de décor dépendent des références et des possibilités proposées par les fabricants.",
       },
       {
         id: 'zone',
@@ -44,7 +44,7 @@ export const fr: Dictionary = {
         id: 'conformite',
         question: 'Vos emballages sont-ils conformes au contact alimentaire ?',
         answer:
-          'Oui. Les matières vierges utilisées sont certifiées contact alimentaire, avec traçabilité par lot et contrôle dimensionnel à chaque démarrage de série. Les matières employées sont le PS, le PP, le PET, le PEHD et la fibre de canne à sucre.',
+          "Les conditions de contact alimentaire dépendent de la référence et de son usage. Contactez-nous pour connaître les caractéristiques et les documents de conformité disponibles auprès des fabricants.",
       },
       {
         id: 'devis',
@@ -56,7 +56,7 @@ export const fr: Dictionary = {
         id: 'personnalisation',
         question: 'Peut-on personnaliser un contenant à notre marque ?',
         answer:
-          "Oui, et sans nouvel outillage dans la plupart des cas. Le même corps de pot porte tour à tour des décors de marques différentes : seul le module de décor change. C'est ce qui raccourcit le délai entre la maquette validée et la première palette livrée.",
+          "Selon la référence et les possibilités proposées par le fabricant, des options de personnalisation peuvent être disponibles. Envoyez-nous votre besoin pour vérifier les décors, quantités et délais correspondants.",
       },
     ],
   },
@@ -65,7 +65,7 @@ export const fr: Dictionary = {
       univers: 'Univers',
       catalogue: 'Catalogue',
       savoirFaire: 'Savoir-faire',
-      atelier: 'Atelier',
+      atelier: 'À propos',
       contact: 'Contact',
     },
     quote: 'Demander un devis',
@@ -91,7 +91,7 @@ export const fr: Dictionary = {
   ranges: {
     eyebrow: 'Nos univers · {n} familles',
     title: 'Emballer, protéger,\nvaloriser',
-    lead: 'Cinq familles produites et distribuées par nos soins, de la barquette alimentaire au conteneur de collecte.',
+    lead: 'Cinq familles commercialisées par Azhar Products, de la barquette alimentaire au conteneur de collecte.',
     items: {
       alimentaire: {
         title: 'Emballage alimentaire',
@@ -144,7 +144,7 @@ export const fr: Dictionary = {
   catalogue: {
     eyebrow: 'Catalogue produit · {n} références',
     title: 'Nos contenants,\nvos marques',
-    lead: "Trois familles, un même atelier. Survolez un rail pour l'arrêter et lire une référence.",
+    lead: "Trois familles de produits à découvrir. Survolez un rail pour l'arrêter et lire une référence.",
     railLabel: '{label} : {n} références',
     categories: {
       laitier: {
@@ -435,39 +435,24 @@ export const fr: Dictionary = {
     },
   },
   expertise: {
-    title: 'Du granulé\nau chantier',
-    lead: "Quatre étapes, une seule chaîne de responsabilité. Le produit ne quitte le site qu'une fois décoré, contrôlé et palettisé.",
+    title: "De votre besoin\nau bon produit",
+    lead: "Nous vous accompagnons dans le choix et l’approvisionnement des produits adaptés à votre activité.",
     steps: {
-      matiere: {
-        title: 'Matière et mise en forme',
-        text: "PS, PP, PET, PEHD et fibre de canne. Thermoformage, injection et soufflage : la matière est choisie pour l'usage, pas l'inverse.",
-      },
-      decor: {
-        title: 'Décor intégré',
-        text: 'In-mould label, sleeve rétractable ou impression offset directe : le décor est choisi selon la série, la durée de vie et le budget.',
-      },
-      conformite: {
-        title: 'Conformité contrôlée',
-        text: 'Matières vierges certifiées contact alimentaire, traçabilité par lot et contrôle dimensionnel à chaque démarrage de série.',
-      },
-      recyclage: {
-        title: 'Matière revalorisée',
-        text: 'Les chutes de découpe repartent en broyage interne. Poubelles, palettes et bacs sont conçus pour être recyclés en fin de vie.',
-      },
+      matiere: { title: "Sélection des produits", text: "Emballages alimentaires, préformes, raccords, bacs et poubelles : nous commercialisons des références adaptées aux usages professionnels." },
+      decor: { title: "Options de décor", text: "IML, sleeve ou impression offset : nous vous orientons vers les options disponibles selon les références et les fabricants." },
+      conformite: { title: "Informations de conformité", text: "Nous vous renseignons sur les caractéristiques et les documents de conformité disponibles pour les références proposées." },
+      recyclage: { title: "Choix des matières", text: "Nous vous aidons à choisir parmi les matières proposées selon votre usage et les consignes de tri applicables." },
     },
   },
   atelier: {
-    eyebrow: "L'atelier",
-    title: 'Un moule,\nmille marques',
-    paragraphs: [
-      'Azhar Products fabrique les contenants que les laiteries remplissent chaque matin. Le même corps de pot porte tour à tour un décor Danone, Yopolis ou Milkman : seul le module de décor change, jamais l\'outillage.',
-      'La même logique vaut sur les autres univers : préformes, raccords, bacs et poubelles partent de matières et de process communs, ce qui raccourcit le délai entre la maquette validée et la première palette livrée.',
-    ],
+    eyebrow: "Azhar Products",
+    title: "Votre partenaire\nen commercialisation",
+    paragraphs: ["Azhar Products commercialise des emballages alimentaires et des produits plastiques destinés aux professionnels. Basée à Mohammedia, l’entreprise vous accompagne dans le choix des références adaptées à votre activité.", "Notre offre couvre cinq familles : emballage alimentaire, préformes PET et bouchons, raccords plastiques bâtiment, bacs et palettes logistiques, poubelles et conteneurs."],
     stats: [
-      { value: '05', label: 'Univers produits couverts' },
-      { value: '40 000', label: 'Pièces par heure et par ligne' },
-      { value: '27', label: 'Références actives au catalogue' },
-      { value: '100 %', label: 'Décor réalisé en interne' },
+      { value: "05", label: "Univers produits proposés" },
+      { value: "27", label: "Références au catalogue" },
+      { value: "PET", label: "Préformes et emballages" },
+      { value: "PPR", label: "Tubes et raccords" },
     ],
     alt: {
       danone: 'Pots Danone Natural Plain empilés',
